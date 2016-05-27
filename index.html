@@ -16,13 +16,13 @@ about: 'about.html'
     <div class="vertical">
         <div class="main-header-content inner">
             <h1 class="page-title">{{ site.name }}</h1>
-            <h2 class="page-description">
-                {% if site.description %} {{ site.description }}. {% endif %}
-                {% if site.author %}
+            {% if site.author %}
                 <figure class="author-image">
                     <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.jpg)">
                     <span class="hidden">{{site.author}}'s Picture</span></a>
                 </figure>
+            <h2 class="page-description">
+                {% if site.description %} {{ site.description }}. {% endif %}
                  Empreendedor; Fundador da Tá Valendo (<a href="facebook.com/tavalendobr" target="_blank">@tavalendobr</a>); Voluntário na AIESEC; Changemaker; Boas cervejas; startups, vendas, marketing; web development; Defensor do <a href="http://www.un.org/sustainabledevelopment/economic-growth/" target="_blank">SDG #8</a>
             </h2>
         </div>
