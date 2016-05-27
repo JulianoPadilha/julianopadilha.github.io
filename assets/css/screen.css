@@ -1123,6 +1123,7 @@ body:not(.post-template) .post-title {
     background: #fff;
     z-index: 2;
     box-shadow: #E7EEF2 0 0 0 1px;
+    clear: both;
 }
 
 .author-image .img {
