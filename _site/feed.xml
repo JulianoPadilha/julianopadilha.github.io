@@ -5,12 +5,12 @@
     <description></description>
     <link>julianopadilha.github.io//</link>
     <atom:link href="julianopadilha.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 May 2016 03:03:35 -0300</pubDate>
-    <lastBuildDate>Fri, 27 May 2016 03:03:35 -0300</lastBuildDate>
+    <pubDate>Fri, 27 May 2016 11:19:25 -0300</pubDate>
+    <lastBuildDate>Fri, 27 May 2016 11:19:25 -0300</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
+        <title>#Teste</title>
         <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
 To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
 
@@ -25,16 +25,10 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 10 Nov 2013 07:18:00 -0300</pubDate>
-        <link>julianopadilha.github.io//thriller/comedy/horror/2013/11/10/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">julianopadilha.github.io//thriller/comedy/horror/2013/11/10/welcome-to-jekyll.html</guid>
+        <pubDate>Thu, 26 May 2016 23:30:00 -0300</pubDate>
+        <link>julianopadilha.github.io//2016/05/26/partiu-sp.html</link>
+        <guid isPermaLink="true">julianopadilha.github.io//2016/05/26/partiu-sp.html</guid>
         
-        
-        <category>Thriller</category>
-        
-        <category>Comedy</category>
-        
-        <category>Horror</category>
         
       </item>
     
