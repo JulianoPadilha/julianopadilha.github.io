@@ -1,7 +1,12 @@
 ---
 layout: post
-title:  "#Teste"
+<<<<<<< HEAD
+title:  "#PartiuSP"
+date:   2016-05-27 10:30:00
+=======
+title:  "#Testehaha"
 date:   2016-05-27 02:30:00
+>>>>>>> origin/master
 categories:
 ---
 
@@ -9,6 +14,8 @@ You'll find this post in your `_posts` directory - edit this post and re-build (
 To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.
 
 Jekyll also offers powerful support for code snippets:
+
+![My helpful screenshot](/assets/images/profile.jpg)
 
 {% highlight ruby %}
 def print_hi(name)
