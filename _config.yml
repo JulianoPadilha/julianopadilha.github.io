@@ -8,7 +8,7 @@ logo: false
 paginate: 5
 baseurl: /
 domain_name: 'julianopadilha.github.io'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-78425258-1'
 gems: [jekyll-paginate]
 
 # Details for the RSS feed generator
