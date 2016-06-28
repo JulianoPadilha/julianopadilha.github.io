@@ -133,7 +133,7 @@ a {
 	height: auto;
 	display: flex;
 	margin-top: 0px;
-	flex-wrap: wrap;
+	flex-wrap: wrap-reverse;
 	justify-content: center;
 }
 
@@ -141,7 +141,6 @@ a {
 	width: auto;
 	text-align: center;
 	height: 200px;
-	/*flex: 2;*/
 	margin: 100px 25px 0 25px;
 }
 
