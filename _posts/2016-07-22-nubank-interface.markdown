@@ -2,7 +2,7 @@
 layout: post
 title:  "Interface do Nubank"
 date:   2016-07-22 23:00:00
-categories: interface, estudos, html, css
+categories: interface estudos html css
 published: true
 ---
 
@@ -21,5 +21,5 @@ Também passarei a compartilhar com desenvolvedores mais experientes o que criei
 
 É isso, em breve devo postar mais coisas envolvendo meus estudos na área de desenvolvimento e mais projetinhos interessantes. 
 
-:D
+😄
 
