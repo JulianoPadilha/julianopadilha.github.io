@@ -6,7 +6,7 @@ categories: interface estudos html css
 published: true
 ---
 
-Como parte do meu processo de crescimento contínuo dentro da área de desenvolvimento, tenha estudado algumas práticas de criação de interfaces para aumentar as minhas skills. Durante um desses dias de estudo, decidi recriar uma das telas da interface do app do Nubank utilizando apenas HTML e CSS.
+Como parte do meu processo de crescimento contínuo dentro da área de desenvolvimento, tenha estudado algumas práticas de criação de interfaces para aumentar as minhas skills. Durante um desses dias de estudo, decidi recriar uma das telas da interface do app do [Nubank](https://www.nubank.com.br/) utilizando apenas **HTML** e **CSS**.
 
 Foi um processo bem interessante, onde consegui aprender algumas novas funcionalidades das tecnologias acima citadas e, mais importante ainda, consegui descobrir alguns pontos fracos meus que precisam ser reforçados. 
 
