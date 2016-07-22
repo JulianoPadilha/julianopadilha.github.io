@@ -3,7 +3,7 @@ layout: post
 title:  "#PartiuSP"
 date:   2016-05-28 23:00:00
 categories:
-published: false
+published: true
 ---
 
 Decidi começar este blog como uma forma de externalizar a decisão que tomei de ir morar em São Paulo no segundo semestre deste ano. Por meio dele relatarei toda essa jornada, apresentando os caminhos que estou tomando para tornar isso realidade e, futuramente, mostrando como estará sendo morar em SP.
