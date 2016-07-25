@@ -14,10 +14,50 @@ Pretendo tornar este tipo de conteúdo uma série dentro do meu site chamada "Ho
 
 Web Storage faz parte da API do HTML e fornece mecanismos para que os navegadores possam armazenar dados através de chave/valor de uma forma mais eficiente que os cookies. A API do Web Storage fornece duas maneiras de armazenar dados:
 
-`sesseionStorage`
-
+- `sesseionStorage`
 O sessionStorage mantém as informações armazenadas por origem e permanece disponível enquanto há uma sessão aberta no navegador(mesmo a página sendo recarregada). Caso o browser seja fechado a sessão será limpa e as informações serão perdidas.
 
-`localStorage`
-
+- `localStorage`
 O localStorage é muito parecido com o sessionStorage, a diferença é que mesmo que o navegador seja fechado, os dados permanecem armazenados.
+
+Esses mecanismos estão disponíveis a partir das seguintes propriedades `Window.sessionStorage` e `Window.localStorage` (para um maior suporte, o objeto Window implementa os objetos  Window.LocalStorage e Window.SessionStorage) — ao invocar uma dessas propriedades, é criada uma instância do objeto Storage, que fornece métodos para inserir, recuperar e remover os dados.
+
+## Propriedades
+
+`Storage.lenght`
+Retorna um inteiro que representa o número de itens de dados armazenados no objeto de armazenamento.
+
+## Métodos
+
+`Storage.key()`
+Retorna o nome da chave passada como parâmetro.
+
+`Storage.getItem()`
+Quando passado o nome de uma chave, retornará o valor dessa chave.
+
+`Storage.setItem()`
+Quando passado o nome de uma chave, adicionará a chave no storage ou atualizar o valor da chave caso ela já exista.
+
+`Storage.removeItem()`
+Quando passado o nome da chave, removerá a chave do storage.
+
+`Storage.clear()`
+Quando chamada, esvaziará todas as chaves fora do armazenamento.
+
+## Chega de teória! Let's make things happen!
+
+Esse será o resultado final do nosso "How to Build" de hoje. Não está bonito, eu sei, seu sei.. Mas a ideia não era essa, a ideia é aprender os fundamentos de algo novo. Então fique a vontade para deixar o seu to-do list esteticamente mais bonito que o meu. 😉
+
+![](/../assets/images/how-to-build-todo-list-js-web-storage.png)
+
+
+
+
+
+
+
+
+
+
+
+
