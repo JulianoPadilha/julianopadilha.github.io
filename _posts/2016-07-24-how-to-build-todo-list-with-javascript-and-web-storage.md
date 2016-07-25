@@ -7,6 +7,8 @@ categories: javascript html how-to-build
 published: true
 ---
 
+![](/../assets/images/localstorage-cover.png)
+
 Decidi escrever este post para falar um pouco sobre uma API muito interessante do HTML, mas que pouco ouvimos falar a respeito. O que também me motivou a escrever este conteúdo, é que recentemente percebi que consigo fixar melhor o que estudo quando tenho a oportunidade de fazer anotações sobre o assunto. Se você der uma olhada no meu [GitHub](https://github.com/JulianoPadilha), verá que estou de fato colocando isso em prática e tomando anotações como parte do meu método de aprendizado. 🤓
 
 Pretendo tornar este tipo de conteúdo uma série dentro do meu site chamada "How to Build". Acredito que será bem interessante e pretendo abordar os mais diversos assuntos, e claro, mostrar como se faz na prática, com uma pitada de teoria. Então vamos lá?! 
@@ -21,7 +23,7 @@ O sessionStorage mantém as informações armazenadas por origem e permanece dis
 - `localStorage`
 O localStorage é muito parecido com o sessionStorage, a diferença é que mesmo que o navegador seja fechado, os dados permanecem armazenados.
 
-Com Local Storage, aplicações web podem armazenar dados localmente no navegador do usuário. Antes do HTML5, os dados de uma aplicação tinham que ser amazenados em cookies. Com Local Storage é mais seguro realizar esse processo e grandes quantidades de dados podem ser armazenados localmente, sem afetar o desempenho do site.
+Com Local Storage, aplicações web podem armazenar dados localmente no navegador do usuário. Antes do HTML5, os dados de uma aplicação tinham que ser armazenados em cookies. Com Local Storage é mais seguro realizar esse processo e grandes quantidades de dados podem ser armazenados localmente, sem afetar o desempenho do site.
 
 Ao contrário dos cookies, o limite de armazenamento é muito maior (pelo menos 5MB) e a informação não é transferida para o servidor.
 
