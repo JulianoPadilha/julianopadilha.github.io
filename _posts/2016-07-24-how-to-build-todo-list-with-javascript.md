@@ -15,13 +15,14 @@ Pretendo tornar este tipo de conteúdo uma série dentro do meu site chamada "Ho
 
 Web Storage faz parte da API do HTML e fornece mecanismos para que os navegadores possam armazenar dados através de chave/valor de uma forma mais eficiente que os cookies. A API do Web Storage fornece duas maneiras de armazenar dados:
 
-- `sesseionStorage`
+- `sessionStorage`
 O sessionStorage mantém as informações armazenadas por origem e permanece disponível enquanto há uma sessão aberta no navegador(mesmo a página sendo recarregada). Caso o browser seja fechado a sessão será limpa e as informações serão perdidas.
 
 - `localStorage`
 O localStorage é muito parecido com o sessionStorage, a diferença é que mesmo que o navegador seja fechado, os dados permanecem armazenados.
 
 Esses mecanismos estão disponíveis a partir das seguintes propriedades `Window.sessionStorage` e `Window.localStorage` (para um maior suporte, o objeto Window implementa os objetos  Window.LocalStorage e Window.SessionStorage) — ao invocar uma dessas propriedades, é criada uma instância do objeto Storage, que fornece métodos para inserir, recuperar e remover os dados.
+>Fonte: [https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API_pt_br](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API_pt_br)
 
 ## Propriedades
 
@@ -104,11 +105,11 @@ Sussa?! Keep going!
 
 Como dito na parte teorica, o Web Storage dispõe do `sessionStorage` e do `localStorage`. Como nossa intensão é manter nosso to-do list mesmo após o navegador ter sido fechado, então neste exemplo usaremos apenas o localStorage. 
 
-Explicarei comentando trecho por trecho o que está acontecendo no código. 🤘
-
-Aaah, uma dica inicial. Vocês podem acompanhar o que está acontecendo no Local Storage de vocês acessando a aba Resources do Inpector de elementos do Chrome (espero que estejam utilizando o Chrome :P), como mostra o gif abaixo.
+Aaah, uma dica inicial. Vocês podem acompanhar o que está acontecendo no Local Storage de vocês acessando a aba Resources do Inspector de elementos do Chrome (torço que estejam utilizando o Chrome :P), como mostra o gif abaixo.
 
 ![](/../assets/images/local-storage-inspector-elementos.gif)
+
+Explicarei comentando trecho por trecho o que está acontecendo no código. 🤘
 
 ```js
 var addTodo = function(){
@@ -280,6 +281,6 @@ ul li {
 ```
 
 
-E assim finalizamos nosso To-Do List utilizando JavaScript e a API localStorage. Espero que tenha sido útil e fico super aberto para feedbacks sobre como melhorar a didática dos exemplos e tudo mais. Também aceito com todo prazer feedbacks sobre o código, o que pode ser melhorado, o que tá errado, etc.. 
+E assim finalizamos nosso To-Do List utilizando JavaScript e a API localStorage. Espero que tenha sido útil, e fico super aberto para feedbacks sobre como melhorar a didática dos exemplos e tudo mais. Também aceito com todo prazer feedbacks sobre o código, o que pode ser melhorado, o que tá errado, etc.. 
 
 Até uma próxima! ✌️ 
