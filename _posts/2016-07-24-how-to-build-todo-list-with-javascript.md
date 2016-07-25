@@ -102,28 +102,184 @@ Sussa?! Keep going!
 
 É aqui que a brincadeira começa a ficar interressante. _Muahahaha_ 
 
-Explicarei trecho por trecho o que está acontecendo no código e no final do tópico deixarei o código completo para facilitar a visualização. 🤘
+Como dito na parte teorica, o Web Storage dispõe do `sessionStorage` e do `localStorage`. Como nossa intensão é manter nosso to-do list mesmo após o navegador ter sido fechado, então neste exemplo usaremos apenas o localStorage. 
 
-- `addTodo()`;
+Explicarei comentando trecho por trecho o que está acontecendo no código. 🤘
+
+Aaah, uma dica inicial. Vocês podem acompanhar o que está acontecendo no Local Storage de vocês acessando a aba Resources do Inpector de elementos do Chrome (espero que estejam utilizando o Chrome :P), como mostra o gif abaixo.
+
+![](/../assets/images/local-storage-inspector-elementos.gif)
 
 ```js
 var addTodo = function(){
-    var todo = document.getElementById('todo').value; // Pega o valor digitado no input e armazena na variável 'task'.
+    var todo = document.getElementById('todo').value; // Pega o valor digitado no input e armazena na variável 'todo'.
 
-    var todos = getTodos(); // Chamamos em uma variável a função 'getTasks' que cria um array que traz todas as tasks salvas antes de inserir uma nova.
+    var todos = getTodos(); // Chamamos em uma variável a função 'getTodos' que cria um array que traz todas as todos salvas antes de inserir uma nova.
 
-    if(todo){ // Verifica se há alguma task preenchida dentro do input
-        todos.push(todo); // Utilizamos o push para jogar o elemento armazenado na variável 'task' para nosso Array.
+    if(todo){ // Verifica se há algum conteúdo preenchido dentro do input
+        todos.push(todo); // Utilizamos o push para jogar o elemento armazenado na variável 'todo' para nosso Array.
 
-        localStorage.setItem('todos', JSON.stringify(todos)); // Utilizamos o localStorage para "persistir" as informações no storage do browser. Com parâmetro passamos a chave e o valor, usando 'JSON.stringify' para transformar o valor em ums string.
+        localStorage.setItem('todos', JSON.stringify(todos)); // Utilizamos o localStorage.setItem para "persistir" as informações no storage do browser. Com parâmetro passamos a chave e o valor, usando 'JSON.stringify' para transformar o valor em uma string.
 
         document.getElementById('todo').value = ''; // Retorna para vazio o input após um item ser inserido.
     }
 
-    // showTasks(); // Chamamos a função showTasks() para ela mostrar na tela o novo elemento adicionado logo após o mesmo ser inserido. Sem ela, teríamos que atualizar o navegador para ver a mudança na tela. 
+    document.location.reload(true); // Utilizamos o reload(true) para após a função ser realizada atualizar a tela.
+}
 
-    document.location.reload(true); // Utilizamos o reload(true) para após a função ser realizada atualizar a a tela. Sendo assim, a função chamada acima pode ser retirada. 
+var getTodos = function(){
+    var todos = []; // Cria um array vazio caso não tenha nada já armazenado.
+
+    var todos_string = localStorage.getItem('todos'); // Pega o conteúdo/valor da chave 'todos' do 'localStorage' e armazena na variável 'todos_string'
+
+    if(todos_string != null){ // Verifica se o array de elementos não é nulo. Caso true então retornará a conversão de um JSON string para um Javascript data.
+        return JSON.parse(todos_string);
+    }
+}
+
+var showTodos = function(){
+    var todos = getTodos(); // Guardamos em uma variável chamada 'todos' todos os todos que temos armazenadas utilizando a função getTodos;
+
+    var html = '<ul>'; // Criamos uma variável 'html' que irá concatenando a nossa estrutura HTML.
+
+    todos.forEach(function(elemento, index){ // Criamos um forEach para iterar todos os elementos do nosso Array. Utilizamos 'todos' na frente para referenciar de qual lugar estamos trazendo os elementos. 
+        html += '<li> 📌 ' + elemento + '<button class="remove" id="'+ index +'">Remover</button></li>'; // Novamente utilizamos a variável 'html' para concatenar nosso HTML passando o 'elemento' que referencia os itens pertencentes os todos. 'index' representa nosso index dentro do array.
+    });
+
+    html += '</ul>'; // Fechamos a concatenação.
+
+    document.getElementById('todos').innerHTML = html; // Inserimos o conteúdo da variável 'html' dentro da 'div' que contém o id 'todos'. O innerHTML serve justamente para inserir novos conteúdos.
+
+    var buttons = document.getElementsByClassName('remove'); // Pegamos todos os elementos do DOM que possuem a class 'remove' e armazenamos na variável 'buttons'.
+
+    for (var i=0; i < buttons.length; i++){ // Iteramos nossos elementos e adicionamos para cada elemento com a class 'remove' o addEventListener conectado com o evento 'click' e o callback da função 'removeTodo'.
+        buttons[i].addEventListener('click', removeTodo);
+    };
+}
+
+var removeTodo = function(){
+    var id = this.getAttribute('id'); // Criamos uma variável id para receber o atual objeto-DOM referente ao id do botão remover que o usuário clicar. O this representa o objeto-DOM atual.
+
+    var todos = getTodos(); // Guardamos em uma variável chamada 'todos' todos os todos que temos armazenadas utilizando a função getTodos;
+
+    todos.splice(id, 1); // Utilizamos o método splice para remover um elemento específico. Como parâmetro passamos o id referente ao elemento que será removido do array e o valor "1", que representa que estamos realizando apenas uma remoção.
+
+    localStorage.setItem('todos', JSON.stringify(todos)); // Após o elemento ser removido, utilizamos novamente o setItem para salvar a nossa nova lista de array.
+
+    document.location.reload(true); // Utilizamos o reload(true) para após a função ser realizada atualizar a tela.
+}
+
+var hasTodo = function(){ // Função que verifica se há algum todo salvo dentro do Array do localStorage.
+
+    var todos = getTodos(); // Guardamos em uma variável chamada 'todos' todos os todos que temos armazenadas utilizando a função getTodos;
+
+    if(todos == ''){ // Utilizamos uma condicional para exibir uma mensagem na tela de acordo com o status do nosso array.
+        text = '<h2>Não há tarefas cadastradas!</h2>';
+        document.getElementById('msg').innerHTML = text;
+    } else {
+        text = '<h2>Suas tarefas pendentes:</h2>';
+        document.getElementById('msg').innerHTML = text;
+    }
+}
+
+document.getElementById('add').addEventListener('click', addTodo); // Buscamos o elemento contendo o id igual a 'add' e em seguinda utilizamos o método 'addEventListener' com o evento de 'click' e o callback que será chamado, no caso, nossa função addTodo.
+
+window.addEventListener('keydown', function(event){ // Inserimos uma alternativa para a inserção os elementos, que é pressionando a tecla 'enter'. Para este caso precisamos passar um parâmetro que é uma função que recebe o evento com a keyCode que pressionamos. Depois verificamos se é true e caso seja chama o addTodo(); 
+    if(event.keyCode == 13){
+        addTodo();
+    };
+}); 
+
+hasTodo(); // Passamos a função aqui para verificar antes mesmo de listar nossos elementos se o array é vazio ou não.
+
+showTodos(); // Chamamos a função showTodos() para mostrar na telas os elementos do nosso array.
+```
+
+Espero que tenha ficado claro. E por fim, vamos para o CSS só para fechar com chave de ouro. Ou não.
+
+### style.css
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #F3F3F3;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    width: 470px;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+    top: 8px;
+}
+
+.header input {
+    width: 400px;
+    height: 30px;
+    border: none;
+    text-indent: 10px;
+}
+
+.header input[type="text"] {
+    font-size: 14px;
+}
+
+.header input:focus {
+    outline-color: #99D04E;
+}
+
+.header button {
+    width: 50px;
+    height: 34px;
+    background-color: #99D04E;
+    border: none;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+hr {
+    border: none;
+    background-color: #00BBC7;
+    color: #00BBC7;
+    height: 1px;
+}
+
+h2 {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px 0 20px 0;
+}
+
+.remove {
+    background-color: #F46560;
+    border: none;
+    box-shadow: none;
+    width: 60px;
+    height: 20px;
+    margin: 0 0 0 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.tasks {
+    width: 100%;
+}
+
+ul li {
+    list-style: none;
+    margin: 20px 200px 0px 50px;
+
 }
 ```
 
 
+E assim finalizamos nosso To-Do List utilizando JavaScript e a API localStorage. Espero que tenha sido útil e fico super aberto para feedbacks sobre como melhorar a didática dos exemplos e tudo mais. Também aceito com todo prazer feedbacks sobre o código, o que pode ser melhorado, o que tá errado, etc.. 
+
+Até uma próxima! ✌️ 
