@@ -64,6 +64,12 @@ Para nosso exemplo usaremos algo simples para nossa estrutura de pastas e arquiv
 
 ### index.html
 
+Nossa página HTML também é super simples. De importante que devemos nos atentar, temos: 
+- O elemento `input` que vai servir para a entrada dos nossos dados;
+- O elemento `button` que irá ser o principal responsável por diversas ações da aplicação;
+- Os dois elementos `div` que irão ser responsáveis, respectivamente, por exibir uma mensagem para o usuário dependendo do status da sua lista de tarefas e listar todo os nossos to-do's
+
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -77,19 +83,47 @@ Para nosso exemplo usaremos algo simples para nossa estrutura de pastas e arquiv
 </head>
 <body>
     <div class="header">
-        <input type="text" name="task" id="task">
+        <input type="text" id="todo">
         <button id="add">Add</button>
     </div>
     <hr>
 
     <div id="msg"></div> // Usaremos essa div para exibir uma mensagem dependendo do status do nosso storage 
-    <div id="tasks" class="tasks"></div> // Usaremos essa div para exibir a nossa lista de to do's
+    <div id="todos" class="todos"></div> // Usaremos essa div para exibir a nossa lista de to do's
 
     <script src="todo.js"></script>
 </body>
 </html>
 ```
 
+Sussa?! Keep going!
 
+### todo.js
+
+É aqui que a brincadeira começa a ficar interressante. _Muahahaha_ 
+
+Explicarei trecho por trecho o que está acontecendo no código e no final do tópico deixarei o código completo para facilitar a visualização. 🤘
+
+- `addTodo()`;
+
+```js
+var addTodo = function(){
+    var todo = document.getElementById('todo').value; // Pega o valor digitado no input e armazena na variável 'task'.
+
+    var todos = getTodos(); // Chamamos em uma variável a função 'getTasks' que cria um array que traz todas as tasks salvas antes de inserir uma nova.
+
+    if(todo){ // Verifica se há alguma task preenchida dentro do input
+        todos.push(todo); // Utilizamos o push para jogar o elemento armazenado na variável 'task' para nosso Array.
+
+        localStorage.setItem('todos', JSON.stringify(todos)); // Utilizamos o localStorage para "persistir" as informações no storage do browser. Com parâmetro passamos a chave e o valor, usando 'JSON.stringify' para transformar o valor em ums string.
+
+        document.getElementById('todo').value = ''; // Retorna para vazio o input após um item ser inserido.
+    }
+
+    // showTasks(); // Chamamos a função showTasks() para ela mostrar na tela o novo elemento adicionado logo após o mesmo ser inserido. Sem ela, teríamos que atualizar o navegador para ver a mudança na tela. 
+
+    document.location.reload(true); // Utilizamos o reload(true) para após a função ser realizada atualizar a a tela. Sendo assim, a função chamada acima pode ser retirada. 
+}
+```
 
 
