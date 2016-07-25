@@ -1,6 +1,6 @@
 name: Juliano Padilha
 description: 
-meta_description: ""
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 
 markdown: kramdown
 highlighter: rouge
