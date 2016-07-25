@@ -8,7 +8,7 @@ published: true
 
 Decidi escrever este post para falar um pouco sobre uma API muito interessante do HTML, mas que pouco ouvimos falar a respeito. O que também me motivou a escrever este conteúdo, é que recentemente percebi que consigo fixar melhor o que estudo quando tenho a oportunidade de fazer anotações sobre o assunto. Se você der uma olhada no meu [GitHub](https://github.com/JulianoPadilha), verá que estou de fato colocando isso em prática e tomando anotações como parte do meu método de aprendizado. 🤓
 
-Pretendo tornar este tipo de conteúdo uma série dentro do meu site chamada "How to Build". Acredito que será bem interessante e pretendo abordar os mais diversos assuntos, e claro, mostrar como se faz na prática, com uma pitada de teória. Então vamos lá?! 
+Pretendo tornar este tipo de conteúdo uma série dentro do meu site chamada "How to Build". Acredito que será bem interessante e pretendo abordar os mais diversos assuntos, e claro, mostrar como se faz na prática, com uma pitada de teoria. Então vamos lá?! 
 
 ## O que é Web Storage?
 
@@ -44,16 +44,20 @@ Quando passado o nome da chave, removerá a chave do storage.
 `Storage.clear()`
 Quando chamada, esvaziará todas as chaves fora do armazenamento.
 
-## Chega de teória! Let's make things happen!
+## Chega de teoria! Let's make things happen!
 
 Esse será o resultado final do nosso "How to Build" de hoje. Não está bonito, eu sei, seu sei.. Mas a ideia não era essa, a ideia é aprender os fundamentos de algo novo. Então fique a vontade para deixar o seu to-do list esteticamente mais bonito que o meu. 😉
 
 ![](/../assets/images/how-to-build-todo-list-js-web-storage.png)
 
+### Estrutura de pastas e arquivos
 
+Para nosso exemplo usaremos algo simples:
 
-
-
+📁 app
+|___ index.html
+|___ style.css
+|___ todo.js
 
 
 
