@@ -103,7 +103,7 @@ Sussa?! Keep going!
 
 É aqui que a brincadeira começa a ficar interressante. _Muahahaha_ 
 
-Como dito na parte teorica, o Web Storage dispõe do `sessionStorage` e do `localStorage`. Como nossa intensão é manter nosso to-do list mesmo após o navegador ter sido fechado, então neste exemplo usaremos apenas o localStorage. 
+Como dito na parte teórica, o Web Storage dispõe do `sessionStorage` e do `localStorage`. Como nossa intensão é manter nosso to-do list mesmo após o navegador ter sido fechado, então neste exemplo usaremos apenas o localStorage. 
 
 Aaah, uma dica inicial. Vocês podem acompanhar o que está acontecendo no Local Storage de vocês acessando a aba Resources do Inspector de elementos do Chrome (torço que estejam utilizando o Chrome :P), como mostra o gif abaixo.
 
