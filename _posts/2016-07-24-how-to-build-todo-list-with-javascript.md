@@ -22,7 +22,8 @@ O sessionStorage mantém as informações armazenadas por origem e permanece dis
 O localStorage é muito parecido com o sessionStorage, a diferença é que mesmo que o navegador seja fechado, os dados permanecem armazenados.
 
 Esses mecanismos estão disponíveis a partir das seguintes propriedades `Window.sessionStorage` e `Window.localStorage` (para um maior suporte, o objeto Window implementa os objetos  Window.LocalStorage e Window.SessionStorage) — ao invocar uma dessas propriedades, é criada uma instância do objeto Storage, que fornece métodos para inserir, recuperar e remover os dados.
->Fonte: [https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API_pt_br](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API_pt_br)
+
+>Fonte: [Mozilla Developer - Web Storage API](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API_pt_br)
 
 ## Propriedades
 
@@ -50,7 +51,7 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.
 
 Esse será o resultado final do nosso "How to Build" de hoje. Não está bonito, eu sei, seu sei.. Mas a ideia não era essa, a ideia é aprender os fundamentos de algo novo. Então fique a vontade para deixar o seu to-do list esteticamente mais bonito que o meu. 😉
 
-![](/../assets/images/how-to-build-todo-list-js-web-storage.png)
+![](/../assets/images/how-to-build-todo-list-js-web-storage.gif)
 
 ### Estrutura de pastas e arquivos
 
