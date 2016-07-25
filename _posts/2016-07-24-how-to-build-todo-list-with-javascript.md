@@ -52,7 +52,7 @@ Esse será o resultado final do nosso "How to Build" de hoje. Não está bonito,
 
 ### Estrutura de pastas e arquivos
 
-Para nosso exemplo usaremos algo simples:
+Para nosso exemplo usaremos algo simples para nossa estrutura de pastas e arquivos:
 
 ```
 📁 app
@@ -61,7 +61,33 @@ Para nosso exemplo usaremos algo simples:
 |___ todo.js
 ```
 
+### index.html
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="header">
+        <input type="text" name="task" id="task">
+        <button id="add">Add</button>
+    </div>
+    <hr>
+
+    <div id="msg"></div> // Usaremos essa div para exibir uma mensagem dependendo do status do nosso storage 
+    <div id="tasks" class="tasks"></div> // Usaremos essa div para exibir a nossa lista de to do's
+
+    <script src="todo.js"></script>
+</body>
+</html>
+```
 
 
 
