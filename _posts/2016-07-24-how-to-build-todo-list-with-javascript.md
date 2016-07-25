@@ -54,11 +54,12 @@ Esse será o resultado final do nosso "How to Build" de hoje. Não está bonito,
 
 Para nosso exemplo usaremos algo simples:
 
+```
 📁 app
 |___ index.html
 |___ style.css
 |___ todo.js
-
+```
 
 
 
