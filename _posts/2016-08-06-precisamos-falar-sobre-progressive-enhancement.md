@@ -7,6 +7,6 @@ categories: web development
 published: true
 ---
 
-Isso mesmo, precisamos falar sobre **Progressive Enhancement**. Progressive Enhancement é uma forma de pensar o desenvolvimento de aplicações web com foco no front-end de uma forma que as melhorias sejam progressivas, como o nome sugere. 
+**Progressive Enhancement** é uma forma de pensar o desenvolvimento de aplicações web com foco no front-end de uma forma que as melhorias sejam progressivas, como o nome sugere. 
 
 Não ficou claro?! Não esquenta! Vamos decifrar o que esses conceitos significam e como aplicá-los nos seus projetos. 🤓
