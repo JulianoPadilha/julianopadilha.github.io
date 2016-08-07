@@ -137,4 +137,21 @@ Conseguimos perceber até aqui que o **Progressive Enhancement** não é apenas 
 
 Sendo assim, uma possível resposta para a nossa pergunta "Por onde começar?" seria:
 
-    **Pelo planejamento do produto**
+**Pelo planejamento do produto**
+
+    Tendo bem claro os objetivos do produto, as decisões técnicas tornam-se mais simples.
+
+Um grande erro dos desenvolvedores, principalmente dos iniciantes, é deixar em segundo plano pontos inerentes ao planejamento do projeto e partir diretamente para a codificação. Erro grave! 
+
+Claro que em um cenário real, algumas situações fogem do nosso controle, como público-alvo pouco conhecido, influência do cliente junto ao projeto e o orçamento com prazo limitado.
+
+Mas ainda com esses potenciais empecilhos, é possível aplicar o **Progressive Enhancement**. Veja só: 
+
+- Se não sabemos qual o cenário mais limitado que vamos atender, podemos começar pelo mais limitado.
+
+- Se não temos orçamento e/ou prazo suficiente para desenvolver todas as funcionalidade desejadas, podemos entregar as que atendem aos cenários mais limitados primeiro.
+
+- Se não sabemos quais tecnologias os visitantes do site vão usar para acessar o conteúdo, começamos com o mínimo possível de tecnologias.
+
+
+## Progressive Enhancement e HTML
