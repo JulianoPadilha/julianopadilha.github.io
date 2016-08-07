@@ -87,6 +87,38 @@ Com essa breve contextualização dos cenários que enfrentamos durante o desenv
 
 Para compreender a diferença entre **Graceful Degradation** e **Progressive Enhancement**, vamos tomar como exemplo o mesmo cenário de antes: precisamos implementar o botão para comprar um produto em uma loja virtual.
 
+Qual seria então o nosso cenário mais limitado? Bom, um navegador baseado em texto já é um começo. Nes te tipo de navegador, a única ferramenta que temos diponível é o HTML.
 
+- Como implementaríamos o botão de compra utilizando apenas HTML? Com algo similar ao que já tínhamos:
+
+```html
+<form action="/comprar" id="comprar">
+    <input type="hidden" name="produto" value="123456">
+    <input type="number" name="quantidade">
+    <button type="submit">Comprar</button>
+</form>
+```
+
+O interessante de se observar nesta implementação, é o uso do atributo `action` no formulário. Ele faz com que o navegador saiba para qual endereço no servidor os dados do formulário devem ser enviados. Assim, não precisamos de JavaScript nenhum para fazer o navegador entender isso.
+
+Outro ponto interessante, é a inserção do texto "Comprar" dentro de um botão em vez de uma imagem. Essa decisão além de tratar a questão dos navegadores baseados em texto, também se mostra compatível com os leitores de telas utilizados pelos usuários com deficiência visual. 
+
+Também vale ressaltar que a decisão de começar pelo cenário mais limitado influencia também o lado servidor da aplicação: o formato dos dados enviados serão o padrão do navegador e não no formado JSON.
+
+- Para implementar a nossa compra com AJAX, como queríamos anteriormente, podemos escrever o seguinte código:
+
+```js
+$("#comprar").submit(function() {
+    $.post(this.action, $(this).serialize());
+});
+```
+
+Por estarmos usando um formulário semâ̂ntico, podemos simplesmente pedir para o jQuery pegar os dados desse formulário e enviá-lo como o navegador faria, porém de forma assíncrona.
+
+Quando começamos por um cenário mais limitado, há a tendência natural em solucioná-lo adequadamente. Isso nos força a pensar e desenvolver de uma forma que favorece um HTML mais semântico e desacoplado de CSS e JavaScript. Ganhamos não apenas um site que funciona bem para todos; ganhamos também um código **mais limpo e fácil de manter**.
+
+>Mas quais são os cenários mais limitados? Por onde começar? Como acrescentar funcionalidades sem quebrar o que já tínhamos? Veremos isso adiante! 🙃
+
+### Por onde começar?
 
 >Este texto é uma compilação envolvendo ideias do autor acerca do assunto, mais conteúdos diversos coletados, tendo forte referência o primeiro capítulo do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" que fala sobre Progressive Enhancement e que foi escrito pelo [Luiz Real](https://twitter.com/srsaude), instrutor da Alura.
