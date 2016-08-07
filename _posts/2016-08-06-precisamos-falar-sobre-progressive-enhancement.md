@@ -72,12 +72,21 @@ Uma forma de melhoria seria trabalhar com um HTML mais semântico:
 
 A tag `form`, como sabemos, serve para indicar que as informações presentes serão enviadas para um servidor. Há também a tag `button` com o tipo `submit`, que indica que essa imagem é um botão e que ao ser clicado enviará o formulário.
 
-Tendo a preocupação com **graceful degradation**, precisamos lembrar de todos os cenários que deixamos de lado ao desenvolver nosso site com as últimas tecnologias.
+Tendo a preocupação com **Graceful Degradation**, precisamos lembrar de todos os cenários que deixamos de lado ao desenvolver nosso site com as últimas tecnologias.
 
 Agora, imagine uma situação onde precisamos implementar uma solução sem JavaScript. Será que é possível? Pelo servidor nos devolver um JSON como resultado, e não uma página, **precisamos** de JavaScript, agora. Ou seja, por termos desenvolvido uma solução sem pensar nos casos mais limitados, acabamos caindo em um beco sem saída. Precisando então **refazer boa parte da nossa solucão**, inclusive do lado do servidor.
 
-- Como fazer para não corrermos o risco de esquecermos estes cenários mais limitados durante o desenvolvimento de nossas aplicações?
+- Como fazer para não corrermos o risco de esquecermos estes cenários mais limitados durante o desenvolvimento de nossas aplicações? 🤔
 
-**Começando exatamente por eles**. Essa é a ideia do **Progressive Enhancement**.
+**Começando exatamente por eles!** Essa é a ideia do **Progressive Enhancement**. 
+
+
+## Progressive Enhancement
+
+Com essa breve contextualização dos cenários que enfrentamos durante o desenvolvimento dos nossos projetos web, agora podemos entrar mais a fundo nos conceitos de Progressive Enhancement. 
+
+Para compreender a diferença entre **Graceful Degradation** e **Progressive Enhancement**, vamos tomar como exemplo o mesmo cenário de antes: precisamos implementar o botão para comprar um produto em uma loja virtual.
+
+
 
 >Este texto é uma compilação envolvendo ideias do autor acerca do assunto, mais conteúdos diversos coletados, tendo forte referência o primeiro capítulo do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" que fala sobre Progressive Enhancement e que foi escrito pelo [Luiz Real](https://twitter.com/srsaude), instrutor da Alura.
