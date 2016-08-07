@@ -9,7 +9,7 @@ published: true
 
 **Progressive Enhancement** é uma forma de pensar o desenvolvimento de aplicações web com foco no front-end de uma forma que as melhorias sejam progressivas, como o nome sugere. Não ficou claro?! Não esquenta! Vamos decifrar o que esses conceitos significam e como aplicá-los nos seus projetos. 🤘
 
->**Nota do autor:** Este texto é uma compilação envolvendo ideias do autor acerca do assunto, mais conteúdos diversos coletados, tendo forte referência o primeiro capítulo do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" que fala sobre Progressive Enhancement e que foi escrito pelo [Luiz Real](https://twitter.com/srsaude), instrutor da Alura.
+>**Nota do autor:** Este texto é uma compilação envolvendo anotações e transcrições do primeiro capítulo do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" que fala sobre Progressive Enhancement e que foi escrito pelo [Luiz Real](https://twitter.com/srsaude), instrutor da Alura.
 
 Quando trata-se do comportamento de aplicações desenvolvidas para a web, todo cuidado passa a ser pouco. Com navegadores mais modernos e compatíveis com as atuais tecnologias e especificações, tornou-se possível a abrangência de mais recursos, ampliando as possibilidades dos desenvolvedores. Seguindo está tendência, o ciclo natural seria que nossos sites também evoluissem, tornando-se cada vez mais sofisticados. 
 
@@ -41,6 +41,7 @@ Porém, pensar dessa forma pode nos levar a alguns problemas, como no exemplo a 
 <input type="number" name="quantidade">
 <a href="#" id="comprar"><img src="icone-comprar.png"></a>
 ```
+>Fonte: Capítulo 1 do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" escrito pelo Luiz Real.
 
 ```js
 $("#comprar").click(function() {
@@ -55,6 +56,7 @@ $("#comprar").click(function() {
     $.post("/compra", dadosCompra, atualizaPagina, "json");
 });
 ```
+>Fonte: Capítulo 1 do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" escrito pelo Luiz Real.
 
 - A quais problemas essa solução não atende?
 
@@ -71,6 +73,7 @@ Uma forma de melhoria seria trabalhar com um HTML mais semântico:
     </button>
 </form>
 ```
+>Fonte: Capítulo 1 do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" escrito pelo Luiz Real.
 
 A tag `form`, como sabemos, serve para indicar que as informações presentes serão enviadas para um servidor. Há também a tag `button` com o tipo `submit`, que indica que essa imagem é um botão e que ao ser clicado enviará o formulário.
 
@@ -100,6 +103,7 @@ Qual seria então o nosso cenário mais limitado? Bom, um navegador baseado em t
     <button type="submit">Comprar</button>
 </form>
 ```
+>Fonte: Capítulo 1 do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" escrito pelo Luiz Real.
 
 O interessante de se observar nesta implementação, é o uso do atributo `action` no formulário. Ele faz com que o navegador saiba para qual endereço no servidor os dados do formulário devem ser enviados. Assim, não precisamos de JavaScript nenhum para fazer o navegador entender isso.
 
@@ -114,6 +118,7 @@ $("#comprar").submit(function() {
     $.post(this.action, $(this).serialize());
 });
 ```
+>Fonte: Capítulo 1 do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" escrito pelo Luiz Real.
 
 Por estarmos usando um formulário semâ̂ntico, podemos simplesmente pedir para o jQuery pegar os dados desse formulário e enviá-lo como o navegador faria, porém de forma assíncrona.
 
@@ -155,3 +160,111 @@ Mas ainda com esses potenciais empecilhos, é possível aplicar o **Progressive 
 
 
 ## Progressive Enhancement e HTML
+
+Como sabemos, o HTML é a base de toda página na Internet e, portanto, todo usuário do nosso site, seja humano ou máquina, tem que entender pelo menos HTML; sempre podemos contar com ele.
+
+>Vale ressaltar que atualmente todoas os navegadores, em suas últimas versões, trabalham com HTML5. 
+
+Quando dizemos HTML5, na verdade, estamos falando de uma série de novas funcionalidades, como, novas tags, novos atributos, novas APIs, entre outros. São tantos novos recursos, que os navegadores, em sua maioria, ainda não implementam a especificação do HTML5 em sua totalidade.
+
+Porém, a especificação do HTML já foi projetado pensando em **Progressive Enhancement**. Peguemos o exemplo abaixo para analisar:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Teste de HTML5</title>
+    </head>
+    <body>
+        <header>
+            <h1>Página com HTML5</h1>
+            <span>Bacana, né?</span>
+        </header>
+        <section>
+            <h1>Hora atual</h1>
+            <time>22:39</time>
+            <p>Um controle de form novo:</p>
+            <input type="range" min="1" max="10">
+        </section>
+    </body>
+</html>
+```
+>Fonte: Capítulo 1 do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" escrito pelo Luiz Real.
+
+Logo no início do código, declaramos o DOCTYPE para indicar para o nvageador que estamos utilizando a versão mais recente do HTML, ouse seja, que o navegador deve mostrar todo seu potencial.
+
+E se o navegador não implementar suporte a todos estes recursos? A especificação do HTML recomenda que:
+
+- *Se um agente de usuário encontrar um elemento que não reconhece, ele deve tentar renderizar seu conteúdo;*
+
+- *Se um agente de usuário encontrar um atributo que não reconhece, ele deve ignorar a declaração completa deste atributo, isto é, o atributo e seu valor;*
+
+- *Se um agente de usuário encontrar um valor de atributo que não reconhece, ele deve usar o valor padrão para aquele atributo.*
+
+Mesmo que o navegador não entenda exatamente o que estamos querendo dizer, ele vai mostrar o contúdo para o usuário; **podemos incrementar a semântica e a interatividade do nosso HTML sem quebrar os navegadores mais limitados!** A recomendação é bem favorável à aplicação do **Progressive Enhancement**.
+
+No exemplo dado anteriormente, se o navegador não suporta a tag `<time>` e o `input` do tipo `range`, ainda assim o usuário verá a hora e um controle de formulário (uma caixa de texto, que é o controle de formulário padrão).
+
+
+## Progressive Enhancement e CSS
+
+Tendo a nosso HTML como base bem definido, podemos começar a implementar o design com CSS.
+
+Assim como o HTML, o CSS é uma tecnologia já antiga e que passou por uma grande evolução, culminando no que chamamos agora de **CSS 3**. Assim como o caso do HTML, os navegadores não implementam suporte a todas as novidades, mesmo porque elas continuam vindo, mas os navegadores ignoram as propriedades desconhecidas, de modo que também é muito fácil ir incrementando nosso visual de acordo com as funcionalidades disponíveis.
+
+Além disso, o CSS tem uma outra característica peculiar que facilita o **Progressive Enhancement**: quando uma propriedade aparece duplicada, apenas a última declaração é considerada.
+
+Esse comportamento permite fazer **Progressive Enhancement** de um jeito fácil: basta ir acrescentando as funcionalidades mais recentes abaixo das mais antigas! 👌
+
+Quando pensamos em **Progressive Enhancement**, devemos pensar em dar a melhor experiência possível para os cenários limitados. A maior parte dos sites que vamos desenvolver no nosso dia a dia precisará de CSS para ser visualmente agradável e atrair mais usuários. Ou seja, mesmo nos cenários mais limitados, já estaremos dependentes de CSS.
+
+>A maioria dos requisitos de front-end que normalmente implementamos com JavaScript podem ser feitos apenas com CSS, ou seja, sem depender de mais uma tecnologia.
+
+
+## Progressive Enhancement e JavaScript
+
+Desenvolver pensando primeiro nos cenários mais limitados já evita que caiamos em certos tipos de armadilhas. No entanto, quando adicionamos JavaScript à̀ página, precisamos tomar certos cuidados para não quebrar o trabalho já feito, assim como no CSS.
+
+Da mesma forma que devemos pensar no CSS como algo a mais em uma página, devemos também pensar no JavaScript dessa forma. Isso significa que, na medida do possível, o código JavaScript não deve interferir no seu HTML.
+
+Tomemos o exemplo dado pelo Luiz Real. Em vez de fazer um link virar uma ação em JavaScript como:
+
+```html
+<a href="#" onclick="maisProdutos()">Mais produtos</a>
+```
+
+Devemos preservar o HTML original.
+
+```html
+<a href="mais-produtos.html">Mais produtos</a>
+```
+
+E adicionar a funcionalidade JavaScript usando o próprio JavaScript.
+
+```js
+document.querySelector(’[href="mais-produtos.html"]’).addEventListener(’click’, maisProdutos);
+```
+
+Dessa forma, nosso site continua funcionando perfeitamente, mesmo que o JavaScript apresente algum problema, e essa é uma das principais vantagens do **Progressive Enhancement** para o seu desenvolvimento.
+
+>Esse tipo de pensamento é conhecido entre os desenvolvedores JavaScript como JavaScript não-obstrutivo.
+
+Um ponto que não gera dores de cabeça no HTML e no CSS mas que, no JavaScript, é bastante complicado, é lidar com funcionalidades faltantes. Vimos que, com relação ao HTML, o navegador mostra informações de tags desconhecidas e, com relação ao CSS, o navegador ignora propriedades e valores não suportados; o mesmo não acontece com o JavaScript: qualquer comando que não seja suportado pelo navegador gerará um erro de JavaScript, consequentemente parando toda a execução do código.
+
+Lidar com as limitações e diferenças entre os navegadores pode ser bastante trabalhoso. Por exemplo, para selecionar elementos da página, podemos usar a função `document.querySelector`, como  fizemos no exemplo anterior. No entanto, essa função não está presente em todos os navegadores. Para que nosso código funcione em todos os navegadores, podemos usar a função `document.getElementsByClassName`:
+
+```js
+var resultados = document.getElementsByClassName(’resultados’)[0];
+```
+
+
+## Entendi! Mas quando o Progressive Enhancement não é uma alternativa?
+
+A abordagem do progressive enhancement resolve muitos problemas do desenvolvedor front-end ao forçar o foco primeiro na parte mais importante de um site, que é prover o conteúdo. No entanto, **Progressive Enhancement** tem suas desvantagens e nem sempre é aplicável. 
+
+Quando desenvolvemos pensando primeiro nos cenários mais limitados, conseguimos planejar nosso desenvolvimento de modo a tornar nosso site minimamente acessível nesses cenários. No entanto, isso pode ser restritivo para o processo criativo de desenvolvimento de um site.
+
+É́ possível desenvolver uma versão mais simples, sem as funcionalidades principais, para os cenários mais limitados, usando **Progressive Enhancement**. Essa abordagem é seguida, por exemplo, pelo Gmail, o serviço de e-mail da Google. A versão principal do cliente web é desenvolvida usando recursos avançados de JavaScript. Para simplificar o desenvolvimento dessa versão e ainda permitir o acesso aos e-mails nos navegadores mais limitados, foi desenvolvida uma versão baseada apenas em HTML.
+
+Mesmo nos cenários em que progressive enhancement não é aplicável, é interessante ter em mente as preocupações dessa forma de desenvolvimento. Desenvolver para a web é desenvolver para todos, independente de plataforma, navegador, língua e capacidades, e essa é a principal preocupação do **Progressive enhancement**.
