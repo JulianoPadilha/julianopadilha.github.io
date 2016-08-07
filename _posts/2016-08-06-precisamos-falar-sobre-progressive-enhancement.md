@@ -125,10 +125,16 @@ Quando começamos por um cenário mais limitado, há a tendência natural em sol
 
 Começar a desenvolver pensando em **Progressive Enhancement** influencia os mais diversos pontos dentro de um projeto. Seguindo novamente um exemplo dado pelo **Luiz Real**, se formos desenvolver um site para divulgar um produto, podemos pensar, antes de mais nada em:
 
-- [ ] Qual nosso público-alvo?
-- [ ] Será que precisamos nos procupar com navegadores antigos?
-- [ ] Qual a parcela de visitantes do meu site que virá de dispositivos móveis?
-- [ ] Quão importante é a integração com redes sociais?
-- [ ] O que posso oferecer para meus visitantes com configurações mais limitadas?
+- Qual nosso público-alvo?
+- Será que precisamos nos procupar com navegadores antigos?
+- Qual a parcela de visitantes do meu site que virá de dispositivos móveis?
+- Quão importante é a integração com redes sociais?
+- O que posso oferecer para meus visitantes com configurações mais limitadas?
 
+Como podemos perceber, estas são questões que estão muito mais relacionadas ao contexto do negócio do que relacionado a questões técnicas. Ter as respostas para essas questões é muito relevante para nortear o processo de aplicação do conceito de **Progressive Enhancement**.
 
+Conseguimos perceber até aqui que o **Progressive Enhancement** não é apenas uma forma de desenvolver códigos front-end. *É uma forma diferente de pensar o desenvolvimento do produto como um todo.*
+
+Sendo assim, uma possível resposta para a nossa pergunta "Por onde começar?" seria:
+
+    **Pelo planejamento do produto**
