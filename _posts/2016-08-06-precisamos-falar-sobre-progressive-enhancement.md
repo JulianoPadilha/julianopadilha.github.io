@@ -15,11 +15,11 @@ Porém, dentro deste cenário, acabamos esquecendo um fator primordial para o su
 
 Normalmente, quando planejamentos o desenvolvimento de um site acabamos fazendo-o para um público indeterminado de pessoas. E dentre esse público, temos:
 
-- Pessoas que **não gostam de JavaScript** sendo executados em suas máquinas;
+- Pessoas que **não gostam de JavaScript** sendo executado em seus computadores;
 
 - Pessoas que **não podem atualizar** seus navegadores;
 
-- Pessoas acessando a internet a partir de dispositivos limitados;
+- Pessoas acessando a internet a partir de **dispositivos limitados**;
 
 - Pessoas com **dificuldades motoras, visuais e auditivas** que nem sempre conseguem utilizar o mouse para navegar ou dependem de leitores de tela;
 
@@ -27,5 +27,6 @@ Normalmente, quando planejamentos o desenvolvimento de um site acabamos fazendo-
 
 ### Então como podemos desenvolver sites levando em conta estes cenários?
 
+Em um primeiro momento, uma forma de pensar seria desenvolver o site para o público geral, que são aqueles que tem acesso aos navegadores mais modernos e atualizados e sem bloqueios de acessibilidade. Em um segundo momento, procuraria-se atender os usuários que jea possuem mais limitações, ou seja, definindo os tipos de usuários e quais implementações são necessárias a cada fase do projeto para suprir as suas necessidades. Dentro do mundo de desenvolvimento web, essa prática é conhecida como **"Graceful Degradation"**.
 
 >Este texto é uma compilação envolvendo ideias do autor acerca do assunto, mais conteúdos diversos coletados, tendo forte referência o primeiro capítulo do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" que fala sobre Progressive Enhancement e que foi escrito pelo [Luiz Real](https://twitter.com/srsaude), instrutor da Alura.
