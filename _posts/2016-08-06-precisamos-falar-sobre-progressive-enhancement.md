@@ -2,12 +2,14 @@
 layout: post
 title: "Precisamos falar sobre Progressive Enhancement"
 description: "Precisamos falar sobre Progressive Enhancement"
-date: 2016-07-24 20:30:00
+date: 2016-08-07 14:30:00
 categories: web development
 published: true
 ---
 
 **Progressive Enhancement** é uma forma de pensar o desenvolvimento de aplicações web com foco no front-end de uma forma que as melhorias sejam progressivas, como o nome sugere. Não ficou claro?! Não esquenta! Vamos decifrar o que esses conceitos significam e como aplicá-los nos seus projetos. 🤘
+
+>**Nota do autor:** Este texto é uma compilação envolvendo ideias do autor acerca do assunto, mais conteúdos diversos coletados, tendo forte referência o primeiro capítulo do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" que fala sobre Progressive Enhancement e que foi escrito pelo [Luiz Real](https://twitter.com/srsaude), instrutor da Alura.
 
 Quando trata-se do comportamento de aplicações desenvolvidas para a web, todo cuidado passa a ser pouco. Com navegadores mais modernos e compatíveis com as atuais tecnologias e especificações, tornou-se possível a abrangência de mais recursos, ampliando as possibilidades dos desenvolvedores. Seguindo está tendência, o ciclo natural seria que nossos sites também evoluissem, tornando-se cada vez mais sofisticados. 
 
@@ -30,7 +32,7 @@ Normalmente, quando planejamentos o desenvolvimento de um site acabamos fazendo-
 
 Em um primeiro momento, uma forma de pensar seria desenvolver o site para o público geral, que são aqueles que tem acesso aos navegadores mais modernos e atualizados e sem bloqueios de acessibilidade. Em um segundo momento, procuraria-se atender os usuários que já possuem mais limitações, ou seja, definindo os tipos de usuários e quais implementações são necessárias a cada fase do projeto para suprir as suas necessidades. Dentro do mundo de desenvolvimento web, essa prática é conhecida como **"Graceful Degradation"**.
 
-Porém, pensar dessa forma pode nos levar a alguns problemas, como no exemplo a seguir dado pelo **Luiz Real**(ver nota de rodapé):
+Porém, pensar dessa forma pode nos levar a alguns problemas, como no exemplo a seguir dado pelo **Luiz Real**(ver nota do autor):
 
 >Pegamos como exemplo para analisar: um botão de comprar em uma loja virtual. A compra foi implementada usando AJAX, para dar mais dinamicidade à navegação do usuário.
 
@@ -121,4 +123,12 @@ Quando começamos por um cenário mais limitado, há a tendência natural em sol
 
 ### Por onde começar?
 
->Este texto é uma compilação envolvendo ideias do autor acerca do assunto, mais conteúdos diversos coletados, tendo forte referência o primeiro capítulo do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" que fala sobre Progressive Enhancement e que foi escrito pelo [Luiz Real](https://twitter.com/srsaude), instrutor da Alura.
+Começar a desenvolver pensando em **Progressive Enhancement** influencia os mais diversos pontos dentro de um projeto. Seguindo novamente um exemplo dado pelo **Luiz Real**, se formos desenvolver um site para divulgar um produto, podemos pensar, antes de mais nada em:
+
+- [ ] Qual nosso público-alvo?
+- [ ] Será que precisamos nos procupar com navegadores antigos?
+- [ ] Qual a parcela de visitantes do meu site que virá de dispositivos móveis?
+- [ ] Quão importante é a integração com redes sociais?
+- [ ] O que posso oferecer para meus visitantes com configurações mais limitadas?
+
+
