@@ -11,7 +11,7 @@ published: true
 
 >**Nota do autor:** Este texto é uma compilação envolvendo anotações e transcrições do segundo capítulo do e-book "Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira" que fala sobre Progressive Enhancement e que foi escrito pelo [Luiz Real](https://twitter.com/srsaude), instrutor da Alura.
 
-Quando trata-se do comportamento de aplicações desenvolvidas para a web, todo cuidado passa a ser pouco. Com navegadores mais modernos e compatíveis com as atuais tecnologias e especificações, tornou-se possível a abrangência de mais recursos, ampliando as possibilidades dos desenvolvedores. Seguindo está tendência, o ciclo natural seria que nossos sites também evoluissem, tornando-se cada vez mais sofisticados. 
+Quando trata-se do comportamento de aplicações desenvolvidas para a web, todo cuidado passa a ser pouco. Com navegadores mais modernos e compatíveis com as atuais tecnologias e especificações, tornou-se possível a abrangência de mais recursos, ampliando as possibilidades dos desenvolvedores. Seguindo está tendência, o ciclo natural seria que nossos sites também evoluíssem, tornando-se cada vez mais sofisticados. 
 
 Porém, dentro deste cenário, acabamos esquecendo um fator primordial para o sucesso: o comportamento do usuário e o navegador que eles utilizam para acessar nossos sites, que muitas vezes não é o navegador com os últimos recursos.
 
@@ -25,7 +25,7 @@ Normalmente, quando planejamentos o desenvolvimento de um site acabamos fazendo-
 
 - Pessoas com **dificuldades motoras, visuais e auditivas** que nem sempre conseguem utilizar o mouse para navegar ou dependem de leitores de tela;
 
-- E ainda temos um outro usuário a considerar, que não tem JavasSript nem CSS habilitados: **as ferramentas de busca**.
+- E ainda temos um outro usuário a considerar, que não tem JavaScript nem CSS habilitados: **as ferramentas de busca**.
 
 ### Então como podemos desenvolver sites levando em conta estes cenários?
 
@@ -76,7 +76,7 @@ A tag `form`, como sabemos, serve para indicar que as informações presentes se
 
 Tendo a preocupação com **Graceful Degradation**, precisamos lembrar de todos os cenários que deixamos de lado ao desenvolver nosso site com as últimas tecnologias.
 
-Agora, imagine uma situação onde precisamos implementar uma solução sem JavaScript. Será que é possível? Pelo servidor nos devolver um JSON como resultado, e não uma página, **precisamos** de JavaScript, agora. Ou seja, por termos desenvolvido uma solução sem pensar nos casos mais limitados, acabamos caindo em um beco sem saída. Precisando então **refazer boa parte da nossa solucão**, inclusive do lado do servidor.
+Agora, imagine uma situação onde precisamos implementar uma solução sem JavaScript. Será que é possível? Pelo servidor nos devolver um JSON como resultado, e não uma página, **precisamos** de JavaScript, agora. Ou seja, por termos desenvolvido uma solução sem pensar nos casos mais limitados, acabamos caindo em um beco sem saída. Precisando então **refazer boa parte da nossa solução**, inclusive do lado do servidor.
 
 - Como fazer para não corrermos o risco de esquecermos estes cenários mais limitados durante o desenvolvimento de nossas aplicações? 🤔
 
@@ -218,7 +218,7 @@ Quando pensamos em **Progressive Enhancement**, devemos pensar em dar a melhor e
 
 ## Progressive Enhancement e JavaScript
 
-Desenvolver pensando primeiro nos cenários mais limitados já evita que caiamos em certos tipos de armadilhas. No entanto, quando adicionamos JavaScript à̀ página, precisamos tomar certos cuidados para não quebrar o trabalho já feito, assim como no CSS.
+Desenvolver pensando primeiro nos cenários mais limitados já evita que caiamos em certos tipos de armadilhas. No entanto, quando adicionamos JavaScript à página, precisamos tomar certos cuidados para não quebrar o trabalho já feito, assim como no CSS.
 
 Da mesma forma que devemos pensar no CSS como algo a mais em uma página, devemos também pensar no JavaScript dessa forma. Isso significa que, na medida do possível, o código JavaScript não deve interferir no seu HTML.
 
