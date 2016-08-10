@@ -7,6 +7,9 @@ categories: git github development
 published: true
 ---
 
+![](/../assets/images/octocat.png)
+<center style="font-size: 11px;">100 milhões de dólares, para ser exato</center>
+
 >Tradução livre do post escrito por [Daniel Gallegos](https://stories.devacademy.la/@thattacoguy): [How to use GitHub like a proper human being](https://stories.devacademy.la/how-to-use-github-like-a-proper-human-being-1a9c895c4e13#.rafva1m7t).
 
 *Saiba algumas regras de etiqueta, parça.*
@@ -18,7 +21,7 @@ A organização do nosso repositório pode ser uma confusão às vezes. Veja com
 Eu tenho visto (e feito) muitas mensagens ruins de commit na [devAcademy](https://medium.com/@devacademyla). Nós realmente devemos começar a cobrar 10 centavos para cada commit ma feito por alguém. Faríamos [milhões](https://www.youtube.com/watch?v=EJR1H5tf5wE).
 
 ![](/../assets/images/austin_power.png)
-<center>100 milhões de dólares, para ser exato</center>
+<center style="font-size: 11px;">100 milhões de dólares, para ser exato</center>
 
 Nós podemos resolver isso de uma vez por todas, lembrando-se de algumas orientações quando comitar alguma coisa no GitHub. E eu quero dizer **QUALQUER COISA**. Projetos pessoais, projetos de trabalho, até mesmo projetos que você acha que nunca verá a luz do dia.
 
@@ -41,7 +44,7 @@ Quando fazendo um commit, eu normalmente sigo [esta pequena lista de orientaçõ
 
 - **Use o mesmo idioma nas suas mensagens de commit.** A maioria das pessoas parece usar o inglês como seu idioma preferido, mas isso não significa que você também deve. O que você precisa fazer é se manter consistente. Não misture frases em um idioma com outro.
 
-![](/../assets/images/fix_estilo.gif)
+![](/../assets/images/fix_estilo.png)
 <center>NÃO FAÇA ISSO. POR FAVOR.</center>
 
 *“Refactor mediumExample() function”*, *“Remove unnecessary lines in bot.js”* e *“Add SASS gem to gemfile”* são todos bons exemplos de commits atômicos fáceis de entender e que descrevem a ação que vocês está fazendo em 50 caracteres ou menos. Eles podem parecer frescuras desnecessárias para você, mas quando você ou outra pessoa precisar encontrar uma mudança específica feita no passado, eles vão agradecer-lhe imensamente.
