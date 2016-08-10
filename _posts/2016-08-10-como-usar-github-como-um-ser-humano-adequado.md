@@ -10,7 +10,7 @@ published: true
 >Tradução livre do post escrito por [Daniel Gallegos](https://stories.devacademy.la/@thattacoguy): [How to use GitHub like a proper human being](https://stories.devacademy.la/how-to-use-github-like-a-proper-human-being-1a9c895c4e13#.rafva1m7t).
 
 ![](/../assets/images/octocat.png)
-<center style="font-size: 11px;">[Founding Father Octocat v2 por James Kang](https://octodex.github.com/foundingfather_v2)</center>
+<center style="font-size: 11px;"> [Founding Father Octocat v2 por James Kang](https://octodex.github.com/foundingfather_v2) </center>
 
 *Saiba algumas regras de etiqueta, parça.*
 
@@ -28,7 +28,7 @@ Nós podemos resolver isso de uma vez por todas, lembrando-se de algumas orienta
 Uma vez que você adquire o hábito de escrever mensagens de commit consistentes, você vai começar a fazer isso reflexivamente. Você não terá mais que perder tempo pensando no que escrever, desperdiçando esforços. Além de que seus colegas de trabalho podem passar a gostar mais de você também. *Podem.*
 
 ![](/../assets/images/reflexive_commits.gif)
-<center style="font-size: 11px;">reflexive_commits.gif</center>
+<center style="font-size: 11px;">reflexive_commits.gif</center><br/>
 
 Quando fazendo um commit, eu normalmente sigo [esta pequena lista de orientações criada pelo Chrys Beams](http://chris.beams.io/posts/git-commit/), juntamente com com o [guia de estilo do git](https://github.com/agis-/git-style-guide). Aqui está o que eu aprendi:
 
@@ -45,7 +45,7 @@ Quando fazendo um commit, eu normalmente sigo [esta pequena lista de orientaçõ
 - **Use o mesmo idioma nas suas mensagens de commit.** A maioria das pessoas parece usar o inglês como seu idioma preferido, mas isso não significa que você também deve. O que você precisa fazer é se manter consistente. Não misture frases em um idioma com outro.
 
 ![](/../assets/images/fix_estilo.png)
-<center style="font-size: 11px;">NÃO FAÇA ISSO. POR FAVOR.</center>
+<center style="font-size: 11px;">NÃO FAÇA ISSO. POR FAVOR.</center><br/>
 
 *“Refactor mediumExample() function”*, *“Remove unnecessary lines in bot.js”* e *“Add SASS gem to gemfile”* são todos bons exemplos de commits atômicos fáceis de entender e que descrevem a ação que vocês está fazendo em 50 caracteres ou menos. Eles podem parecer frescuras desnecessárias para você, mas quando você ou outra pessoa precisar encontrar uma mudança específica feita no passado, eles vão agradecer-lhe imensamente.
 
@@ -98,7 +98,7 @@ Como você espera que alguém possa te ajudar com seu problema se você não pod
 - **Como reproduzir seu problema.**
 
 - **Outros detalhes importantes.** Sistema Operacional, versão de tudo que você estava usando, alguns logs do sistema, caso você tenha, alguns screenshots. Nos ajude a te ajudar.
-- 
+
 Agora que nós temos tudo em mente, vamos falar sobre a resposta a issues. Seja gentil. Diga “por favor” e “obrigado”. Só porque alguém submeteu uma issue ruim, não quer dizer que ela é uma pessoa ruim. Ser gentil com as pessoas é o primeiro passo para levá-los a cooperar com você. Tente resolver seus problemas, enquanto pede mais informações. Ofereça soluções e não mais problemas.
 
 Mantenedores de projetos provavelmente devem usar [templates para as issues](https://help.github.com/articles/creating-an-issue-template-for-your-repository/) em seus projetos com as sugestões apresentadas acima. Eles estão lá por um motivo. Isso vai ajudar os usuários a fazerem melhores issues e fornecer para você melhores reports e sugestões. Ajude-os a ajudar você.
