@@ -75,32 +75,11 @@ A tag `aside` é usada para agregar mais informação ao conteúdo principal. Al
 
 O elemento `aside` pode ir também dentro de um elemento `article` como uma caixa de notação ou algo do genêro.
 
-#### Exemplo:
-
-```html
-<header>
-	<h1>Os Metais</h1>
-</header>
-<article>
-	<h1>Trompete</h1>
-	<p>O <b>trompete</b> é um instrumento de sopro de metal cuja 	etc...</p>
-	<aside>
-		<h2>Você sabia ?</h2>
-		<dl>
-			<dt>Trompete  pícolo</dt>
-			<dd>É um trompete pequeno geralmente utilizado para...</dd>
-		</dl>
-	</aside>
-</article>
-<aside>
-	<h3>Conheça outros instrumentos de metal</h3>
-	<ul>
-		<li><a href="#">Trombone</a></li>
-		<li><a href="#">Trompa</a></li>
-		<li><a href="#">Tuba</a></li>
-	</ul>
-</aside>
-```
 
 `<audio>`
 
+O HTML5 introduziu a possibilidade de tocar mídias nativamente no browser. A tag `audio` é utilizada para especificar o uso de um áudio em um documento HTML.
+
+Qualquer conteúdo entre as tags de abertura e de fechamento do elemento `audio` é um *fallback*. Este conteúdo é exibido apenas em browsers que não suportam a tag `audio`.
+
+<audio src="/../assets/audios/good_enough.mp3" controls></audio>
