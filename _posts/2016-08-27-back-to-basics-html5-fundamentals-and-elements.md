@@ -90,6 +90,20 @@ Qualquer conteúdo entre as tags de abertura e de fechamento do elemento `audio`
 
 ```html
 <audio src="/../assets/audios/good_enough.mp3" constrols>
-	<p>Se você está vendo este texto é porque seu navegador não suporta o elemento áudio. :/</p>
+	<p>Se você está vendo este texto é porque seu navegador não suporta o elemento áudio.</p> //Fallback para navegadores que não suportam o elemento audio.
 </audio>
 ```
+
+`<bdi>`
+
+O elemento `bdi` é meio estranho. Nunca me deparei com uma situação onde precisei utilizá-lo. Mas segunda a especificação, este elemento isola uma parte do texto que pode ser formatado numa direção diferente a partir do texto fora dela. Algo como o exemplo abaixo:
+
+```html
+<ul>
+  <li>User <bdi>hrefs</bdi>: 60 points</li>
+  <li>User <bdi>jdoe</bdi>: 80 points</li>
+  <li>User <bdi>إيان</bdi>: 90 points</li>
+</ul>
+```
+
+Este elemento é útil ao incorporar o texto com uma direção desconhecida, de um banco de dados por exemplo, no interior do texto com uma direção fixa. 
