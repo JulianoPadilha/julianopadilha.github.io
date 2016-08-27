@@ -54,7 +54,7 @@ Agora usamos apenas:
 
 ### Novos elementos
 
-####`<article>`
+`<article>`
 
 O propósito do elemento `article` é ser um container para representar uma seção de conteúdo dentro do site, que forma uma parte independente do documento. Dentro de um `article` pode conter, por exemplo, um post de blog, um artigo, texto e etc.
 
@@ -69,7 +69,7 @@ Comumente confundesse os elementos `article`, `section` e `div`. O `article` é 
 </article>
 ```
 
-####`<aside>`
+`<aside>`
 
 A tag `aside` é usada para agregar mais informação ao conteúdo principal. Algumas utilidades do `aside`: citações ou sidebars, agrupamento de publicidade, grupos e blocos de navegação e para qualquer outro conteúdo que é separado do conteúdo principal.
 
@@ -102,5 +102,5 @@ O elemento `aside` pode ir também dentro de um elemento `article` como uma caix
 </aside>
 ```
 
-####`<audio>`
+`<audio>`
 
