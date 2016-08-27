@@ -54,7 +54,7 @@ Agora usamos apenas:
 
 ### Novos elementos
 
-**`<article>`**
+####`<article>`
 
 O propósito do elemento `article` é ser um container para representar uma seção de conteúdo dentro do site, que forma uma parte independente do documento. Dentro de um `article` pode conter, por exemplo, um post de blog, um artigo, texto e etc.
 
@@ -65,9 +65,42 @@ Comumente confundesse os elementos `article`, `section` e `div`. O `article` é 
 ```html
 <article>
 	<h4>Google</h4>
-	<p>![Google Inc](https://www.google.com.br). é uma empresa multinacional de serviços online e software dos Estados Unidos. O Google hospeda e desenvolve uma série de serviços e produtos baseados na internet e gera lucro principalmente através da publicidade pelo AdWords</p>
+	<p><a href="https://www.google.com.br">Google Inc</a>. é uma empresa multinacional de serviços online e software dos Estados Unidos. O Google hospeda e desenvolve uma série de serviços e produtos baseados na internet e gera lucro principalmente através da publicidade pelo AdWords</p>
 </article>
 ```
 
-**`aside`**
+####`<aside>`
+
+A tag `aside` é usada para agregar mais informação ao conteúdo principal. Algumas utilidades do `aside`: citações ou sidebars, agrupamento de publicidade, grupos e blocos de navegação e para qualquer outro conteúdo que é separado do conteúdo principal.
+
+O elemento `aside` pode ir também dentro de um elemento `article` como uma caixa de notação ou algo do genêro.
+
+#### Exemplo:
+
+```html
+<header>
+	<h1>Os Metais</h1>
+</header>
+<article>
+	<h1>Trompete</h1>
+	<p>O <b>trompete</b> é um instrumento de sopro de metal cuja 	etc...</p>
+	<aside>
+		<h2>Você sabia ?</h2>
+		<dl>
+			<dt>Trompete  pícolo</dt>
+			<dd>É um trompete pequeno geralmente utilizado para...</dd>
+		</dl>
+	</aside>
+</article>
+<aside>
+	<h3>Conheça outros instrumentos de metal</h3>
+	<ul>
+		<li><a href="#">Trombone</a></li>
+		<li><a href="#">Trompa</a></li>
+		<li><a href="#">Tuba</a></li>
+	</ul>
+</aside>
+```
+
+####`<audio>`
 
