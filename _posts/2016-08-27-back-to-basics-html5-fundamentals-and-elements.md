@@ -31,7 +31,7 @@ O HTML5 também cria novas tags e modifica a função de outras. As versões ant
 
 ## Mudanças e novos elementos
 
-Um das primeiras mudaças é como declaramos o **DOCTYPE** dos nossos documentos HTML. Com o HTML5 a sintaxe passa a ser a seguinte:
+Uma das primeiras mudaças é como declaramos o **DOCTYPE** dos nossos documentos HTML. Com o HTML5 a sintaxe passa a ser a seguinte:
 
 ```html
 <!DOCTYPE html>
@@ -40,6 +40,33 @@ Um das primeiras mudaças é como declaramos o **DOCTYPE** dos nossos documentos
 Declarando o DOCTYPE desta forma, faz com que os navegadores identifiquem que estamos utilizando a versão mais recente do HTML e que ele deve dar todo o suporte necessário para nosso documento. 
 
 
+A forma como declaramos a metatag charset também ficou mais simples. Ao invés de termos que declarar todo o trecho abaixo, que era um padrão definido no HTML 4.01:
 
+```html
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+```
 
+Agora usamos apenas:
 
+```html
+<meta charset="UTF-8">
+```
+
+### Novos elementos
+
+**`<article>`**
+
+O propósito do elemento `article` é ser um container para representar uma seção de conteúdo dentro do site, que forma uma parte independente do documento. Dentro de um `article` pode conter, por exemplo, um post de blog, um artigo, texto e etc.
+
+Comumente confundesse os elementos `article`, `section` e `div`. O `article` é um elemento mais específico que o `section` e o `div`. O `article` indica que um determinado bloco leva um conteúdo importante. O `section` é apenas um bloco de separação de assuntos diferentes. O `div`, o mais genérico de todos, apenas é aplicado para separar elementos em blocos.
+
+#### Exemplo:
+
+```html
+<article>
+	<h4>Google</h4>
+	<p>![Google Inc](https://www.google.com.br). é uma empresa multinacional de serviços online e software dos Estados Unidos. O Google hospeda e desenvolve uma série de serviços e produtos baseados na internet e gera lucro principalmente através da publicidade pelo AdWords</p>
+</article>
+```
+
+**`aside`**
