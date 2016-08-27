@@ -82,4 +82,14 @@ O HTML5 introduziu a possibilidade de tocar mídias nativamente no browser. A ta
 
 Qualquer conteúdo entre as tags de abertura e de fechamento do elemento `audio` é um *fallback*. Este conteúdo é exibido apenas em browsers que não suportam a tag `audio`.
 
-<audio src="/../assets/audios/good_enough.mp3" controls></audio>
+<audio src="/../assets/audios/good_enough.mp3" controls>
+	<p>Se você está vendo este texto é porque seu navegador não suporta o elemento áudio. :/</p>
+</audio>
+
+#### Exemplo:
+
+```html
+<audio src="/../assets/audios/good_enough.mp3" constrols>
+	<p>Se você está vendo este texto é porque seu navegador não suporta o elemento áudio. :/</p>
+</audio>
+```
