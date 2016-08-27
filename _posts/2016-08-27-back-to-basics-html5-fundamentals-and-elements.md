@@ -7,8 +7,6 @@ categories: html5 development
 published: true
 ---
 
-# Back to basics: HTML5 Fundamentals
-
 Ter uma boa base é essencial para que possamos continuar progredindo. Isso não apenas para nós desenvolvedores, mas para as mais diversas áreas de estudo e profissões. Com o tempo alguns fundamentos importantes acabam se perdendo e deixamos de fazer o simples em detrimento da falta de conhecimento ~~ou de lembrança mesmo~~. 
 
 Com todas ferramentas, frameworks e libraries disponíveis atualmente, acabamos na correria do dia a dia automatizando algumas tarefas triviais. E não julgo isso como algo ruim, acho super válido nos apoiarmos em ferramentas que possuem o poder de otimizar nosso trabalho. Meu receio entra quando passamos a depender exclusivamente destas ferramentas para desempenhar nosso papel. 
