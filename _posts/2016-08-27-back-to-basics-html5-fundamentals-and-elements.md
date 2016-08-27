@@ -107,3 +107,38 @@ O elemento `bdi` é meio estranho. Nunca me deparei com uma situação onde prec
 ```
 
 Este elemento é útil ao incorporar o texto com uma direção desconhecida, de um banco de dados por exemplo, no interior do texto com uma direção fixa. 
+
+`<canvas>`
+
+O elemento `canvas` é uma superfície desenhavel nativa disponível nos browsers. Ela permite que desenhemos utilizando JavaScript por meio da sua API.
+
+O única elemento HTML existente para isso é o elemento `canva`, o resto é todo feito via JS. 
+
+```html
+<canvas id="myCanvas" width="300" height="300"></canvas> 
+```
+
+O exemplo acima vai exibir um retângulo vazio. E para desenharmos nele basta utilizar JavaScript, como já mencionado. 
+
+<canvas id="myCanvas" width="300" height="200">Seu browser não suporta o elemento canvas.</p></canvas>
+
+<script>
+function displayCanvas()
+	{
+      var canvas = document.getElementById("myCanvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "rgb(200,0,0)";
+        ctx.fillRect (0, 0, 150, 75);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (40, 30, 125, 75);
+
+        ctx.fillStyle = "rgb(0,0,150)";
+        ctx.strokeRect (20, 20, 50, 100); 
+      }
+    }
+
+    window.onload = displayCanvas;
+</script>
