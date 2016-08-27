@@ -4,7 +4,7 @@ title: "Back to basics: HTML5 Fundamentals"
 description: "Back to basics: HTML5 Fundamentals"
 date: 2016-08-27 13:00:00
 categories: html5 development
-published: false
+published: true
 ---
 
 Ter uma boa base é essencial para que possamos continuar progredindo. Isso não apenas para nós desenvolvedores, mas para as mais diversas áreas de estudo e profissões. Com o tempo alguns fundamentos importantes acabam se perdendo e deixamos de fazer o simples em detrimento da falta de conhecimento ~~ou de lembrança mesmo~~. 
@@ -70,3 +70,4 @@ Comumente confundesse os elementos `article`, `section` e `div`. O `article` é 
 ```
 
 **`aside`**
+
