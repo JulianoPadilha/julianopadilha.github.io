@@ -110,7 +110,7 @@ Este elemento é útil ao incorporar o texto com uma direção desconhecida, de 
 
 `<canvas>`
 
-O elemento `canvas` é uma superfície desenhavel nativa disponível nos browsers. Ela permite que desenhemos utilizando JavaScript por meio da sua API.
+O elemento `canvas` é uma superfície desenhável nativa disponível nos browsers. Ela permite que desenhemos utilizando JavaScript por meio da sua API.
 
 O única elemento HTML existente para isso é o elemento `canva`, o resto é todo feito via JS. 
 
@@ -143,6 +143,7 @@ function displayCanvas()
     window.onload = displayCanvas;
 </script>
 
+#### Exemplo:
 
 ```html
 <canvas id="myCanvas" width="300" height="200">Seu browser não suporta o elemento canvas.</p></canvas>
@@ -166,3 +167,27 @@ function displayCanvas()
     window.onload = displayCanvas;
 </script>
 ```
+
+Quando você utilizamos o `canvas`, precisamos declarar qual tipo de contexto queredo usar. Podemos escolher entre os contextos 2D e 3D. Vale a pena estudar mais sobre este elemento e sua API.
+
+`datalist`
+
+O elemento `datalist` é uma nova adição a coleção de elementos de formulário. Para entender este elemento, considere um formulário onde você dá para o usuário a oportunidade de entrar com sua cor favorita. Ao mesmo tempo que o campo de texto é aberto para o usuário digitar algum valor, nós também podemos prover uma lista de sugestões, e isso pode ser feito com uma `datalist` associada. O exemplo abaixo vai deixar a ideia mais clara. Sua estrutura lembra muito a tag `select`.
+
+<input type="text" list="colors">
+<datalist id="colors">
+    <option src="Blue"></option>
+    <option src="White"></option>
+    <option src="Red"></option>
+</datalist>
+
+#### Exemplo: 
+
+```html
+<input type="text" list="colors">
+<datalist id="colors">
+    <option src="Blue"></option>
+    <option src="White"></option>
+</datalist>
+```
+
