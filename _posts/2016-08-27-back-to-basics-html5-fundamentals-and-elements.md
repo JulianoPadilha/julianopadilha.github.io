@@ -172,7 +172,7 @@ function displayCanvas()
 
 Quando você utilizamos o `canvas`, precisamos declarar qual tipo de contexto queredo usar. Podemos escolher entre os contextos 2D e 3D. Vale a pena estudar mais sobre este elemento e sua API.
 
-`datalist`
+`<datalist>`
 
 O elemento `datalist` é uma nova adição a coleção de elementos de formulário. Para entender este elemento, considere um formulário onde você dá para o usuário a oportunidade de entrar com sua cor favorita. Ao mesmo tempo que o campo de texto é aberto para o usuário digitar algum valor, nós também podemos prover uma lista de sugestões, e isso pode ser feito com uma `datalist` associada. O exemplo abaixo vai deixar a ideia mais clara. Sua estrutura lembra muito a tag `select`.
 
@@ -194,13 +194,13 @@ O elemento `datalist` é uma nova adição a coleção de elementos de formulár
 </datalist>
 ```
 
-`details`
+`<details>`
 
 Sabe quando precisamos criar uma área para o site onde mostrará um sumário de informações e quando alguém clicar no conteúdo, abrir mais informações sobre aquele item logo abaixo?
 
 Pois é, quem já fez algo do tipo, provavelmente utilizou JavaScript, jQuery, ou alguma outra solução para atingir o objetivo final. Porém, com o HTML5 é possível termos o mesmo comportamento utilizando apenas elementos do HTML. 😎
 
-O elemento `details` pode ser utilizado juntamente com o elemento `summary` para prover um cabeçalho clicável que expande/recolhe os details desejados.
+O elemento `details` pode ser utilizado juntamente com o elemento `summary` para prover um cabeçalho clicável que expande/recolhe os detalhes desejados.
 
 <details>
 	<summary>Clique para abrir</summary>
@@ -215,3 +215,13 @@ O elemento `details` pode ser utilizado juntamente com o elemento `summary` para
 	<p>Se você estiver vendo essa mensagem é porque seu browser 		suporta essa funcionalidade. Legal, né?!</p>
 </details>
 ```
+
+`<dialog>`
+
+O elemento `dialog` indica uma parte de uma aplicação que o usuário pode interagir.
+
+Esse elemento aceita um atributo booleano chamado `open` que define o elemento para "ativo" e permite que o usuário interage com ele.
+
+<dialog open>
+  <p>Greetings, one and all!</p>
+</dialog>
