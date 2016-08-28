@@ -65,7 +65,7 @@ Comumente confundesse os elementos `article`, `section` e `div`. O `article` é 
 ```html
 <article>
 	<h4>Google</h4>
-	<p><a href="https://www.google.com.br">Google Inc</a>. é uma empresa multinacional de serviços online e software dos Estados Unidos. O Google hospeda e desenvolve uma série de serviços e produtos baseados na internet e gera lucro principalmente através da publicidade pelo AdWords</p>
+	<p><a href="https://www.google.com.br">Google Inc</a>. é uma 		empresa multinacional de serviços online e software dos 		Estados Unidos. O Google hospeda e desenvolve uma série de 		serviços e produtos baseados na internet e gera lucro 		principalmente através da publicidade pelo AdWords</p>
 </article>
 ```
 
@@ -90,7 +90,7 @@ Qualquer conteúdo entre as tags de abertura e de fechamento do elemento `audio`
 
 ```html
 <audio src="/../assets/audios/good_enough.mp3" constrols>
-	<p>Se você está vendo este texto é porque seu navegador não suporta o elemento áudio.</p> //Fallback para navegadores que não suportam o elemento audio.
+	<p>Se você está vendo este texto é porque seu navegador não 		suporta o elemento áudio.</p> //Fallback para navegadores 		que não suportam o elemento audio.
 </audio>
 ```
 
@@ -212,6 +212,6 @@ O elemento `details` pode ser utilizado juntamente com o elemento `summary` para
 ```html
 <details>
 	<summary>Clique para abrir</summary>
-	<p>Se você estiver vendo essa mensagem é porque seu browser suporta essa funcionalidade. Legal, né?!</p>
+	<p>Se você estiver vendo essa mensagem é porque seu browser 		suporta essa funcionalidade. Legal, né?!</p>
 </details>
 ```
