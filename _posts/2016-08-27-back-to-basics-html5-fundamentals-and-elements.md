@@ -96,7 +96,9 @@ Qualquer conteúdo entre as tags de abertura e de fechamento do elemento `audio`
 
 `<bdi>`
 
-O elemento `bdi` é meio estranho. Nunca me deparei com uma situação onde precisei utilizá-lo. Mas segunda a especificação, este elemento isola uma parte do texto que pode ser formatado numa direção diferente a partir do texto fora dela. Algo como o exemplo abaixo:
+O elemento `bdi` é meio estranho. Nunca me deparei com uma situação onde precisei utilizá-lo. Mas segunda a especificação, este elemento isola uma parte do texto que pode ser formatado numa direção diferente a partir do texto fora dela. 
+
+#### Exemplo:
 
 ```html
 <ul>
@@ -192,3 +194,24 @@ O elemento `datalist` é uma nova adição a coleção de elementos de formulár
 </datalist>
 ```
 
+`details`
+
+Sabe quando precisamos criar uma área para o site onde mostrará um sumário de informações e quando alguém clicar no conteúdo, abrir mais informações sobre aquele item logo abaixo?
+
+Pois é, quem já fez algo do tipo, provavelmente utilizou JavaScript, jQuery, ou alguma outra solução para atingir o objetivo final. Porém, com o HTML5 é possível termos o mesmo comportamento utilizando apenas elementos do HTML. 😎
+
+O elemento `details` pode ser utilizado juntamente com o elemento `summary` para prover um cabeçalho clicável que expande/recolhe os details desejados.
+
+<details>
+	<summary>Clique para abrir</summary>
+	<p>Se você estiver vendo essa mensagem é porque seu browser suporta essa funcionalidade. Legal, né?!</p>
+</details>
+
+#### Exemplo:
+
+```html
+<details>
+	<summary>Clique para abrir</summary>
+	<p>Se você estiver vendo essa mensagem é porque seu browser suporta essa funcionalidade. Legal, né?!</p>
+</details>
+```
