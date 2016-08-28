@@ -174,7 +174,7 @@ Quando você utilizamos o `canvas`, precisamos declarar qual tipo de contexto qu
 
 O elemento `datalist` é uma nova adição a coleção de elementos de formulário. Para entender este elemento, considere um formulário onde você dá para o usuário a oportunidade de entrar com sua cor favorita. Ao mesmo tempo que o campo de texto é aberto para o usuário digitar algum valor, nós também podemos prover uma lista de sugestões, e isso pode ser feito com uma `datalist` associada. O exemplo abaixo vai deixar a ideia mais clara. Sua estrutura lembra muito a tag `select`.
 
-<input type="text" list="colors">
+<input type="text" list="colors" placeholder="Clique aqui..">
 <datalist id="colors">
     <option value="Blue"></option>
     <option value="White"></option>
