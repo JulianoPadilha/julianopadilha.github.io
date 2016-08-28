@@ -205,7 +205,7 @@ O elemento `details` pode ser utilizado juntamente com o elemento `summary` para
 <details>
 	<summary>Clique para abrir</summary>
 	<p>Se você estiver vendo essa mensagem é porque seu browser suporta essa funcionalidade. Legal, né?!</p>
-</details>
+</details><br>
 
 #### Exemplo:
 
