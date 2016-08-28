@@ -220,8 +220,31 @@ O elemento `details` pode ser utilizado juntamente com o elemento `summary` para
 
 O elemento `dialog` indica uma parte de uma aplicação que o usuário pode interagir.
 
-Esse elemento aceita um atributo booleano chamado `open` que define o elemento para "ativo" e permite que o usuário interage com ele.
-
-Abaixo um exemplo do seu funcionamento. 
+Esse elemento aceita um atributo booleano chamado `open` que define o elemento para "ativo" e permite que o usuário interaja com ele. Sele este atributo for omitido, então vai ser necessário manipular ele por meio de JavaScript para permitir que o dialog abra and feche.
 
 ![](/../assets/images/dialog_html5.gif)
+
+#### Exemplo:
+
+```html
+<div>
+	<dialog id="myFirstDialog" style="width:50%;background-color:#F4FFEF;border:1px dotted black;">		<p><q>The world is full of magical things patiently waiting for our wits to grow sharper.</q> - <cite>Bertrand Russell</cite></p>
+		<button id="hide">Close</button>
+	</dialog>
+<!-- "Show" button -->
+<button id="show">Show Dialog</button>
+</div>
+
+<!-- JavaScript habilita a funcionalidade "Show/Close" -->
+<script type="text/JavaScript">
+(function() {  
+    var dialog = document.getElementById('myFirstDialog');  
+    document.getElementById('show').onclick = function() {  
+        dialog.show();  
+    };  
+    document.getElementById('hide').onclick = function() {  
+        dialog.close();  
+    };  
+})(); 
+</script>
+```
