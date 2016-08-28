@@ -176,9 +176,9 @@ O elemento `datalist` é uma nova adição a coleção de elementos de formulár
 
 <input type="text" list="colors">
 <datalist id="colors">
-    <option src="Blue"></option>
-    <option src="White"></option>
-    <option src="Red"></option>
+    <option value="Blue"></option>
+    <option value="White"></option>
+    <option value="Red"></option>
 </datalist>
 
 #### Exemplo: 
@@ -186,8 +186,9 @@ O elemento `datalist` é uma nova adição a coleção de elementos de formulár
 ```html
 <input type="text" list="colors">
 <datalist id="colors">
-    <option src="Blue"></option>
-    <option src="White"></option>
+    <option value="Blue"></option>
+    <option value="White"></option>
+    <option value="Red"></option>
 </datalist>
 ```
 
