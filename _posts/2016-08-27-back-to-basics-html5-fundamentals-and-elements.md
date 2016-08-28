@@ -222,25 +222,6 @@ O elemento `dialog` indica uma parte de uma aplicação que o usuário pode inte
 
 Esse elemento aceita um atributo booleano chamado `open` que define o elemento para "ativo" e permite que o usuário interage com ele.
 
-<style scoped>
-dialog{width:200px;background-color:#F4FFEF;border:1px dotted black;}
-</style>
-<dialog id="dialog2">
-<p><q>The world is full of magical things patiently waiting for our wits to grow sharper.</q> - <cite>Bertrand Russell</cite></p>
-<button id="hide2">Close</button>
-</dialog>
-<!-- "Show" button -->
-<button id="show2">Show Dialog</button>
+Abaixo um exemplo do seu funcionamento. 
 
-<!-- JavaScript to provide the "Show/Close" functionality -->
-<script type="text/JavaScript">
-(function() {  
-    var dialog2 = document.getElementById('dialog2');  
-    document.getElementById('show2').onclick = function() {  
-        dialog2.show();  
-    };  
-    document.getElementById('hide2').onclick = function() {  
-        dialog2.close();  
-    };  
-})(); 
-</script>
+![](/../assets/images/dialog_html5.gif)
