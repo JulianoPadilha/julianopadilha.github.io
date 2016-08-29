@@ -17,7 +17,7 @@ Para começar, optei por ir direto ao ponto de reviravolta da forma como desenvo
 
 ![](/../assets/images/HTML5.png)
 
-Não vou me aprofundar na história do HTML nem nos detalhes por traz do HTML5. Esses conteúdos podem ser facilmente encontrados em sites como o da [W3C](https://www.w3.org/TR/html5/) ou em infinitamente outros, como o [Dive into HTML5](https://diveintohtml5.com.br/) (português). Aqui vou relatar um pouco dos elementos que fazem parte do HTML5 e as API disponíveis. A propósito, recentemente escrevi sobre uma dessas APIs, a Web Storage, e aproveitei para criar um simples [To-Do List](http://julianopadilha.com/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html).  
+Não vou me aprofundar na história do HTML nem nos detalhes por traz do HTML5. Esses conteúdos podem ser facilmente encontrados em sites como o da [W3C](https://www.w3.org/TR/html5/) ou em infinitamente outros, como o [Dive into HTML5](https://diveintohtml5.com.br/) (português). Aqui vou relatar um pouco dos elementos que fazem parte do HTML5 e **futuramente**, em um outro texto, falar sobre as API disponíveis. A propósito, recentemente escrevi sobre uma dessas APIs, a Web Storage, e aproveitei para criar um simples [To-Do List](http://julianopadilha.com/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html).  
 
 Depois de toda essa introdução e disclaimer, vamos ao que interessa! 🕵🏻
 
@@ -194,7 +194,7 @@ O elemento `datalist` é uma nova adição a coleção de elementos de formulár
 </datalist>
 ```
 
-`<details>`
+`<details>` associado com o elemento `<summary>`
 
 Sabe quando precisamos criar uma área para o site onde mostrará um sumário de informações e quando alguém clicar no conteúdo, abrir mais informações sobre aquele item logo abaixo?
 
@@ -248,3 +248,148 @@ Esse elemento aceita um atributo booleano chamado `open` que define o elemento p
 })(); 
 </script>
 ```
+
+`<embed>`
+
+Esse é simples. O elemento `embed` é utilizado para incorporar uma aplicação externa ou um conteúdo interativo dentro de um documento HTML. 
+
+#### Exemplo:
+
+```html
+<embed src="helloworld.swf">
+```
+
+`<figure>` associado com o `<figcaption>`
+
+O elemento `figure` é para ser usado em conjunto com o elemento `figcaption`. Sua finalidade é para marcar diagramas, ilustrações, fotos, e fragmentos de código (entre outros conteúdos). Segundo a W3C: O elemento `figcaption` destina-se a marcar o cabeçalho ou a legenda para uma figura.
+
+#### Exemplo:
+
+```html
+<figure>
+	<img src="/images/masp.jpg" alt="Museu de Arte de São Paulo">
+	<figcaption>Fachada do Museu de Arte de São Paulo - MASP.</figcaption>
+</figure>
+```
+
+`<footer>`
+
+O elemento `footer` é utilizado para definir o rodapé de um documento HTML ou de uma seção dentro de uma página.
+
+Embora o `footer` ser tipicamente localizado no rodapé de um documento HTML, isto não é obrigatório.
+
+Elementos que comumente utilizam o elemento `footer`:
+
+	<article>, <aside>, <nav>, <section>, <blockquote>, <body>, <details>, <fieldset>, <figure>, <td>
+	
+`<header>`
+
+O elemento `header` representa um grupo de suporte introdutório ou navegacional. Pode conter alguns elementos de cabeçalhos mas também outros elementos como logos, `sections`, `forms`, etc.
+
+#### Exemplo:
+
+```html
+<header>
+	<nav>
+		<ul>
+			<li><a href="home">Home</a></li>
+			<li><a href="about">About</a></li>
+			<li><a href="articles">Articles</a></li>
+			<li><a href="projects">Projects</a></li>
+		</ul>
+	</nav>
+</header>
+```
+
+`<main>`
+
+O elemento `main` especifica o conteúdo principal de um documento. O conteúdo dentro da tag `main` deve ser único dentro do documento HTML criado. Ele não deve conter nenhum conteúdo que é repetido ao longo do página, como sidebars, navigations, forms, entre outros.
+
+#### Exemplo:
+
+```html
+<main>
+  <h1>Web Browsers</h1>
+  <p>Google Chrome, Firefox, and Internet Explorer are the most used browsers today.</p>
+  <article>
+    <h1>Google Chrome</h1>
+    <p>Google Chrome is a free, open-source web browser developed by Google,
+    released in 2008.</p>
+  </article>
+  ...
+ </main>
+```
+
+`<mark>`
+
+O elemento `mark` é usado para marcar ou gerar um highlight de um texto especificado.
+
+<p>Esta frase possui utiliza a tag mark <mark>bem aqui</mark></p>
+
+#### Exemplo: 
+
+```html
+<p>Esta frase possui utiliza a tag mark <mark>bem aqui</mark></p>
+```
+
+`<meter>`
+
+O elemento `meter` é usado para especificar uma barra de escala dentro de um range definido.
+
+<meter min="0" max="100" value="70">70 out of 100</meter>
+
+#### Exemplo:
+
+```html
+<meter min="0" max="100" value="70">70 out of 100</meter>
+```
+
+`<nav>`
+
+O elemento `nav` é um desses elementos que veio para trazer um significado específico para o documento HTML. Nav é o container para links de navegacão. Mais acima, onde explico a tag `header` mostro um exemplo do uso do elemento `nav`.
+
+`<progress>`
+
+O elemento `progress` é utilizado para representar o progresso de um tarefa. Utilizado juntamente com JavaScript, é possível apresentar para o usuário o progresso de alguma atividade
+
+<progress value="70" max="100"></progress>
+
+```html
+<progress value="70" max="100"></progress>
+```
+
+`<section>`
+
+O elemento `section` é utilizado para representar uma seção dentro de um elemento.
+
+O `section` define um bloco ou um grupo de um assunto específico. É importante entender que a `section` agrupa diversos elementos que tenham relação entre si. Por exemplo, se há uma área no site que há links, conteúdo, imagens e etc de um assunto em comum, você agrupará esses elementos com uma `section`.
+
+#### Exemplo:
+
+```html
+<section id="news">
+...
+</section>
+```
+
+`<time>`
+
+Resumidamente: o elemento `time` é utilizada para declarar datas e tempos dentros de um documento HTML.
+
+#### Exemplo:
+
+```html
+<time datetime="2016-08-24T13:25:23-8:00" pubdate>August 28th, 2016</time>
+```
+
+### Ufa! 
+
+Esses são alguns dos principais elementos do HTML5. Não me aprofundei nas propriedades de cada um, pois senão o texto ficaria enorme. 
+
+A imagem abaixo contém todas as tag pertencentes ao HTML e pode servir de referência. 
+
+![](/../assets/images/html5_list.png)
+
+Escrevi esse conteúdo como uma forma de me forçar a pesquisar mais sobre o HTML5 e ao mesmo tempo prover algo legal para quem tem interesse ou está começando. 
+
+🙃
