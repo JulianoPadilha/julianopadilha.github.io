@@ -7,7 +7,7 @@ categories: debug development chrome
 published: true
 ---
 
-Aprender a debugar seu código (e dos outros) é uma tarefa que todo desenvolvedor deve dominar.  Existem diversas ferramentas e técnicas para isso, porém, às vezes, o básico é tudo que precisamos para o nosso dia a dia. Sendo assim, trago aqui alguns dicas simples para debugar suas aplicações utilizando o Chrome Developer Tools. 
+Aprender a debugar seu código (e dos outros) é uma tarefa que todo desenvolvedor deve dominar.  Existem diversas ferramentas e técnicas para isso, porém, às vezes, o básico é tudo que precisamos para o nosso dia a dia. Sendo assim, trago aqui algumas dicas simples para debugar suas aplicações utilizando o Chrome Developer Tools. 
 
 ## Logando dados tabulares
     console.table
