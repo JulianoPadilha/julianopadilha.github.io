@@ -376,6 +376,42 @@ textarea {
     .home-wrap {
       display: block; } }
 
+.home-sections {
+  flex: 1; }
+  .home-sections section {
+    padding: 50px 0; }
+  .home-sections .flex {
+    display: flex;
+    flex-direction: rows; }
+  .home-sections .flex--center {
+    justify-content: center; }
+  .home-sections .flex--space-around {
+    justify-content: space-around; }
+  .home-sections .order-first {
+    order: -1; }
+
+.col-1 {
+  max-width: 300px;
+  margin: 0 10px;
+  background: pink; }
+
+.col-2 {
+  max-width: 630px;
+  margin: 0 10px;
+  background: honeydew; }
+
+.col-50 {
+  width: 100%;
+  background: yellow; }
+
+@media (max-width: 640px) {
+  .home-sections .flex {
+    display: block; }
+  .col-1 {
+    max-width: 100%; }
+  .col-50 {
+    width: auto; } }
+
 body {
   background-color: #eee;
   font-family: 'Fira Sans', sans-serif; }
@@ -402,7 +438,7 @@ body {
     text-indent: 101%;
     white-space: nowrap;
     max-width: 135px;
-    background-image: url(/assets/images/logo.svg);
+    background-image: url(/assets/images/logo-jp.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
