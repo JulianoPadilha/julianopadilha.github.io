@@ -1,3 +1,11 @@
+body 
+	background:
+		color: #eee
+	font:
+		family: 'Fira Sans', sans-serif;
+	-webkit-font-smoothing: antialiased
+	-webkit-text-size-adjust: 100%
+
 .home-wrap
 	display: flex
 	min-height: 100vh
@@ -32,7 +40,6 @@
 .col-1
 	max-width: 300px
 	margin: 0 10px
-	background: pink
 
 .col-2
 	max-width: 630px
@@ -43,6 +50,9 @@
 	width: 100%
 	background: yellow
 
+.push-right
+	margin-left: 330px
+
 @media (max-width: 640px)
 	.home-sections .flex
 		display: block
@@ -52,3 +62,12 @@
 
 	.col-50
 		width: auto
+
+	.push-right
+		margin-left: 10px
+
+// Typography
+
+.home-lead
+	font-size: 36px
+	line-height: 1.1

@@ -10,12 +10,6 @@
 	-o-justify-content: $value
 	justify-content: $value
 
-body 
-	background:
-		color: #eee
-	font:
-		family: 'Fira Sans', sans-serif;
-
 .home-wrap 
 	header
 		width: 135px
@@ -36,7 +30,8 @@ body
 			+hide-text
 			max-width: 135px
 			background:
-				image: url(/portfolio/assets/images/logo-jp.svg)
+				image: url(/portfolio/assets/images/logo-jp.svg) //production
+				image: url(/assets/images/logo-jp.svg) //development
 				repeat: no-repeat
 				position: center
 				size: contain

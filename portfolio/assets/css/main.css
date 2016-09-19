@@ -369,6 +369,12 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+body {
+  background-color: #eee;
+  font-family: 'Fira Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%; }
+
 .home-wrap {
   display: flex;
   min-height: 100vh; }
@@ -392,8 +398,7 @@ textarea {
 
 .col-1 {
   max-width: 300px;
-  margin: 0 10px;
-  background: pink; }
+  margin: 0 10px; }
 
 .col-2 {
   max-width: 630px;
@@ -404,17 +409,22 @@ textarea {
   width: 100%;
   background: yellow; }
 
+.push-right {
+  margin-left: 330px; }
+
 @media (max-width: 640px) {
   .home-sections .flex {
     display: block; }
   .col-1 {
     max-width: 100%; }
   .col-50 {
-    width: auto; } }
+    width: auto; }
+  .push-right {
+    margin-left: 10px; } }
 
-body {
-  background-color: #eee;
-  font-family: 'Fira Sans', sans-serif; }
+.home-lead {
+  font-size: 36px;
+  line-height: 1.1; }
 
 .home-wrap header {
   width: 135px;
@@ -439,6 +449,7 @@ body {
     white-space: nowrap;
     max-width: 135px;
     background-image: url(/portfolio/assets/images/logo-jp.svg);
+    background-image: url(/assets/images/logo-jp.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -528,3 +539,24 @@ body {
   .home-wrap .mobile-nav.is-open {
     display: block;
     transform: translateY(0%); } }
+
+section.about {
+  background-image: url(../images/about-bg.jpg);
+  background-position: center bottom;
+  background-size: cover; }
+  section.about h2 {
+    color: #3f3f42;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    margin-left: -108px;
+    margin-top: 0; }
+  section.about .home-lead {
+    padding-bottom: 180px;
+    color: #3f3f42; }
+
+@media (max-width: 640px) {
+  section.about h2, section.about .home-lead {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px; } }
