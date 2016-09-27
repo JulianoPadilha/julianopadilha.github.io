@@ -1,10 +1,15 @@
+---
+layout: 
+title: Web Developer, Entrepreneur and Creative
+cover: false
+---
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width">
-	<title>Juliano Padilha - Web Developer, Entrepreneur and Creative</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
@@ -119,90 +124,14 @@
 				<div class="flex flex--center">
 					<div class="col-50">
 						<div class="article-wrap">
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
+							{% for post in site.posts limit: 12 %}
+							<a href="{{post.url}}" class="article-thumb" style="background-image: url(../assets/images/posts/thumbnails/{{post.thumbnail}})">
 								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
+									<div class="name">{{post.title}}</div>
+									<div class="date">{{post.date | date: "%d, %b, %Y"}}</div>
 								</div>
 							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
-
-							<a href="" class="article-thumb" style="background-image: url(http://fillmurray.com/230/500)">
-								<div class="article-meta">
-									<div class="name">Article Name</div>
-									<div class="date">Dec 10, 1982</div>
-								</div>
-							</a>
+							{% endfor %}
 						</div>
 					</div>
 
