@@ -698,7 +698,16 @@ section.articles {
     width: 25%;
     float: left;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    opacity: 0;
+    transition: all 300ms ease-in-out; }
+    section.articles .article-thumb.is-visible {
+      opacity: 1; }
+    section.articles .article-thumb.is-emph {
+      animation-name: tada;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      z-index: 1; }
     section.articles .article-thumb:after {
       content: "";
       display: block;
@@ -731,6 +740,34 @@ section.articles {
     section.articles .article-thumb {
       width: 33.3%; } }
 
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1); }
+  10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+  to {
+    transform: scale3d(1, 1, 1); } }
+section.vine {
+  background-color: #00bf8f;
+  background-image: url(../images/vine-bg.jpg);
+  background-size: cover;
+  color: #fff; }
+  section.vine iframe {
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3); }
+  section.vine .home-cta {
+    color: #00bf8f; }
+  section.vine .description {
+    display: flex;
+    align-items: center; }
+@media(max-width: 640px) {
+  section.vine .col-1 {
+    text-align: center; }
+  section.vine .description {
+    margin-top: 50px; } }
 .home-cta {
   font-size: 28px;
   display: block;
