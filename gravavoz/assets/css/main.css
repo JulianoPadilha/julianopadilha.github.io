@@ -1,0 +1,164 @@
+.container-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 250px; }
+
+.sections {
+  height: 100%;
+  flex: 1; }
+  .sections .flex {
+    display: flex;
+    flex-direction: row; }
+  .sections .flex--center {
+    justify-content: center; }
+  .sections .flex--space-around {
+    justify-content: space-around; }
+  .sections .flex--space-between {
+    justify-content: space-between; }
+
+.col-1 {
+  width: 380px;
+  margin: 0px 0px;
+  box-sizing: border-box; }
+
+.space-center {
+  margin: 0 60px; }
+
+.btn-follow {
+  width: 80px;
+  border-radius: 10px;
+  border: #B70000;
+  background: #DC1E1D;
+  color: #fff;
+  font-weight: bold; }
+
+.btn-red {
+  width: 100px;
+  height: 25px;
+  border: #B70000;
+  background: #DC1E1D;
+  color: #fff;
+  font-weight: bold; }
+
+.container-wrap header {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  box-sizing: border-box; }
+.container-wrap .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  color: #fff;
+  background-color: #3F3F3F;
+  font-size: 2em; }
+.container-wrap .site-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #313131; }
+  .container-wrap .site-nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  .container-wrap .site-nav li {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin: 0 10px; }
+    .container-wrap .site-nav li.is-active {
+      border-bottom: 3px solid #B83423; }
+@media(max-width: 800px) {
+  .container-wrap .site-nav ul {
+    justify-content: flex-start; } }
+.container-wrap .last-item-menu {
+  width: 200px;
+  background-color: #3F3F3F;
+  position: relative; }
+  .container-wrap .last-item-menu a {
+    background: #1C1C1C;
+    color: #fff;
+    height: 100%;
+    align-items: center;
+    padding: 0px 5px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 100px; }
+
+section.first-section .personal-infos {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative; }
+  section.first-section .personal-infos .thumbnail {
+    display: block;
+    position: relative; }
+    section.first-section .personal-infos .thumbnail img {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #FCD246;
+      border-radius: 50%; }
+    section.first-section .personal-infos .thumbnail .thumb-icon {
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      top: 2px;
+      left: 78px;
+      border-radius: 50%;
+      background-color: #FCD246;
+      background-image: url(../images/icons/microphone.svg);
+      background-position: center;
+      background-size: contain; }
+  section.first-section .personal-infos .name {
+    margin: 0px 100px 0 30px;
+    font-weight: bold;
+    color: #7E7E7E; }
+  section.first-section .personal-infos .followers {
+    font-weight: bold;
+    color: #7E7E7E; }
+    section.first-section .personal-infos .followers span {
+      font-weight: normal; }
+  section.first-section .personal-infos .bio {
+    position: absolute;
+    top: 30px;
+    left: 130px;
+    color: #7E7E7E;
+    text-align: justify; }
+  section.first-section .personal-infos .btn-follow {
+    display: block;
+    margin: 10px 0 0 12px; }
+section.first-section .player .btn-red {
+  float: right;
+  margin-top: 10px; }
+section.first-section .player p {
+  font-weight: bold;
+  color: #7E7E7E; }
+section.first-section .player .player-mini {
+  background: #F3F3F3;
+  border-radius: 10px;
+  height: 60px;
+  margin-top: 10px; }
+  section.first-section .player .player-mini p {
+    color: #9F9F9F;
+    font-size: 10px;
+    margin-left: 20px;
+    margin-top: 5px; }
+  section.first-section .player .player-mini span {
+    font-size: 10px;
+    margin-right: 50px;
+    color: #696969; }
+  section.first-section .player .player-mini audio::-webkit-media-controls-panel {
+    border-radius: 10px 10px 0px 0px;
+    width: 360px;
+    background: #EBEBEB;
+    padding: 0 10px; }
+  section.first-section .player .player-mini audio::-webkit-media-controls-timeline {
+    background: #404040; }
+  section.first-section .player .player-mini audio::-webkit-media-controls-timeline-container {
+    background: pink; }
+  section.first-section .player .player-mini audio::-webkit-media-controls-rewind-button {
+    background: yellow; }
+
+/*# sourceMappingURL=main.css.map */
