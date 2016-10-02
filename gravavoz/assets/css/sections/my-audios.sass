@@ -1,0 +1,82 @@
+section.my-audios
+	width: 100%
+	display: flex
+	justify-content: center
+	position: relative
+	margin-top: 40px
+
+	.player
+		width: 700px
+
+		p
+			font-weight: bold
+			color: #7E7E7E
+
+		.player-mini
+			background: #EBEBEB
+			border-radius: 100px
+			height: 80px
+			margin-top: 10px
+			padding: 10px 20px
+
+			p
+				color: #9F9F9F
+				font-size: 10px
+				margin-left: 30px
+				margin-top: 5px
+
+			span
+				font-size: 10px
+				margin-right: 50px
+				color: #696969
+
+			audio
+				float: right
+
+			audio::-webkit-media-controls-panel
+				border-radius: 100px
+				width: 400px
+				margin: 0 -180px
+				background: #EBEBEB
+				padding: 0px 10px
+
+			audio::-webkit-media-controls-timeline
+				background: #404040
+
+			.work-title
+				font-size: 16px
+				font-weight: bold
+				display: inline
+				color: #7E7E7E
+
+			.work-infos
+				margin-left: 200px
+
+	.title-type
+		position: absolute
+		left: 200px
+		margin-top: 10px
+		text-align: center
+
+	.share
+		float: right
+		margin-top: 10px
+
+		img
+			vertical-align: bottom
+
+	.audio-icon-type
+		position: absolute
+		left: 230px
+		top: 35%
+		transform: translate(-50%, -50%)
+		width: 80px
+		height: 80px
+		border: 1px solid #777777
+		border-radius: 50%
+
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)

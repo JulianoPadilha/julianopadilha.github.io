@@ -1,7 +1,7 @@
 .container-wrap {
   display: flex;
   flex-wrap: wrap;
-  min-height: 250px; }
+  min-height: 170vh; }
 
 .sections {
   height: 100%;
@@ -21,6 +21,9 @@
   margin: 0px 0px;
   box-sizing: border-box; }
 
+.col-full {
+  width: 100%; }
+
 .space-center {
   margin: 0 60px; }
 
@@ -39,6 +42,32 @@
   background: #DC1E1D;
   color: #fff;
   font-weight: bold; }
+
+.tabs {
+  margin: 70px 0px;
+  display: flex;
+  justify-content: center; }
+  .tabs .tabs-nav {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    border-bottom: 1px solid #DCDCDC; }
+    .tabs .tabs-nav ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-around; }
+    .tabs .tabs-nav li {
+      display: flex;
+      align-items: center;
+      color: #747474;
+      font-weight: bold;
+      margin: 0 10px; }
+    .tabs .tabs-nav li.is-active--tab {
+      color: #fff;
+      padding: 10px; }
+
+.is-active--tab {
+  background: #404040; }
 
 .container-wrap header {
   display: flex;
@@ -68,7 +97,7 @@
     align-items: center;
     color: #fff;
     margin: 0 10px; }
-    .container-wrap .site-nav li.is-active {
+    .container-wrap .site-nav li.is-active--border {
       border-bottom: 3px solid #B83423; }
 @media(max-width: 800px) {
   .container-wrap .site-nav ul {
@@ -131,7 +160,7 @@ section.first-section .personal-infos {
     margin: 10px 0 0 12px; }
 section.first-section .player .btn-red {
   float: right;
-  margin-top: 10px; }
+  margin-top: 20px; }
 section.first-section .player p {
   font-weight: bold;
   color: #7E7E7E; }
@@ -156,9 +185,78 @@ section.first-section .player .player-mini {
     padding: 0 10px; }
   section.first-section .player .player-mini audio::-webkit-media-controls-timeline {
     background: #404040; }
-  section.first-section .player .player-mini audio::-webkit-media-controls-timeline-container {
-    background: pink; }
-  section.first-section .player .player-mini audio::-webkit-media-controls-rewind-button {
-    background: yellow; }
+section.first-section .player .share {
+  float: left;
+  margin-top: 20px; }
+  section.first-section .player .share img {
+    vertical-align: bottom; }
+
+section.my-audios {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 40px; }
+  section.my-audios .player {
+    width: 700px; }
+    section.my-audios .player p {
+      font-weight: bold;
+      color: #7E7E7E; }
+    section.my-audios .player .player-mini {
+      background: #EBEBEB;
+      border-radius: 100px;
+      height: 80px;
+      margin-top: 10px;
+      padding: 10px 20px; }
+      section.my-audios .player .player-mini p {
+        color: #9F9F9F;
+        font-size: 10px;
+        margin-left: 30px;
+        margin-top: 5px; }
+      section.my-audios .player .player-mini span {
+        font-size: 10px;
+        margin-right: 50px;
+        color: #696969; }
+      section.my-audios .player .player-mini audio {
+        float: right; }
+      section.my-audios .player .player-mini audio::-webkit-media-controls-panel {
+        border-radius: 100px;
+        width: 400px;
+        margin: 0 -180px;
+        background: #EBEBEB;
+        padding: 0px 10px; }
+      section.my-audios .player .player-mini audio::-webkit-media-controls-timeline {
+        background: #404040; }
+      section.my-audios .player .player-mini .work-title {
+        font-size: 16px;
+        font-weight: bold;
+        display: inline;
+        color: #7E7E7E; }
+      section.my-audios .player .player-mini .work-infos {
+        margin-left: 200px; }
+  section.my-audios .title-type {
+    position: absolute;
+    left: 200px;
+    margin-top: 10px;
+    text-align: center; }
+  section.my-audios .share {
+    float: right;
+    margin-top: 10px; }
+    section.my-audios .share img {
+      vertical-align: bottom; }
+  section.my-audios .audio-icon-type {
+    position: absolute;
+    left: 230px;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border: 1px solid #777777;
+    border-radius: 50%; }
+    section.my-audios .audio-icon-type img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
 
 /*# sourceMappingURL=main.css.map */
