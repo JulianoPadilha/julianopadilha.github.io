@@ -107,6 +107,9 @@
       border-bottom: 3px solid #B83423; }
     .container-wrap .site-nav li a {
       color: #fff; }
+@media(max-width: 800px) {
+  .container-wrap .site-nav li ul {
+    justify-content: flex-start; } }
 .container-wrap .last-item-menu {
   width: 200px;
   background-color: #3F3F3F;
