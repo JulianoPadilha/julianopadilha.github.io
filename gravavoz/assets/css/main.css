@@ -2,8 +2,9 @@
   display: block; }
 
 .sections {
+  margin-top: 50px;
   height: 100%;
-  margin-top: 50px; }
+  flex: 1; }
   .sections .flex {
     display: flex;
     flex-direction: row; }
@@ -65,15 +66,14 @@
     .tabs .tabs-nav li {
       display: flex;
       align-items: center;
-      color: #747474;
       font-weight: bold;
       margin: 0 10px; }
-    .tabs .tabs-nav li.is-active--tab {
-      color: #fff;
-      padding: 10px; }
-
-.is-active--tab {
-  background: #404040; }
+      .tabs .tabs-nav li a {
+        color: #747474; }
+      .tabs .tabs-nav li a.is-active--tab {
+        background: #404040;
+        color: #fff;
+        padding: 10px; }
 
 .container-wrap header {
   display: flex;
@@ -105,6 +105,8 @@
     margin: 0 10px; }
     .container-wrap .site-nav li.is-active--border {
       border-bottom: 3px solid #B83423; }
+    .container-wrap .site-nav li a {
+      color: #fff; }
 .container-wrap .last-item-menu {
   width: 200px;
   background-color: #3F3F3F;
@@ -160,9 +162,11 @@ section.first-section .personal-infos {
     text-align: justify; }
   section.first-section .personal-infos .btn-follow {
     display: block;
+    cursor: pointer;
     margin: 10px 0 0 12px; }
 section.first-section .player .btn-red {
   float: right;
+  cursor: pointer;
   margin-top: 20px; }
 section.first-section .player p {
   font-weight: bold;
@@ -190,6 +194,7 @@ section.first-section .player .player-mini {
     background: #404040; }
 section.first-section .player .share {
   float: left;
+  color: #747474;
   margin-top: 20px; }
   section.first-section .player .share img {
     vertical-align: bottom; }
@@ -241,10 +246,12 @@ section.my-audios {
   section.my-audios .title-type {
     position: absolute;
     left: -95px;
+    color: #747474;
     margin-top: 10px;
     text-align: center; }
   section.my-audios .share {
     float: right;
+    color: #747474;
     margin-top: 10px; }
     section.my-audios .share img {
       vertical-align: bottom; }
@@ -269,6 +276,7 @@ section.my-audios {
   margin: 40px 0px 50px 0px; }
   .load-more .btn-load-more {
     display: block;
+    cursor: pointer;
     font-size: 16px;
     margin: 0 auto; }
 
@@ -293,6 +301,8 @@ section.my-audios {
     margin-left: 20px; }
   .footer li {
     margin-bottom: 5px; }
+    .footer li a {
+      color: #fff; }
   .footer .footer-bar {
     height: 50px;
     background: #1B1B1B;
