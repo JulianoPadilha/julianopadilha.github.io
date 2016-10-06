@@ -232,8 +232,6 @@ nav ul li a:hover {
       margin-bottom: 10px;
     }
 
-
-
     .btn-red-square {
       margin-left: 20px;
     }
@@ -265,8 +263,25 @@ nav ul li a:hover {
 
 }
 
-@media(max-width: 360px){
-  
+@media(max-width: 320px){
+  .player-mini {
+    width: 240px;
+    margin-top: 10px;
+  }
+
+  .player-mini audio::-webkit-media-controls-panel {
+    width: 220px;
+  }
+
+  .share {
+    float: none;
+    color: #747474;
+    text-align: center;
+  }
+
+  .btn-red-square {
+    margin: 20px 25%;
+  }
 }
 .userAccess a {
     font-size: 16px;
