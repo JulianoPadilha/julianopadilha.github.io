@@ -210,7 +210,7 @@ nav ul li a:hover {
   }
 
   .player-mini audio::-webkit-media-controls-panel {
-    width: 300px;
+    width: 280px;
   }
 }
 
@@ -265,12 +265,12 @@ nav ul li a:hover {
 
 @media(max-width: 320px){
   .player-mini {
-    width: 240px;
+    width: 260px;
     margin-top: 10px;
   }
 
   .player-mini audio::-webkit-media-controls-panel {
-    width: 220px;
+    width: 240px;
   }
 
   .share {
