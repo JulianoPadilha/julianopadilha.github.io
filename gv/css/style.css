@@ -210,7 +210,7 @@ nav ul li a:hover {
   }
 
   .player-mini audio::-webkit-media-controls-panel {
-    width: 280px;
+    width: 300px;
   }
 }
 
