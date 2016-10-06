@@ -266,7 +266,7 @@ nav ul li a:hover {
   .player-mini {
     width: 240px;
     margin-top: 10px;
-    height: 80px
+    height: 70px
   }
 
   .player-mini audio::-webkit-media-controls-panel {
