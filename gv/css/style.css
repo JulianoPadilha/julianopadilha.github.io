@@ -301,31 +301,65 @@ nav ul li a:hover {
 
 @media(max-width: 420px){
 
+  .tabs .tabs-nav {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    z-index: 999;
+  }
 
-    .thumb-icon {
-      right: -20px;
-    }
-
-    .sub-header-section {
-        margin-top: 30px;
-    }
-
-    .sub-header-section .col-md-3 {
-        float: none;
-        margin: 0 auto;
-    }
-
-    .sub-header-section .thumbnail-profile {
-        margin-bottom: 30px
-    }
-
-    .sub-header-section .thumbnail-profile img {
-        margin-left: -35px;
-    }
-
-    .player-mini {
+  .tabs .tabs-nav ul {
+      display: block;
+      width: 100%;
+  }
+  .tabs .tabs-nav ul li {
+      float: none;
+      width: 100%;
+      margin: 0px;
+      background: #404040;
+      border-bottom: 1px solid #ccc;
+  }
+  .tabs .tabs-nav ul li a {
+      display: block;
       margin: 0 auto;
-    }
+      line-height: 40px;
+      color: #fff;
+  }
+  .tabs .tabs-nav li a:hover {
+      color: #000;
+  }
+
+  .tabs .tabs-nav li a.is-active--tab {
+    padding: 0px 10px;
+    background: none;
+  }
+
+
+  .thumb-icon {
+    right: -20px;
+  }
+
+  .sub-header-section {
+      margin-top: 30px;
+  }
+
+  .sub-header-section .col-md-3 {
+      float: none;
+      margin: 0 auto;
+  }
+
+  .sub-header-section .thumbnail-profile {
+      margin-bottom: 30px
+  }
+
+  .sub-header-section .thumbnail-profile img {
+      margin-left: -35px;
+  }
+
+  .player-mini {
+    margin: 0 auto;
+  }
 }
 
 @media(max-width: 375px){
@@ -341,7 +375,6 @@ nav ul li a:hover {
 }
 
 @media(max-width: 320px){
-
   .btn-follow {
     width: 100px;
     height: 20px;
