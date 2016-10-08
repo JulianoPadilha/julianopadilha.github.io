@@ -183,7 +183,6 @@ nav ul li a:hover {
   display: inline;
 }
 
-
 .categoria-player p:nth-child(5) {
   margin-left: 50px;
 }
@@ -203,6 +202,14 @@ nav ul li a:hover {
   margin-top: -20px; 
   width: 20px;
   vertical-align: bottom;
+}
+
+.btn-load-more {
+  width: 150px;
+  padding: 10px 10px;
+  text-align: center;
+  border: 1px solid #C8C8C8;
+  color: #000;
 }
 
 /*END TAB CATEGORIAS*/
@@ -922,6 +929,7 @@ nav ul li a:hover {
 .footerTop {
     background: #444444;
     padding: 100px 0;
+    margin-top: 80px;
 }
 .footerTop .row {
     display: table;
