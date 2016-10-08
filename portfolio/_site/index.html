@@ -1,9 +1,3 @@
----
-layout: 
-title: Web Developer, Entrepreneur and Creative
-cover: false
----
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -124,14 +118,7 @@ cover: false
 				<div class="flex flex--center">
 					<div class="col-50">
 						<div class="article-wrap">
-							{% for post in site.posts limit: 12 %}
-							<a href="{{post.url}}" class="article-thumb" style="background-image: url(../assets/images/posts/thumbnails/{{post.thumbnail}})">
-								<div class="article-meta">
-									<div class="name">{{post.title}}</div>
-									<div class="date">{{post.date | date: "%d, %b, %Y"}}</div>
-								</div>
-							</a>
-							{% endfor %}
+							
 						</div>
 					</div>
 
@@ -149,69 +136,13 @@ cover: false
 			<section class="vine">
 				<div class="flex flex--space-around">
 					<div class="col-1">
-						<iframe src="https://vine.co/v/iuXKUqZjmw0/embed/postcard?audio=0" width="300" height="300" frameborder="0"></iframe><script src="https://platform.vine.co/static/scripts/embed.js"></script>
+						<iframe src="https://vine.co/v/iuXKUqZjmw0/embed/postcard?audio=1" width="300" height="300" frameborder="0"></iframe><script src="https://platform.vine.co/static/scripts/embed.js"></script>
 					</div>
 
 					<div class="col-1 description">
 						<div class="desc-wrap">
 							<p class="home-lead outdented">...Offering creative lifestyle tips on Vine...</p>
 							<a href="" class="home-cta">Checkout Vine</a>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="design">
-				<div class="flex flex--center">
-					<div class="col-50 flex flex--center dribbble">
-						<div class="col-1">
-							<p class="home-lead"> ...Updating Dribbble...</p>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/drib-1.jpg" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/drib-2.jpg" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/drib-3.png" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/drib-4.jpg" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/drib-5.jpg" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/drib-6.jpg" alt="">
-							</a>
-							<div class="clearfix"></div>
-							<a href="" class="home-cta">See more on Dribbble</a>
-						</div>
-					</div>
-
-					<div class="col-50 flex flex--center behance">
-						<div class="col-1">
-							<p class="home-lead"> ...and Behance...</p>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/be-1.png" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/be-2.jpg" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/be-3.jpg" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/be-4.jpg" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/be-5.jpg" alt="">
-							</a>
-							<a href="" class="design-img-link">
-								<img src="assets/images/design-img/be-6.png" alt="">
-							</a>
-							<div class="clearfix"></div>
-							<a href="" class="home-cta">See more on Behance</a>
 						</div>
 					</div>
 				</div>
