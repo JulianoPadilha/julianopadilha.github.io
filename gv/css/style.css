@@ -112,7 +112,7 @@ nav ul li a:hover {
 
 /* START TABS*/
 .tabs {
-  margin: 70px 0px;
+  margin: 0px 0px 70px 0px;
   width: 100%;
   display: flex;
   justify-content: center; 
@@ -145,6 +145,44 @@ nav ul li a:hover {
 }
 /*END TABS*/
 
+
+/*TAB CATEGORIAS*/
+.categoria {
+  margin-bottom: 40px
+}
+
+.categoria-icon img {
+  width: 60px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.categoria-title {
+  margin-top: 10px;
+}
+
+.categoria-player {
+  background-color: #EBEBEB;
+  border-radius: 10px;
+  height: 60px;
+  padding: 0px;
+}
+
+.categoria-player audio::-webkit-media-controls-panel {
+  background-color: #EBEBEB;
+  border-radius: 10px 10px 0px 0px;
+  width: 580px;
+  padding: 0 10px;
+}
+
+.categoria-share img {
+  margin-top: -20px; 
+  width: 20px;
+  vertical-align: bottom;
+}
+
+/*END TAB CATEGORIAS*/
+
 .userAccess {
     width: 200px;
     background: #1b1b1b;
@@ -152,7 +190,7 @@ nav ul li a:hover {
     font-size: 16px;
 }
 .sub-header-section {
-    margin-top: 50px;
+    margin: 50px 0px;
 }
 .thumbnail-profile {
     display: block;
@@ -250,6 +288,10 @@ nav ul li a:hover {
     position: absolute;
     margin-left: 50px;
   }
+
+  .categoria-player audio::-webkit-media-controls-panel {
+    width: 350px
+  }
 }
 
 @media(max-width: 1024px){
@@ -260,37 +302,60 @@ nav ul li a:hover {
   .player-mini audio::-webkit-media-controls-panel {
     width: 280px;
   }
+
+  .categoria-player audio::-webkit-media-controls-panel {
+    width: 300px
+  }
+
 }
 
 @media(max-width: 776px) {
-    .btn-follow {
-      width: 100px;
-      height: 20px;
-      margin-left: -30px;
-      margin-bottom: 20px; 
-    }
 
-    .sub-header-section .col-md-3 {
-        float: none;
-        margin: 0 auto;
-    }
+  .btn-follow {
+    width: 100px;
+    height: 20px;
+    margin-left: -30px;
+    margin-bottom: 20px; 
+  }
 
-    .sub-header-section .thumbnail-profile {
-        margin-bottom: 30px;
-    }
+  .sub-header-section .col-md-3 {
+      float: none;
+      margin: 0 auto;
+  }
 
-    .sub-header-section .thumbnail-profile img {
-        margin-left: -35px;
-    }
+  .sub-header-section .thumbnail-profile {
+      margin-bottom: 30px;
+  }
 
-    .profile-bio {
-      margin-bottom: 10px;
-    }
+  .sub-header-section .thumbnail-profile img {
+      margin-left: -35px;
+  }
 
-    .btn-red-square {
-      margin-left: 20px;
-    }
+  .profile-bio {
+    margin-bottom: 10px;
+  }
 
+  .btn-red-square {
+    margin-left: 20px;
+  }
+}
+
+@media(max-width: 630px){
+  .categoria-player {
+    width: 220px;
+  }
+
+  .categoria-icon {
+    margin-bottom: 10px;
+  }
+
+  .categoria-player audio::-webkit-media-controls-panel {
+    width: 200px;
+  }
+
+  .categoria-share {
+    margin-top: 20px;
+  }
 }
 
 @media(max-width: 465px){
@@ -300,6 +365,11 @@ nav ul li a:hover {
 }
 
 @media(max-width: 420px){
+
+  .tabs {
+    height: 180px;
+    margin-top: 30px;
+  }
 
   .tabs .tabs-nav {
     position: absolute;
@@ -335,7 +405,6 @@ nav ul li a:hover {
     background: none;
   }
 
-
   .thumb-icon {
     right: -20px;
   }
@@ -369,6 +438,7 @@ nav ul li a:hover {
 }
 
 @media(max-width: 360px){
+
   .thumb-icon {
     right: -30px;
   }
@@ -918,7 +988,7 @@ nav ul li a:hover {
         height: 75px;
     }
     nav ul li a {
-        font-size: 18px;
+        font-size: 16px;
     }
     .userAccess a {
         font-size: 20px;
