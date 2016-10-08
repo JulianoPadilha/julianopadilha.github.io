@@ -940,7 +940,7 @@ nav ul li a:hover {
     float: none;
 }
 .footerTop h5 {
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
     text-transform: uppercase;
 }
@@ -948,7 +948,7 @@ nav ul li a:hover {
     margin-top: 25px;
 }
 .footerTopContents p {
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
     margin-bottom: 15px;
 }
@@ -960,7 +960,7 @@ nav ul li a:hover {
     border-left: 3px solid #1b1b1b;
 }
 .footerTopContents ul li {
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
 }
 .footerTopContents ul li a {
@@ -1110,7 +1110,7 @@ nav ul li a:hover {
         width: 140px;
     }
     .footerTop h5 {
-        font-size: 22px;
+        font-size: 20px;
     }
     .footerTopContents p {
         font-size: 18px;
