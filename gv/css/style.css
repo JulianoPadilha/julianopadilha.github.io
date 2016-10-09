@@ -137,6 +137,7 @@ nav ul li a:hover {
 }
 .tabs .tabs-nav li a {
   color: #747474; 
+  cursor: pointer;
 }
 .tabs .tabs-nav li a.is-active--tab {
   background: #404040;
