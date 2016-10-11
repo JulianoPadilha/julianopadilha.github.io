@@ -163,7 +163,7 @@ nav ul li a:hover {
 }
 
 .categoria-player {
-  background-color: #EBEBEB;
+  background-color: pink;
   border-radius: 10px;
   height: 60px;
   padding: 0px;
@@ -214,6 +214,38 @@ nav ul li a:hover {
 }
 
 /*END TAB CATEGORIAS*/
+
+
+/*TAB CLIENTES*/
+
+.clientes {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 80px;
+}
+
+.clientes .cliente {
+  margin: 0px 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.clientes .cliente:hover {
+  border: 2px solid #B4B4B4;
+  border-radius: 10px;
+  transform: scale(1.2);
+  transition: 300ms ease-in-out;
+  box-sizing: border-box;
+  
+}
+
+.clientes .cliente p {
+  margin-top: 20px;
+}
+
+
+/*END TAB CLIENTES*/
 
 .userAccess {
     width: 200px;
@@ -372,8 +404,14 @@ nav ul li a:hover {
 }
 
 @media(max-width: 776px) {
+  .clientes {
+    flex-wrap: wrap;
+  }
 
-  
+  .clientes .cliente:hover {
+    transform: scale(1);
+  }
+
   .btn-follow {
     width: 100px;
     height: 20px;
@@ -404,6 +442,11 @@ nav ul li a:hover {
 }
 
 @media(max-width: 630px){
+
+  .clientes {
+    flex-wrap: wrap;
+  }
+
   .categoria-player {
     width: 220px;
   }
