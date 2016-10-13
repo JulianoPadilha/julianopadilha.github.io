@@ -163,7 +163,7 @@ nav ul li a:hover {
 }
 
 .categoria-player {
-  background-color: pink;
+  background-color: #EBEBEB;
   border-radius: 10px;
   height: 60px;
   padding: 0px;
@@ -223,6 +223,25 @@ nav ul li a:hover {
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 80px;
+}
+
+.cliente-player .categoria-player {
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.cliente-player .work-title {
+  margin-left: 50px;
+}
+
+.cliente-player .categoria-icon {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.cliente-player .categoria-icon img {
+  border: 2px solid #B4B4B4;
+  border-radius: 50%;
 }
 
 .clientes .cliente {
@@ -348,6 +367,14 @@ nav ul li a:hover {
 }
 
 @media(max-width: 1200px){
+  .cliente-player .work-title {
+    margin-left: 0px;
+  }
+
+  .cliente-player .categoria-player .data-divulgacao {
+    margin-left: 0px;
+  }
+  
   .btn-red-square {
     position: absolute;
     margin-left: 50px;
@@ -359,6 +386,8 @@ nav ul li a:hover {
 }
 
 @media(max-width: 1024px){
+
+
   .player-mini {
     width: 300px;
   }
@@ -380,6 +409,20 @@ nav ul li a:hover {
 
   .categoria-player {
     height: 90px;
+    margin-bottom: 20px;
+  }
+
+  .cliente-player .categoria-player {
+    height: auto;
+    text-align: center;
+  }
+
+  .cliente-player .categoria-player .data-divulgacao, .work-infos-plays, .work-infos-jobs {
+    margin-left: 90px;
+  }
+
+  .cliente-player .categoria-player audio::-webkit-media-controls-panel {
+    width: 270px;
   }
 
   .categoria-player audio {
@@ -395,7 +438,7 @@ nav ul li a:hover {
   .categoria-player p:nth-child(3), 
   .categoria-player p:nth-child(4),
   .categoria-player p:nth-child(5),
-  .categoria-player p:nth-child(6) {
+  .categoria-player p:nth-child(6), {
     display: inline;
     margin-top: -10px;
     margin-left: 50px;
@@ -404,6 +447,10 @@ nav ul li a:hover {
 }
 
 @media(max-width: 776px) {
+  .cliente-player .categoria-icon {
+    text-align: center;
+  }
+
   .clientes {
     flex-wrap: wrap;
   }
@@ -443,6 +490,18 @@ nav ul li a:hover {
 
 @media(max-width: 630px){
 
+  .cliente-player .categoria-player {
+    height: auto;
+    text-align: center;
+    width: 300px;
+    margin-left: 10px;
+  }
+
+  .cliente-player .categoria-player .data-divulgacao, .work-infos-plays, .work-infos-jobs {
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
+
   .clientes {
     flex-wrap: wrap;
   }
@@ -479,6 +538,11 @@ nav ul li a:hover {
 }
 
 @media(max-width: 420px){
+  .cliente-player .categoria-player {
+    width: 300px;
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
 
   .tabs {
     height: 180px;
@@ -552,6 +616,12 @@ nav ul li a:hover {
 }
 
 @media(max-width: 360px){
+
+  .cliente-player .categoria-player {
+    width: 300px;
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
 
   .thumb-icon {
     right: -30px;
