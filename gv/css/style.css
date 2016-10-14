@@ -199,6 +199,11 @@ nav ul li a:hover {
   padding: 0 10px;
 }
 
+.tab-list audio::-webkit-media-controls-panel {
+  background-color: #EBEBEB;
+  border-radius: 10px;
+}
+
 .categoria-share img {
   margin-top: -20px; 
   width: 20px;
@@ -262,9 +267,64 @@ nav ul li a:hover {
 .clientes .cliente p {
   margin-top: 20px;
 }
-
-
 /*END TAB CLIENTES*/
+
+
+/*OTHER TABS*/
+
+.other-tabs {
+  margin-top: 50px;
+}
+
+.other-tabs .tabs-nav {
+  width: 50%;
+}
+
+.other-tabs .tabs {
+  margin: 0px 0px 20px 0px;
+}
+
+.other-tabs .tabs-nav ul {
+  width: 50%;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+.other-tabs--profile {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.border-right {
+  border-right: 1px solid #B4B4B4;
+  height: 80px;
+}
+
+.other-tabs--profile img {
+  border-radius: 50%;
+  width: 60px;
+}
+
+.other-tabs--profile.icon img {
+  width: 40px;
+  margin-top: 20%;
+  border: 3px solid #DC1E1D;
+}
+
+.other-tabs--profile.icon p {
+  font-size: 10px;
+}
+
+.other-tabs--profile button {
+  background: #C9C9C9;
+  border: none;
+  width: 80px;
+  color: #fff;
+  border-radius: 7px;
+  margin-top: 15%;
+}
+
+/*END OTHER TABS*/
 
 .userAccess {
     width: 200px;
@@ -629,6 +689,10 @@ nav ul li a:hover {
 }
 
 @media(max-width: 320px){
+  .other-tabs {
+    margin-top: 0px;
+  }
+
   .btn-follow {
     width: 100px;
     height: 20px;
