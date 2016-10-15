@@ -882,6 +882,34 @@ section.notes {
     font-size: 12px;
     left: 10px; }
 
+section.podcast {
+  background-image: url(../images/podcast-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #fff; }
+  section.podcast .home-lead {
+    text-align: center; }
+  section.podcast .podcast-content {
+    display: flex;
+    margin-bottom: 20px; }
+  section.podcast .podcast-thumb {
+    margin-right: 30px; }
+  section.podcast .podcast-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+  section.podcast .title {
+    font-size: 30px;
+    line-height: 1.1;
+    margin-bottom: 20px; }
+  section.podcast .web {
+    color: #fff;
+    background: #8d16de; }
+  section.podcast .itunes {
+    color: #fff;
+    background: #13cbdf; }
+
 .home-cta {
   font-size: 28px;
   display: block;
