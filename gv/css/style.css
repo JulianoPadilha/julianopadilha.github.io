@@ -277,7 +277,7 @@ nav ul li a:hover {
 }
 
 .other-tabs .tabs-nav {
-  width: 50%;
+  width: 66%;
 }
 
 .other-tabs .tabs {
@@ -321,7 +321,7 @@ nav ul li a:hover {
   width: 80px;
   color: #fff;
   border-radius: 7px;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 /*END OTHER TABS*/
