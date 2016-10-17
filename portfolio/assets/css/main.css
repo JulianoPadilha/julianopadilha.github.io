@@ -471,7 +471,7 @@ body {
     padding: 0 20px 0 0;
     text-align: right; }
     .home-wrap header .site-nav ul li {
-      margin-bottom: 20px; }
+      margin-bottom: 10px; }
       .home-wrap header .site-nav ul li:last-child {
         margin-bottom: 0; }
       .home-wrap header .site-nav ul li a {
@@ -910,6 +910,28 @@ section.podcast {
     color: #fff;
     background: #13cbdf; }
 
+.home-footer a {
+  color: #fff;
+  background: #e24040;
+  display: block;
+  width: 100%;
+  line-height: 6;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+  transition: background 150ms ease-in-out;
+  text-decoration: none; }
+  .home-footer a:hover {
+    background: #d82121; }
+@media(max-width: 550px) {
+  .home-footer a {
+    font-size: 30px; } }
+@media(max-width: 430px) {
+  .home-footer a {
+    font-size: 25px; } }
+@media(max-width: 320px) {
+  .home-footer a {
+    font-size: 20px; } }
 .home-cta {
   font-size: 28px;
   display: block;
