@@ -424,7 +424,7 @@ body {
     width: auto; }
 
   .push-right {
-    margin-left: 10px; } }
+    margin-left: 0px; } }
 .home-lead {
   font-size: 36px;
   line-height: 1.1; }
@@ -547,8 +547,8 @@ body {
     display: block;
     transform: translateY(0%); } }
 section.about {
-  background-image: url(../images/about-bg.jpg);
-  background-position: center bottom;
+  background-image: url(../images/about2.jpg);
+  background-position: center top;
   background-size: cover; }
   section.about h2 {
     color: #3f3f42;
@@ -558,6 +558,7 @@ section.about {
     margin-left: -108px;
     margin-top: 0; }
   section.about .home-lead {
+    margin: 0;
     padding-bottom: 180px;
     color: #3f3f42; }
 
@@ -565,7 +566,8 @@ section.about {
   section.about h2, section.about .home-lead {
     margin-left: auto;
     margin-right: auto;
-    max-width: 300px; } }
+    max-width: 300px;
+    font-size: 40px; } }
 section.youtube {
   background-image: url(../images/youtube-bg.gif);
   background-color: #e20a0a;
@@ -882,6 +884,15 @@ section.notes {
     font-size: 12px;
     left: 10px; }
 
+@media (max-width: 640px) {
+  .col-2 {
+    max-width: 300px; }
+
+  .notes-signup-box {
+    max-width: 300px; }
+    .notes-signup-box input {
+      padding-left: 0;
+      padding-right: 0; } }
 section.podcast {
   background-image: url(../images/podcast-bg.jpg);
   background-size: cover;
@@ -910,6 +921,9 @@ section.podcast {
     color: #fff;
     background: #13cbdf; }
 
+@media (max-width: 640px) {
+  section.podcast .col-2 {
+    max-width: 300px; } }
 .home-footer a {
   color: #fff;
   background: #e24040;
