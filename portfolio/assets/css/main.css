@@ -411,7 +411,7 @@ body {
   width: 100%; }
 
 .push-right {
-  margin-left: 330px; }
+  margin-left: 60px; }
 
 @media (max-width: 640px) {
   .home-sections .flex {
@@ -548,8 +548,10 @@ body {
     transform: translateY(0%); } }
 section.about {
   background-image: url(../images/about2.jpg);
+  background-repeat: no-repeat;
   background-position: center top;
-  background-size: cover; }
+  background-size: cover;
+  height: 500px; }
   section.about h2 {
     color: #3f3f42;
     font-size: 60px;
@@ -569,11 +571,19 @@ section.about {
     max-width: 300px;
     font-size: 40px; } }
 section.youtube {
-  background-image: url(../images/youtube-bg.gif);
+  background-image: url(../images/about-bg.png);
   background-color: #e20a0a;
-  background-position: center;
+  background-position: center bottom;
   background-size: cover;
   color: #ffffff; }
+  section.youtube h2 {
+    color: #2b3e41;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 0; }
+  section.youtube .home-lead {
+    color: #2b3e41; }
   section.youtube .home-cta {
     color: #e20a0a; }
   section.youtube .flex-video {
@@ -588,7 +598,7 @@ section.youtube {
     margin: -50px 0;
     width: 100%;
     height: calc(100% + 100px);
-    background-image: url(../images/video-strip.png);
+    background-image: url(../images/imagem-strip.png);
     background-position: center 0px;
     background-repeat: repeat-y;
     background-size: 70%; }
@@ -681,7 +691,8 @@ section.mentoring {
     margin-left: 20px; } }
 section.articles {
   background-image: url(../images/article-bg.jpg);
-  background-repeat: repeat; }
+  background-repeat: repeat;
+  padding-top: 0; }
   section.articles .col-1 {
     display: flex;
     align-items: center; }

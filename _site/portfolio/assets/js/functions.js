@@ -3,7 +3,44 @@ $(function() {
 	setInterval(function(){
 		articleTada();
 	}, 4000);
+
+	designBGStuff();
+	smoothScroll(500);
+	mobileNav();
 });
+
+function mobileNav() {
+	$('.mobile-nav-toggle').on('click', function() {
+		var status = $(this).hasClass('is-open');
+		if(status) {
+			$('.mobile-nav-toggle, .mobile-nav').removeClass('is-open');
+		} else {
+			$('.mobile-nav-toggle, .mobile-nav').addClass('is-open');
+		}
+	});
+}
+
+function smoothScroll (duration) {
+	$('a[href^="#"]').on('click', function(event) {
+
+	    var target = $( $(this).attr('href') );
+
+	    if( target.length ) {
+	        event.preventDefault();
+	        $('html, body').animate({
+	            scrollTop: target.offset().top
+	        }, duration);
+	    }
+	});
+}
+
+function designBGStuff() {
+	$('.design-img-link').hover(function(){
+		$(this).parent().parent().css('background-color', $(this).data('color'));
+	}, function(){
+		$(this).parent().parent().css('background-color', $(this).parent().parent().data('orig-color'));
+	});
+}
 
 function articleTada(){
 	var randomNum = Math.floor(Math.random() * $('.article-thumb').length) +1;

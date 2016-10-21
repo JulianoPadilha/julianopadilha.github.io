@@ -5,7 +5,7 @@ $(function() {
 	}, 4000);
 
 	designBGStuff();
-	smoothScroll(300);
+	smoothScroll(500);
 	mobileNav();
 });
 
