@@ -4,6 +4,7 @@ title: "How to build: Um To-Do List com JavaScript utilizando a API Web Storage 
 description: "How to build: Um To-Do List com JavaScript utilizando a API Web Storage do HTML"
 date: 2016-07-24 20:30:00
 categories: javascript html how-to-build
+thumbnail: javascript.png
 published: true
 ---
 

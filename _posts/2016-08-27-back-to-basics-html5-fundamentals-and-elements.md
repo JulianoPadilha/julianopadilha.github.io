@@ -4,6 +4,7 @@ title: "Back to basics: HTML5 Fundamentals"
 description: "Back to basics: HTML5 Fundamentals"
 date: 2016-08-27 13:00:00
 categories: html5 development
+thumbnail: html5.png
 published: true
 ---
 

@@ -571,11 +571,12 @@ section.about {
     max-width: 300px;
     font-size: 40px; } }
 section.youtube {
-  background-image: url(../images/about-bg.png);
-  background-color: #e20a0a;
+  background-image: url(../images/about-bg2.png);
+  background-color: #ecf0f1;
   background-position: center bottom;
   background-size: cover;
-  color: #ffffff; }
+  color: #ffffff;
+  height: 400px; }
   section.youtube h2 {
     color: #2b3e41;
     font-size: 40px;
@@ -601,7 +602,7 @@ section.youtube {
     background-image: url(../images/imagem-strip.png);
     background-position: center 0px;
     background-repeat: repeat-y;
-    background-size: 70%; }
+    background-size: 75%; }
     @media (max-width: 640px) {
       section.youtube .video-strip {
         display: none; } }
@@ -621,7 +622,7 @@ section.youtube {
           padding: 0px 20px 50px; } }
 
 section.mentoring {
-  background-image: url(../images/mentoring-bg.jpg);
+  background-image: url(../images/interests-bg.png);
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -643,8 +644,8 @@ section.mentoring {
   section.mentoring .face {
     height: 80px;
     width: 80px;
-    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     border-radius: 50%;
     margin-bottom: 35px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
@@ -676,7 +677,7 @@ section.mentoring {
 @media (max-width: 640px) {
   section.mentoring .faces {
     margin: 0;
-    width: 805px;
+    width: 920px;
     top: 230px;
     left: 0px; }
   section.mentoring .face {
@@ -765,20 +766,32 @@ section.articles {
   to {
     transform: scale3d(1, 1, 1); } }
 section.vine {
-  background-color: #00bf8f;
-  background-image: url(../images/vine-bg.jpg);
+  background-color: #3f3f42;
+  background-image: url(../images/skills.png);
   background-size: cover;
   color: #fff; }
   section.vine iframe {
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3); }
   section.vine .home-cta {
-    color: #00bf8f; }
+    color: #3f3f42; }
   section.vine .description {
     display: flex;
     align-items: center; }
+  section.vine .skill {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 24px; }
+    section.vine .skill p {
+      transition: all 0.2s ease-in-out;
+      color: #e2e4e9; }
+    section.vine .skill p:hover {
+      transform: scale(1.2); }
 @media(max-width: 640px) {
   section.vine .col-1 {
     text-align: center; }
+  section.vine .skill {
+    display: block; }
   section.vine .description {
     margin-top: 50px; } }
 .home-sections .design {
@@ -796,9 +809,9 @@ section.design {
     padding: 50px 0;
     transition: background-color 150ms ease-in-out; }
     section.design .dribbble.behance, section.design .behance.behance {
-      background-color: #1769ff; }
+      background-color: #ea4c89; }
       section.design .dribbble.behance .home-cta, section.design .behance.behance .home-cta {
-        color: #1769ff; }
+        color: #ea4c89; }
   section.design .home-cta {
     font-size: 24px;
     color: #ea4c89; }
@@ -935,7 +948,7 @@ section.podcast {
 @media (max-width: 640px) {
   section.podcast .col-2 {
     max-width: 300px; } }
-.home-footer a {
+.home-footer .email-contact {
   color: #fff;
   background: #e24040;
   display: block;
@@ -946,8 +959,15 @@ section.podcast {
   font-weight: 300;
   transition: background 150ms ease-in-out;
   text-decoration: none; }
-  .home-footer a:hover {
+  .home-footer .email-contact:hover {
     background: #d82121; }
+.home-footer .social-media {
+  margin: 10px 0; }
+  .home-footer .social-media img {
+    margin: 10px; }
+@media (max-width: 640px) {
+  .home-footer .social-media {
+    display: flex; } }
 @media(max-width: 550px) {
   .home-footer a {
     font-size: 30px; } }

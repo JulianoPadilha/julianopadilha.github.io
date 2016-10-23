@@ -4,6 +4,7 @@ title: "Como usar o GitHub como um ser humano adequado"
 description: "Como usar o GitHub como um ser humano adequado"
 date: 2016-08-10 19:50:00
 categories: git github development
+thumbnail: github.png
 published: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "Criação: Interface do Nubank"
 date:   2016-07-22 23:00:00
 categories: interface estudos html css
-thumbnail: 
+thumbnail: nubank.jpg
 published: true
 ---
 

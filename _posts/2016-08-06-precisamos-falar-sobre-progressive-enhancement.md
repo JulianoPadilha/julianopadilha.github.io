@@ -4,6 +4,7 @@ title: "Precisamos falar sobre Progressive Enhancement"
 description: "Precisamos falar sobre Progressive Enhancement"
 date: 2016-08-07 14:30:00
 categories: web development
+thumbnail: progressive.jpg
 published: true
 ---
 

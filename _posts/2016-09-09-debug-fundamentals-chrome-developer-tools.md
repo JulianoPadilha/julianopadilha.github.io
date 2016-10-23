@@ -4,6 +4,7 @@ title: "Debug tips: Chrome Developer Tools"
 description: "Debug Fundamentals: Chrome Developer Tools"
 date: 2016-09-09 21:09:00
 categories: debug development chrome
+thumbnail: devtools.png
 published: true
 ---
 

@@ -1,7 +1,7 @@
 section.vine
 	background:
-		color: #00bf8f
-		image: url(../images/vine-bg.jpg)
+		color: #3f3f42
+		image: url(../images/skills.png)
 		size: cover
 	color: #fff
 
@@ -9,15 +9,31 @@ section.vine
 		box-shadow: 0px 3px 20px rgba(0,0,0,0.3)
 
 	.home-cta
-		color: #00bf8f
+		color: #3f3f42
 
 	.description
 		display: flex
 		align-items: center
 
+	.skill
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-around
+		font-size: 24px
+
+		p
+			transition: all 0.2s ease-in-out
+			color: #e2e4e9
+
+		p:hover
+			transform: scale(1.2)
+
 	@media(max-width: 640px)
 		.col-1
 			text-align: center
+
+		.skill
+			display: block
 
 		.description
 			margin-top: 50px
