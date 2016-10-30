@@ -122,7 +122,7 @@ cover: false
 					<div class="col-50">
 						<div class="article-wrap">
 							{% for post in site.posts limit: 12 %}
-							<a href="{{post.url}}" class="article-thumb" style="background-image: url(../assets/images/posts/thumbnails/{{post.thumbnail}})">
+							<a href="{{post.url}}" class="article-thumb" style="background-image: url(/blog/assets/images/posts/thumbnails/{{post.thumbnail}})">
 								<div class="article-meta">
 									<div class="name">{{post.title}}</div>
 									<div class="date">{{post.date | date: "%d, %b, %Y"}}</div>
