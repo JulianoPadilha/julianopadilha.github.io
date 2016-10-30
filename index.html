@@ -1,97 +1,219 @@
 ---
-layout: default
-title: Home
+layout: 
+title: Web Developer, Entrepreneur, Freelancer and Creative
 cover: false
-about: 'about.html'
 ---
 
-<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
-    <nav class="main-nav overlay clearfix">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.name }}</h1>
-            <h2 class="page-description">
-                {% if site.description %} {{ site.description }} {% endif %}
-                 Empreendedor; Web Developer; Fundador da Tá Valendo (<a href="facebook.com/tavalendobr" target="_blank">@tavalendobr</a>); Changemaker; Cerveja; Startups; Vendas; Marketing; Apple; Defensor do <a href="http://www.un.org/sustainabledevelopment/economic-growth/" target="_blank">SDG #8</a>
-            </h2>
-            {% if site.author %}
-                <figure class="author-image-home">
-                    <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.jpg)">
-                    <span class="hidden">{{site.author}}'s Picture</span></a>
-                </figure>
-            {% endif %}
-        </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
-</header>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Web Developer, Entrepreneur, Freelancer and Creative. Passionate about startups, leadership, code and some other things.">
+	<meta name="keywords" content="web developer, web development, front-end, css, html, javascript, freelancer, entrepreneur">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
 
+	<div class="home-wrap">
+		<div class="mobile-nav">
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#interests">Interests</a></li>
+				<li><a href="#articles">Articles</a></li>
+				<li><a href="#skills">Skills</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+		<header>
+			<div class="header-position">
+				<h1 class="logo">Juliano Padilha</h1>
+				<nav class="site-nav">
+					<ul>
+						<li><a href="#about">About</a></li>
+						<li><a href="#interests">Interests</a></li>
+						<li><a href="#articles">Articles</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+				<div class="mobile-nav-toggle">
+					<span></span>
+				</div>
+			</div>
+		</header>
 
-<main id="content" class="content" role="main">
+		<div class="home-sections">
 
+			<section class="hero">
+				
+			</section>
 
-    <div class="extra-pagination inner">
-        {% include pagination.html %}
-    </div>
+			<section class="about" id="about">
+				<div class="flex flex--space-around">
+					<div class="col-1">
+						<div class="image-strip"></div>
+					</div>
 
-    {% for post in paginator.posts %}
+					<div class="col-1 order-first">
+						<h2 class="home-lead">Web Developer& Entrepreneur& Changemaker...</h2>
+						<p class="home-lead push-right">...born to create and share...</p>
+					</div>
+				</div>
+			</section>
 
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        </header>
-        <section class="post-excerpt">
-            {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
-        </section>
-        <footer class="post-meta">
-            {% if site.author %}
-                <img class="author-thumb" src="/assets/images/profile.jpg" alt="Author's profile picture" nopin="nopin" />
-                {{ site.author }}
-            {% endif %}
-            {% if post.categories.size > 0 %} 
-                {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
-            {% endif %}
-            <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
-                {{ post.date | date_to_string }}
-            </time> 
-        </footer>
-    </article>
+			<section class="interests" id="interests">
+				<div class="flex flex--center">
+					<div class="col-1">
+						<ul class="items">
+							<li class="item" style="background-image: url(assets/images/startup.png);">
+								<div class="bubble">
+									<p><span style="font-weight: bold;">ENTREPRENEURSHIP</span> has the power to change reality and bring innovation to the most diverse areas, causing economies to grow and more opportunities arise. I am an entrepreneur. And you?</p>
+								</div>
+							</li>
 
-    <!-- Capser below -->
-<!--     <article class="{{post_class}}">
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
-        {{author}}
-        {{tags prefix=" on "}}
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-    </footer>
-    </article> -->
-    <!--  -->
+							<li class="item" style="background-image: url(assets/images/leadership.png);">
+								<div class="bubble">
+									<p><span style="font-weight: bold;">LEADERSHIP</span> is one of the great skills that someone who wants to change the world needs to have. I work hard to exercise my leadership every day in everything I'm involved.</p>
+								</div>
+							</li>
 
-    {% endfor %}
+							<li class="item" style="background-image: url(assets/images/write.png);">
+								<div class="bubble">
+									<p><span style="font-weight: bold;">WRITE</span> is one of the ways I have found to put order in the ideas bubbling in my head. Writing also helps me in the study process. I usually write about everything I'm studying and this has helped me a lot.</p>
+								</div>
+							</li>
 
-    {% include pagination.html %}
+							<li class="item" style="background-image: url(assets/images/read.png);">
+								<div class="bubble">
+									<p><span style="font-weight: bold;">READ</span> gives me the power to go further and see the world from a different perspective from mine. I read everything and do not spend a single day without reading something (article, book, ebook, etc ..). In my GitHub has a repository only with books and ebooks I have ever read.</p>
+								</div>
+							</li>
 
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+							<li class="item" style="background-image: url(assets/images/puzzle.png);">
+								<div class="bubble">
+									<p><span style="font-weight: bold;">STUDY</span> shows me that I always have something new to learn and I should never stay in my comfort zone. I love to study and know that every day I know a little bit more than the previous day.</p>
+								</div>
+							</li>
 
-  ga('create', 'UA-78425258-1', 'auto');
-  ga('send', 'pageview');
+							<li class="item" style="background-image: url(assets/images/code.png);">
+								<div class="bubble">
+									<p>Knowing how to <span style="font-weight: bold;">CODE</span> is like having super powers. And I believe that I have powers to create awesome things and share to world.</p>
+								</div>
+							</li>
+							
+							<li class="back-btn item"></li>
 
-</script>
+						</ul>
+					</div>
 
-</main>
+					<div class="col-1">
+						<p class="home-lead outdented">...Passionate about some things...</p>
+						<a href="https://twitter.com/padilhano" class="home-cta">See more things</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="articles" id="articles">
+				<div class="flex flex--center">
+					<div class="col-50">
+						<div class="article-wrap">
+							{% for post in site.posts limit: 12 %}
+							<a href="{{post.url}}" class="article-thumb" style="background-image: url(../assets/images/posts/thumbnails/{{post.thumbnail}})">
+								<div class="article-meta">
+									<div class="name">{{post.title}}</div>
+									<div class="date">{{post.date | date: "%d, %b, %Y"}}</div>
+								</div>
+							</a>
+							{% endfor %}
+						</div>
+					</div>
+
+					<div class="col-50 flex flex--center order-first">
+						<div class="col-1">
+							<div class="desc-wrap">
+								<p class="home-lead outdented">...Who likes to write and design things...</p>
+								<a href="" class="home-cta">See All Articles</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="skills" id="skills">
+				<div class="flex flex--space-around">
+					<div class="col-1 skill">
+						<p>HTML/CSS</p>
+						<p>JavaScript</p>
+						<p>Git</p>
+						<p>AngularJS</p>
+						<p>Bootstrap</p>
+						<p>Requirements Analysis</p>
+						<p>PHP</p>
+						<p>Email Design</p>
+						<p>jQuery</p>
+						<p>Sass</p>
+						<p>Design Interfaces</p>
+					</div>
+
+					<div class="col-1 description">
+						<div class="desc-wrap">
+							<p class="home-lead outdented">...And have some cool skills...</p>
+							<a href="https://br.linkedin.com/in/julianopadilha" class="home-cta">Checkout more Skills</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="projects" id="projects">
+				<div class="flex flex--center">
+					<div class="col-50 flex flex--center behance" data-orig-color="#ea4c89">
+						<div class="col-1">
+							<p class="home-lead"> ...and Projects...</p>
+							<a href="" class="design-img-link" data-color="#5aadb5">
+								<img src="assets/images/design-img/b-1.png" alt="">
+							</a>
+							<a href="" class="design-img-link" data-color="#d32022">
+								<img src="assets/images/design-img/b-2.png" alt="">
+							</a>
+							<a href="" class="design-img-link" data-color="#4c4c4c">
+								<img src="assets/images/design-img/b-3.png" alt="">
+							</a>
+							<a href="" class="design-img-link" data-color="#f59e82">
+								<img src="assets/images/design-img/b-4.png" alt="">
+							</a>
+							<a href="" class="design-img-link" data-color="#d57628">
+								<img src="assets/images/design-img/b-5.png" alt="">
+							</a>
+							<a href="" class="design-img-link" data-color="#f6c599">
+								<img src="assets/images/design-img/b-6.png" alt="">
+							</a>
+							<div class="clearfix"></div>
+							<a href="https://www.behance.net/julianopadilha" class="home-cta">See more on Behance</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<footer class="home-footer" id="contact">
+				<a class="email-contact">sistemas.padilha@gmail.com</a>
+				<div class="social-media flex flex--center">
+					<a href="https://github.com/JulianoPadilha?tab=repositories"><img src="assets/images/github.svg" alt="Github"></a>
+					<a href="https://www.facebook.com/JulianoPadilha"><img src="assets/images/facebook.svg" alt="Facebook"></a>
+					<a href="https://twitter.com/padilhano?lang=pt-br"><img src="assets/images/twitter.svg" alt="Twitter"></a>
+					<a href="https://www.behance.net/julianopadilha"><img src="assets/images/behance.svg" alt="Behance"></a>
+					<a href="codepen.io/julianopadilha/"><img src="assets/images/codepen.svg" alt=""></a>
+					<a href="https://br.linkedin.com/in/julianopadilha"><img src="assets/images/linkedin.svg" alt="LinkedIn"></a>
+				</div>
+			</footer>
+
+		</div>
+	</div>
+	
+	<script src="assets/js/libs/jquery-3.1.1.min.js"></script>
+	<script src="assets/js/functions.js"></script>
+</body>
+</html>

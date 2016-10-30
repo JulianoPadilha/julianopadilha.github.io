@@ -1,14 +1,16 @@
----
-# Let's add a comment to make this file sass-y.
-# Change this file for any custom CSS.
----
+@import "tools/normalize";
+@import "tools/fonts";
 
-/* We need to add display:inline in order to align the '>>' of the 'read more' link */
-.post-excerpt p {
-	display:inline;
-}
+@import "layouts/home";
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-	"syntax"
-;
+@import "sections/header";
+@import "sections/home-hero";
+@import "sections/home-about";
+@import "sections/home-interests";
+@import "sections/home-articles";
+@import "sections/home-skills";
+@import "sections/home-projects";
+@import "sections/home-footer";
+
+@import "modules/buttons";
+
