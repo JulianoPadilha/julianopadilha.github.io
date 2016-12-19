@@ -45,18 +45,27 @@
 			</div>
 			<div class="col-lg-5 form_contato">
 				<h2>Fale Conosco</h2>
-				<form action="">
+				<h5>ATENDIMENTO COM HORA MARCADA</h5>
+				<div class="address">
+					<p>Rua Cardoso de Almeida, 1991</p>
+					<p>Pacaembu - São Paulo - SP</p>
+					<p>Tel.: 011 3675-1211 / Cel.: 11 99326-0234</p>
+					<p>E-mail: dravandafonteles@gmail.com</p>
+				</div>
+				<form action="https://formspree.io/sistemas.padilha@gmail.com" method="POST">
 					<label for="nome">Nome</label>
-					<input type="text" name="nome" id="nome" class="form-control">
+					<input type="text" name="Nome" id="nome" class="form-control">
 
 					<label for="email">E-mail</label>
-					<input type="text" name="email" id="email" class="form-control">
+					<input type="text" name="_replyto" id="email" class="form-control">
 
 					<label for="assunto">Assunto</label>
-					<input type="text" name="assunto" id="assunto" class="form-control">
+					<input type="text" name="Assunto" id="assunto" class="form-control">
+
+					<input type="hidden" name="_next" value="/views/obrigado.html" />
 
 					<label for="mensagem">Mensagem</label>
-					<textarea name="mensagem" id="mensagem" class="form-control"></textarea>
+					<textarea name="Mensagem" id="mensagem" class="form-control"></textarea>
 					<input type="submit" name="enviar" value="Enviar" class="btn-enviar">
 				</form>
 			</div>
