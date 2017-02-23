@@ -22,7 +22,7 @@ $.get("https://api.github.com/search/repositories?q=tetris")
   });
 ```
 
-![](/../assets/images/consoletable1.png)
+![](/blog/assets/images/consoletable1.png)
 
 É possível escolher quais campos serão mostrados. Passe um array como segundo argumento informando quais chaves dos objetos serão mostradas, como no exemplo a seguir.
 
@@ -33,7 +33,7 @@ $.get("https://api.github.com/search/repositories?q=tetris")
   });
 ```
 
-![](/../assets/images/consoletable2.png)
+![](/blog/assets/images/consoletable2.png)
 
 ## Listando todos os *event listeners*
     getEventListeners
@@ -45,7 +45,7 @@ Esta função retorna todos os event listeners do objeto passado como parâmet
 getEventListeners(document);
 ```
 
-![](/../assets/images/event-listener-console.png)
+![](/blog/assets/images/event-listener-console.png)
 
 ## Listando todas as regras CSS de um elemento
     getMatchedCssRules
@@ -57,14 +57,14 @@ Retorna uma lista de todas as regras CSS que estão sendo aplicadas no objeto p
 getMatchedCSSRules(document.querySelector("body"));
 ```
 
-![](/../assets/images/console-regras-css-elemento.png)
+![](/blog/assets/images/console-regras-css-elemento.png)
 
 ## Monitorar chamadas a uma função
     monitor
 
 Monitora todas as chamadas à função passada como parâmetro. Toda vez que a função `monitor(fn)` for chamada, esta chamada é logada no Console mostrando o nome da função, parâmetros e seus valores.
 
-![](/../assets/images/monitor.png)
+![](/blog/assets/images/monitor.png)
 
 A função unmonitor desliga o monitoramento na função passada como parâmetro.
 
@@ -94,4 +94,4 @@ A função unmonitorEvents desliga o monitoramento na função passada como 
 
 Adiciona um breakpoint na primeira linha da função passada como parâmetro. Com esse método, fica mais fácil debugar uma função sobre a qual não sabemos em que arquivo ela está implementada.
 
-![](/../assets/images/thatsallfolks.jpg)
+![](/blog/assets/images/thatsallfolks.jpg)

@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description></description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 23 Feb 2017 20:44:36 -0300</pubDate>
+    <lastBuildDate>Thu, 23 Feb 2017 20:44:36 -0300</lastBuildDate>
+    <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Debug tips: Chrome Developer Tools</title>
+        <description>&lt;p&gt;Aprender a debugar seu código (e dos outros) é uma tarefa que todo desenvolvedor deve dominar.  Existem diversas ferramentas e técnicas para isso, porém, às vezes, o básico é tudo que precisamos para o nosso dia a dia. Sendo assim, trago aqui algumas dicas simples para debugar suas aplicações utilizando o Chrome Developer Tools.&lt;/p&gt;
+
+&lt;h2 id=&quot;logando-dados-tabulares&quot;&gt;Logando dados tabulares&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;console.table
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Com o console.table, podemos imprimir no Console dados como uma tabela. Ótimo para logar uma resposta de uma API. Poderíamos imprimir de uma forma mais fácil de visualizar a resposta da API da seguinte forma:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://api.github.com/search/repositories?q=tetris&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/consoletable1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;É possível escolher quais campos serão mostrados. Passe um array como segundo argumento informando quais chaves dos objetos serão mostradas, como no exemplo a seguir.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://api.github.com/search/repositories?q=tetris&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;full_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/consoletable2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;listando-todos-os-event-listeners&quot;&gt;Listando todos os &lt;em&gt;event listeners&lt;/em&gt;&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getEventListeners
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Esta função retorna todos os event listeners do objeto passado como parâmetro. É uma mão na roda na hora de debugar código.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Retorna uma lista com todos os event listeners do elemento document&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;getEventListeners&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/event-listener-console.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;listando-todas-as-regras-css-de-um-elemento&quot;&gt;Listando todas as regras CSS de um elemento&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getMatchedCssRules
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Retorna uma lista de todas as regras CSS que estão sendo aplicadas no objeto passado como parâmetro.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Retorna uma lista com todas as regras CSS aplicadas ao elemento &amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;getMatchedCSSRules&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;body&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/console-regras-css-elemento.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;monitorar-chamadas-a-uma-função&quot;&gt;Monitorar chamadas a uma função&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;monitor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Monitora todas as chamadas à função passada como parâmetro. Toda vez que a função &lt;code class=&quot;highlighter-rouge&quot;&gt;monitor(fn)&lt;/code&gt; for chamada, esta chamada é logada no Console mostrando o nome da função, parâmetros e seus valores.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/monitor.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A função unmonitor desliga o monitoramento na função passada como parâmetro.&lt;/p&gt;
+
+&lt;h2 id=&quot;monitorando-eventos&quot;&gt;Monitorando eventos&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;monitorEvents
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Quando algum dos eventos especificados acontece no objeto passado como parâmetro, o objeto Event é logado. Caso não seja especificado nenhum parâmetro, todos os eventos serão escutados.&lt;/p&gt;
+
+&lt;p&gt;Para filtrar quais eventos serão monitorados, passe como segundo parâmetro um array com uma lista dos mesmos.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Monitorando apenas os eventos click, resize e scroll&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;monitorEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;resize&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;scroll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Também é possível especificar tipos de eventos, que funcionam como grupos predefinidos de eventos. Os tipos disponíveis são:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;mouse&lt;/strong&gt;: mousedown, mouseup, click, dblclick, mousemove, mouseover, mouseout, mousewheel;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;key&lt;/strong&gt;: keydown, keyup, keypress, textInput;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;touch&lt;/strong&gt;: touchstart, touchmove, touchend, touchcancel;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;control&lt;/strong&gt;: resize, scroll, zoom, focus, blur, select, change, submit, reset.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A função unmonitorEvents desliga o monitoramento na função passada como parâmetro.&lt;/p&gt;
+
+&lt;h2 id=&quot;breakpoint-em-uma-função&quot;&gt;&lt;em&gt;Breakpoint&lt;/em&gt; em uma função&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;debug
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Adiciona um breakpoint na primeira linha da função passada como parâmetro. Com esse método, fica mais fácil debugar uma função sobre a qual não sabemos em que arquivo ela está implementada.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/thatsallfolks.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Sep 2016 18:09:00 -0300</pubDate>
+        <link>http://localhost:4000/blog/debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>debug</category>
+        
+        <category>development</category>
+        
+        <category>chrome</category>
+        
+      </item>
+    
+      <item>
+        <title>Back to basics: HTML5 Fundamentals</title>
+        <description>&lt;p&gt;Ter uma boa base é essencial para que possamos continuar progredindo. Isso não apenas para nós desenvolvedores, mas para as mais diversas áreas de estudo e profissões. Com o tempo alguns fundamentos importantes acabam se perdendo e deixamos de fazer o simples em detrimento da falta de conhecimento &lt;del&gt;ou de lembrança mesmo&lt;/del&gt;.&lt;/p&gt;
+
+&lt;p&gt;Com todas as ferramentas, frameworks e libraries disponíveis atualmente, acabamos na correria do dia a dia automatizando algumas tarefas triviais. E não julgo isso como algo ruim, acho super válido nos apoiarmos em ferramentas que possuem o poder de otimizar nosso trabalho. Meu receio entra quando passamos a depender exclusivamente destas ferramentas para desempenhar nosso papel.&lt;/p&gt;
+
+&lt;p&gt;Refletindo sobre isso, decidi retomar o estudo de alguns fundamentos básicos do desenvolvimento web para rever alguns conceitos e porque não, aprender novos. 🤓&lt;/p&gt;
+
+&lt;p&gt;Para começar, optei por ir direto ao ponto de reviravolta da forma como desenvolvemos aplicações para a web: &lt;strong&gt;o HTML5&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/HTML5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Não vou me aprofundar na história do HTML nem nos detalhes por traz do HTML5. Esses conteúdos podem ser facilmente encontrados em sites como o da &lt;a href=&quot;https://www.w3.org/TR/html5/&quot;&gt;W3C&lt;/a&gt; ou em infinitamente outros, como o &lt;a href=&quot;https://diveintohtml5.com.br/&quot;&gt;Dive into HTML5&lt;/a&gt; (português). Aqui vou relatar um pouco dos elementos que fazem parte do HTML5 e &lt;strong&gt;futuramente&lt;/strong&gt;, em um outro texto, falar sobre as API disponíveis. A propósito, recentemente escrevi sobre uma dessas APIs, a Web Storage, e aproveitei para criar um simples &lt;a href=&quot;http://julianopadilha.com/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html&quot;&gt;To-Do List&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Depois de toda essa introdução e disclaimer, vamos ao que interessa! 🕵🏻&lt;/p&gt;
+
+&lt;h2 id=&quot;html5&quot;&gt;HTML5&lt;/h2&gt;
+
+&lt;p&gt;Um dos principais objetivos do HTML5 é facilitar a manipulação de elementos possibilitando o desenvolvedor a modificar as características dos objetos de forma não intrusiva e de maneira que seja transparente para o usuário final.&lt;/p&gt;
+
+&lt;p&gt;Ao contrário das versões anteriores, o HTML5 fornece ferramentas para o CSS e o Javascript fazerem seu trabalho da melhor maneira possível. O HTML5 permite por meio de suas APIs a manipulação das características destes elementos, de forma que o website ou a aplicação continue leve e funcional.&lt;/p&gt;
+
+&lt;p&gt;O HTML5 também cria novas tags e modifica a função de outras. As versões antigas do HTML não continham um padrão universal para a criação de seções comuns e específicas como rodapé, cabeçalho, sidebar, menus e etc. Não havia um padrão de nomenclatura de IDs, Classes ou tags.&lt;/p&gt;
+
+&lt;h2 id=&quot;mudanças-e-novos-elementos&quot;&gt;Mudanças e novos elementos&lt;/h2&gt;
+
+&lt;p&gt;Uma das primeiras mudaças é como declaramos o &lt;strong&gt;DOCTYPE&lt;/strong&gt; dos nossos documentos HTML. Com o HTML5 a sintaxe passa a ser a seguinte:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Declarando o DOCTYPE desta forma, faz com que os navegadores identifiquem que estamos utilizando a versão mais recente do HTML e que ele deve dar todo o suporte necessário para nosso documento.&lt;/p&gt;
+
+&lt;p&gt;A forma como declaramos a metatag charset também ficou mais simples. Ao invés de termos que declarar todo o trecho abaixo, que era um padrão definido no HTML 4.01:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/html; charset=UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Agora usamos apenas:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;novos-elementos&quot;&gt;Novos elementos&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;article&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O propósito do elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;article&lt;/code&gt; é ser um container para representar uma seção de conteúdo dentro do site, que forma uma parte independente do documento. Dentro de um &lt;code class=&quot;highlighter-rouge&quot;&gt;article&lt;/code&gt; pode conter, por exemplo, um post de blog, um artigo, texto e etc.&lt;/p&gt;
+
+&lt;p&gt;Comumente confundesse os elementos &lt;code class=&quot;highlighter-rouge&quot;&gt;article&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;section&lt;/code&gt; e &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt;. O &lt;code class=&quot;highlighter-rouge&quot;&gt;article&lt;/code&gt; é um elemento mais específico que o &lt;code class=&quot;highlighter-rouge&quot;&gt;section&lt;/code&gt; e o &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt;. O &lt;code class=&quot;highlighter-rouge&quot;&gt;article&lt;/code&gt; indica que um determinado bloco leva um conteúdo importante. O &lt;code class=&quot;highlighter-rouge&quot;&gt;section&lt;/code&gt; é apenas um bloco de separação de assuntos diferentes. O &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt;, o mais genérico de todos, apenas é aplicado para separar elementos em blocos.&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;article&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;Google&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.google.com.br&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Google Inc&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;. é uma 		empresa multinacional de serviços online e software dos 		Estados Unidos. O Google hospeda e desenvolve uma série de 		serviços e produtos baseados na internet e gera lucro 		principalmente através da publicidade pelo AdWords&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;aside&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A tag &lt;code class=&quot;highlighter-rouge&quot;&gt;aside&lt;/code&gt; é usada para agregar mais informação ao conteúdo principal. Algumas utilidades do &lt;code class=&quot;highlighter-rouge&quot;&gt;aside&lt;/code&gt;: citações ou sidebars, agrupamento de publicidade, grupos e blocos de navegação e para qualquer outro conteúdo que é separado do conteúdo principal.&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;aside&lt;/code&gt; pode ir também dentro de um elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;article&lt;/code&gt; como uma caixa de notação ou algo do genêro.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;audio&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O HTML5 introduziu a possibilidade de tocar mídias nativamente no browser. A tag &lt;code class=&quot;highlighter-rouge&quot;&gt;audio&lt;/code&gt; é utilizada para especificar o uso de um áudio em um documento HTML.&lt;/p&gt;
+
+&lt;p&gt;Qualquer conteúdo entre as tags de abertura e de fechamento do elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;audio&lt;/code&gt; é um &lt;em&gt;fallback&lt;/em&gt;. Este conteúdo é exibido apenas em browsers que não suportam a tag &lt;code class=&quot;highlighter-rouge&quot;&gt;audio&lt;/code&gt;.&lt;/p&gt;
+
+&lt;audio src=&quot;/../assets/audios/good_enough.mp3&quot; controls=&quot;&quot;&gt;
+	&lt;p&gt;Se você está vendo este texto é porque seu navegador não suporta o elemento áudio. :/&lt;/p&gt;
+&lt;/audio&gt;
+
+&lt;h4 id=&quot;exemplo-1&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;audio&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/../assets/audios/good_enough.mp3&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;constrols&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Se você está vendo este texto é porque seu navegador não 		suporta o elemento áudio.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt; //Fallback para navegadores 		que não suportam o elemento audio.
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/audio&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;bdi&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;bdi&lt;/code&gt; é meio estranho. Nunca me deparei com uma situação onde precisei utilizá-lo. Mas segunda a especificação, este elemento isola uma parte do texto que pode ser formatado numa direção diferente a partir do texto fora dela.&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-2&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;User &lt;span class=&quot;nt&quot;&gt;&amp;lt;bdi&amp;gt;&lt;/span&gt;hrefs&lt;span class=&quot;nt&quot;&gt;&amp;lt;/bdi&amp;gt;&lt;/span&gt;: 60 points&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;User &lt;span class=&quot;nt&quot;&gt;&amp;lt;bdi&amp;gt;&lt;/span&gt;jdoe&lt;span class=&quot;nt&quot;&gt;&amp;lt;/bdi&amp;gt;&lt;/span&gt;: 80 points&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;User &lt;span class=&quot;nt&quot;&gt;&amp;lt;bdi&amp;gt;&lt;/span&gt;إيان&lt;span class=&quot;nt&quot;&gt;&amp;lt;/bdi&amp;gt;&lt;/span&gt;: 90 points&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Este elemento é útil ao incorporar o texto com uma direção desconhecida, de um banco de dados por exemplo, no interior do texto com uma direção fixa.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;canvas&lt;/code&gt; é uma superfície desenhável nativa disponível nos browsers. Ela permite que desenhemos utilizando JavaScript por meio da sua API.&lt;/p&gt;
+
+&lt;p&gt;O única elemento HTML existente para isso é o elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;canva&lt;/code&gt;, o resto é todo feito via JS.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myCanvas&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;O exemplo acima vai exibir um retângulo vazio. E para desenharmos nele basta utilizar JavaScript, como já mencionado.&lt;/p&gt;
+
+&lt;canvas id=&quot;myCanvas&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;Seu browser não suporta o elemento canvas.&amp;lt;/p&amp;gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+function displayCanvas()
+	{
+      var canvas = document.getElementById(&quot;myCanvas&quot;);
+      if (canvas.getContext) {
+        var ctx = canvas.getContext(&quot;2d&quot;);
+
+        ctx.fillStyle = &quot;rgb(200,0,0)&quot;;
+        ctx.fillRect (0, 0, 150, 75);
+
+        ctx.fillStyle = &quot;rgba(0, 0, 200, 0.5)&quot;;
+        ctx.fillRect (40, 30, 125, 75);
+
+        ctx.fillStyle = &quot;rgb(0,0,150)&quot;;
+        ctx.strokeRect (20, 20, 50, 100); 
+      }
+    }
+
+    window.onload = displayCanvas;
+&lt;/script&gt;
+
+&lt;h4 id=&quot;exemplo-3&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myCanvas&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Seu browser não suporta o elemento canvas.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;displayCanvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myCanvas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fillStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rgb(200,0,0)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fillRect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;75&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fillStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rgba(0, 0, 200, 0.5)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fillRect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;125&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;75&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fillStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rgb(0,0,150)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;strokeRect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;displayCanvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Quando você utilizamos o &lt;code class=&quot;highlighter-rouge&quot;&gt;canvas&lt;/code&gt;, precisamos declarar qual tipo de contexto queredo usar. Podemos escolher entre os contextos 2D e 3D. Vale a pena estudar mais sobre este elemento e sua API.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;datalist&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;datalist&lt;/code&gt; é uma nova adição a coleção de elementos de formulário. Para entender este elemento, considere um formulário onde você dá para o usuário a oportunidade de entrar com sua cor favorita. Ao mesmo tempo que o campo de texto é aberto para o usuário digitar algum valor, nós também podemos prover uma lista de sugestões, e isso pode ser feito com uma &lt;code class=&quot;highlighter-rouge&quot;&gt;datalist&lt;/code&gt; associada. O exemplo abaixo vai deixar a ideia mais clara. Sua estrutura lembra muito a tag &lt;code class=&quot;highlighter-rouge&quot;&gt;select&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;text&quot; list=&quot;colors&quot; placeholder=&quot;Clique aqui..&quot; /&gt;&lt;/p&gt;
+&lt;datalist id=&quot;colors&quot;&gt;
+    &lt;option value=&quot;Blue&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;White&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;Red&quot;&gt;&lt;/option&gt;
+&lt;/datalist&gt;
+
+&lt;h4 id=&quot;exemplo-4&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;list=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;colors&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;datalist&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;colors&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;option&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/option&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;option&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/option&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;option&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Red&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/option&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/datalist&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;details&amp;gt;&lt;/code&gt; associado com o elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;summary&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Sabe quando precisamos criar uma área para o site onde mostrará um sumário de informações e quando alguém clicar no conteúdo, abrir mais informações sobre aquele item logo abaixo?&lt;/p&gt;
+
+&lt;p&gt;Pois é, quem já fez algo do tipo, provavelmente utilizou JavaScript, jQuery, ou alguma outra solução para atingir o objetivo final. Porém, com o HTML5 é possível termos o mesmo comportamento utilizando apenas elementos do HTML. 😎&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;details&lt;/code&gt; pode ser utilizado juntamente com o elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;summary&lt;/code&gt; para prover um cabeçalho clicável que expande/recolhe os detalhes desejados.&lt;/p&gt;
+
+&lt;details&gt;
+	&lt;summary&gt;Clique para abrir&lt;/summary&gt;
+	&lt;p&gt;Se você estiver vendo essa mensagem é porque seu browser suporta essa funcionalidade. Legal, né?!&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-5&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;details&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;summary&amp;gt;&lt;/span&gt;Clique para abrir&lt;span class=&quot;nt&quot;&gt;&amp;lt;/summary&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Se você estiver vendo essa mensagem é porque seu browser 		suporta essa funcionalidade. Legal, né?!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/details&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;dialog&lt;/code&gt; indica uma parte de uma aplicação que o usuário pode interagir.&lt;/p&gt;
+
+&lt;p&gt;Esse elemento aceita um atributo booleano chamado &lt;code class=&quot;highlighter-rouge&quot;&gt;open&lt;/code&gt; que define o elemento para “ativo” e permite que o usuário interaja com ele. Sele este atributo for omitido, então vai ser necessário manipular ele por meio de JavaScript para permitir que o dialog abra and feche.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/dialog_html5.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-6&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;dialog&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myFirstDialog&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width:50%;background-color:#F4FFEF;border:1px dotted black;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;		&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;q&amp;gt;&lt;/span&gt;The world is full of magical things patiently waiting for our wits to grow sharper.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/q&amp;gt;&lt;/span&gt; - &lt;span class=&quot;nt&quot;&gt;&amp;lt;cite&amp;gt;&lt;/span&gt;Bertrand Russell&lt;span class=&quot;nt&quot;&gt;&amp;lt;/cite&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hide&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Close&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dialog&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &quot;Show&quot; button --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;show&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Show Dialog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- JavaScript habilita a funcionalidade &quot;Show/Close&quot; --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/JavaScript&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dialog&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'myFirstDialog'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'show'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;nx&quot;&gt;dialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;  
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'hide'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;nx&quot;&gt;dialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt; 
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;embed&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Esse é simples. O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;embed&lt;/code&gt; é utilizado para incorporar uma aplicação externa ou um conteúdo interativo dentro de um documento HTML.&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-7&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;embed&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;helloworld.swf&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;figure&amp;gt;&lt;/code&gt; associado com o &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;figure&lt;/code&gt; é para ser usado em conjunto com o elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;figcaption&lt;/code&gt;. Sua finalidade é para marcar diagramas, ilustrações, fotos, e fragmentos de código (entre outros conteúdos). Segundo a W3C: O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;figcaption&lt;/code&gt; destina-se a marcar o cabeçalho ou a legenda para uma figura.&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-8&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/masp.jpg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Museu de Arte de São Paulo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Fachada do Museu de Arte de São Paulo - MASP.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;footer&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;footer&lt;/code&gt; é utilizado para definir o rodapé de um documento HTML ou de uma seção dentro de uma página.&lt;/p&gt;
+
+&lt;p&gt;Embora o &lt;code class=&quot;highlighter-rouge&quot;&gt;footer&lt;/code&gt; ser tipicamente localizado no rodapé de um documento HTML, isto não é obrigatório.&lt;/p&gt;
+
+&lt;p&gt;Elementos que comumente utilizam o elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;footer&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;article&amp;gt;, &amp;lt;aside&amp;gt;, &amp;lt;nav&amp;gt;, &amp;lt;section&amp;gt;, &amp;lt;blockquote&amp;gt;, &amp;lt;body&amp;gt;, &amp;lt;details&amp;gt;, &amp;lt;fieldset&amp;gt;, &amp;lt;figure&amp;gt;, &amp;lt;td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;header&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;header&lt;/code&gt; representa um grupo de suporte introdutório ou navegacional. Pode conter alguns elementos de cabeçalhos mas também outros elementos como logos, &lt;code class=&quot;highlighter-rouge&quot;&gt;sections&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;forms&lt;/code&gt;, etc.&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-9&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;home&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;about&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;About&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;articles&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Articles&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;projects&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Projects&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; especifica o conteúdo principal de um documento. O conteúdo dentro da tag &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; deve ser único dentro do documento HTML criado. Ele não deve conter nenhum conteúdo que é repetido ao longo do página, como sidebars, navigations, forms, entre outros.&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-10&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;main&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Web Browsers&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Google Chrome, Firefox, and Internet Explorer are the most used browsers today.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;article&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Google Chrome&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Google Chrome is a free, open-source web browser developed by Google,
+    released in 2008.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+  ...
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;mark&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;mark&lt;/code&gt; é usado para marcar ou gerar um highlight de um texto especificado.&lt;/p&gt;
+
+&lt;p&gt;Esta frase possui utiliza a tag mark &lt;mark&gt;bem aqui&lt;/mark&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-11&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Esta frase possui utiliza a tag mark &lt;span class=&quot;nt&quot;&gt;&amp;lt;mark&amp;gt;&lt;/span&gt;bem aqui&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mark&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meter&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;meter&lt;/code&gt; é usado para especificar uma barra de escala dentro de um range definido.&lt;/p&gt;
+
+&lt;meter min=&quot;0&quot; max=&quot;100&quot; value=&quot;70&quot;&gt;70 out of 100&lt;/meter&gt;
+
+&lt;h4 id=&quot;exemplo-12&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meter&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;min=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;max=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;70&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;70 out of 100&lt;span class=&quot;nt&quot;&gt;&amp;lt;/meter&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;nav&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;nav&lt;/code&gt; é um desses elementos que veio para trazer um significado específico para o documento HTML. Nav é o container para links de navegacão. Mais acima, onde explico a tag &lt;code class=&quot;highlighter-rouge&quot;&gt;header&lt;/code&gt; mostro um exemplo do uso do elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;nav&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;progress&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;progress&lt;/code&gt; é utilizado para representar o progresso de um tarefa. Utilizado juntamente com JavaScript, é possível apresentar para o usuário o progresso de alguma atividade&lt;/p&gt;
+
+&lt;progress value=&quot;70&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;progress&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;70&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;max=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/progress&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;section&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;section&lt;/code&gt; é utilizado para representar uma seção dentro de um elemento.&lt;/p&gt;
+
+&lt;p&gt;O &lt;code class=&quot;highlighter-rouge&quot;&gt;section&lt;/code&gt; define um bloco ou um grupo de um assunto específico. É importante entender que a &lt;code class=&quot;highlighter-rouge&quot;&gt;section&lt;/code&gt; agrupa diversos elementos que tenham relação entre si. Por exemplo, se há uma área no site que há links, conteúdo, imagens e etc de um assunto em comum, você agrupará esses elementos com uma &lt;code class=&quot;highlighter-rouge&quot;&gt;section&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-13&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;news&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;time&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Resumidamente: o elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt; é utilizada para declarar datas e tempos dentros de um documento HTML.&lt;/p&gt;
+
+&lt;h4 id=&quot;exemplo-14&quot;&gt;Exemplo:&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;time&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;datetime=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2016-08-24T13:25:23-8:00&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;pubdate&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;August 28th, 2016&lt;span class=&quot;nt&quot;&gt;&amp;lt;/time&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;ufa&quot;&gt;Ufa!&lt;/h3&gt;
+
+&lt;p&gt;Esses são alguns dos principais elementos do HTML5. Não me aprofundei nas propriedades de cada um, pois senão o texto ficaria enorme.&lt;/p&gt;
+
+&lt;p&gt;A imagem abaixo contém todas as tag pertencentes ao HTML e pode servir de referência.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/html5_list.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Escrevi esse conteúdo como uma forma de me forçar a pesquisar mais sobre o HTML5 e ao mesmo tempo prover algo legal para quem tem interesse ou está começando.&lt;/p&gt;
+
+&lt;p&gt;🙃&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Aug 2016 10:00:00 -0300</pubDate>
+        <link>http://localhost:4000/blog/html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>html5</category>
+        
+        <category>development</category>
+        
+      </item>
+    
+      <item>
+        <title>Como usar o GitHub como um ser humano adequado</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Tradução livre do post escrito por &lt;a href=&quot;https://stories.devacademy.la/@thattacoguy&quot;&gt;Daniel Gallegos&lt;/a&gt;: &lt;a href=&quot;https://stories.devacademy.la/how-to-use-github-like-a-proper-human-being-1a9c895c4e13#.rafva1m7t&quot;&gt;How to use GitHub like a proper human being&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/octocat.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;center style=&quot;font-size: 11px;&quot;&gt; [Founding Father Octocat v2 por James Kang](https://octodex.github.com/foundingfather_v2) &lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Saiba algumas regras de etiqueta, parça.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A organização do nosso repositório pode ser uma confusão às vezes. Veja como torná-lo menos bagunçado.&lt;/p&gt;
+
+&lt;h3 id=&quot;commits&quot;&gt;Commits&lt;/h3&gt;
+
+&lt;p&gt;Eu tenho visto (e feito) muitas mensagens ruins de commit na &lt;a href=&quot;https://medium.com/@devacademyla&quot;&gt;devAcademy&lt;/a&gt;. Nós realmente devíamos começar a cobrar 10 centavos para cada commit mal feito por alguém. Faríamos &lt;a href=&quot;https://www.youtube.com/watch?v=EJR1H5tf5wE&quot;&gt;milhões&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/austin_power.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;center style=&quot;font-size: 11px;&quot;&gt;100 milhões de dólares, para ser exato&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nós podemos resolver isso de uma vez por todas, lembrando-se de algumas orientações quando comitar qualquer coisa no GitHub. E eu quero dizer &lt;strong&gt;QUALQUER COISA&lt;/strong&gt;. Projetos pessoais, projetos de trabalho, até mesmo projetos que você acha que nunca verá a luz do dia.&lt;/p&gt;
+
+&lt;p&gt;Uma vez que você adquire o hábito de escrever mensagens de commit consistentes, você vai começar a fazer isso reflexivamente. Você não terá mais que perder tempo pensando no que escrever, desperdiçando esforços. Além de que seus colegas de trabalho podem passar a gostar mais de você também. &lt;em&gt;Podem.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/reflexive_commits.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;center style=&quot;font-size: 11px;&quot;&gt;reflexive_commits.gif&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Quando fazendo um commit, eu normalmente sigo &lt;a href=&quot;http://chris.beams.io/posts/git-commit/&quot;&gt;esta pequena lista de orientações criada pelo Chrys Beams&lt;/a&gt;, juntamente com com o &lt;a href=&quot;https://github.com/agis-/git-style-guide&quot;&gt;guia de estilo do git&lt;/a&gt;. Aqui está o que eu aprendi:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Mantenha seus commits atômicos.&lt;/strong&gt; O que isso quer dizer? &lt;a href=&quot;http://www.freshconsulting.com/atomic-commits/&quot;&gt;Fresh Consulting&lt;/a&gt; diz que você deve aplicar as mudanças assim que você as fizer. Seu commit deve girar em torno de uma alteração ou correção. Se você tem que adicionar um “e” em sua mensagem de commit, então você já está comitando demais.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Mantenha as suas mensagens de commit com menos de 50 caracteres.&lt;/strong&gt; Por que? Pequenas coisas são fáceis de ler, como esta frase. Curta e direta ao ponto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Escreva em maiúsculo a primeira letra da sua mensagem de commit.&lt;/strong&gt; Isto é visto geralmente como uma boa conduta pela maioria dos especialista em git. Frases começando com letras em maiúsculo também são mais profissionais e fáceis de ler. (Vê um padrão aqui?)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Não termine sua mensagem de commit com um ponto.&lt;/strong&gt; Deixe as pessoas em suspense. Deixe elas querendo mais. Além disso, você deve ter certeza de que seus 50 caracteres estão sendo bem gastos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Use uma mensagem de commit imperativa.&lt;/strong&gt; Faça com que seus commits soem como se você estivesse dando um comando para alguém. A programação é normalmente definida em “ordenar seu computador a fazer coisas”. Então, porque não manter a mesmo padrão para seus commits, certo?!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Use o mesmo idioma nas suas mensagens de commit.&lt;/strong&gt; A maioria das pessoas parece usar o inglês como seu idioma preferido, mas isso não significa que você também deve. O que você precisa fazer é se manter consistente. Não misture frases em um idioma com outro.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/fix_estilo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;center style=&quot;font-size: 11px;&quot;&gt;NÃO FAÇA ISSO. POR FAVOR.&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Refactor mediumExample() function”&lt;/em&gt;, &lt;em&gt;“Remove unnecessary lines in bot.js”&lt;/em&gt; e &lt;em&gt;“Add SASS gem to gemfile”&lt;/em&gt; são todos bons exemplos de commits atômicos fáceis de entender e que descrevem a ação que você está fazendo em 50 caracteres ou menos. Eles podem parecer frescuras desnecessárias para você, mas quando você ou outra pessoa precisar encontrar uma mudança específica feita no passado, eles vão agradecer-lhe imensamente.&lt;/p&gt;
+
+&lt;h3 id=&quot;readmes&quot;&gt;READMEs&lt;/h3&gt;
+
+&lt;p&gt;Eu tenho visto muitos projetos com READMEs confusos e “sem brilho” que tem me feito mal. O README supostamente foi feito para você “vender seu projeto”. Quando alguém lê-lo, devo conseguir se interessar por seu projeto em segundos. Apenas depois disso, que as pessoas vão considerar fazer uma análise mais profunda do projeto.&lt;/p&gt;
+
+&lt;p&gt;Eis aqui o que eu considero elementos necessários em um README:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Uma imagem de cabeçalho (opcional).&lt;/strong&gt; Dê para as pessoas algo para olhar. Elas precisam saber sobre o que é seu projeto, mesmo de relance. Exponha para elas um screenshot ou adicione um logotipo no topo da página.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Um título.&lt;/strong&gt; As pessoas precisam saber como seu projeto é chamado. Torne o nome algo óbvio e intuitivo para as pessoas lembrarem dele.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Badges (opcional).&lt;/strong&gt; &lt;a href=&quot;http://forthebadge.com/&quot;&gt;Badges são legais&lt;/a&gt;, não são?! Badges devem ser utilizados para coisas importantes, como um status de compilação, versão do código, compatibilidade do projeto, etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Uma pequena descrição.&lt;/strong&gt; Vinte palavras ou menos. Essa pequena frase deve resumir tudo sobre seu projeto. É o seu slogan, basicamente. Então saiba vender seu projeto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Uma pequena lista de características.&lt;/strong&gt; Quatro ou cinco coisas que digam “Hey, essas são algumas coisas legais sobre este projeto!” Mantenha as pessoas interessadas em seu projeto com algumas coisas radicais que seu produto faz.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Um curto sumário de instalação e/ou uso.&lt;/strong&gt; A sua aplicação não deve ter 10 parágrafos para descrever como instalá-lo e/ou usá-lo, e você não deve escrever um manual completo para mostrar rapidamente para algumas pessoas como seu projeto funciona.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Links externos para documentação adicional.&lt;/strong&gt; Você escreveu documentação para seu projeto, certo? Certo? CERTO?! Se sim, por favor, não inclua ele totalmente no seu README. O GitHub tem Wikis para seus projetos, que é um método muito melhor de apresentar conteúdo, o oposto de um enorme arquivo em Markdown. Crie uma lista de links importantes com marcadores para tornar a leitura mais agradável.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;branches&quot;&gt;Branches&lt;/h3&gt;
+
+&lt;p&gt;Esse ponto é simples. Mantenha o nome do seu branch de forma que descreva o que há nele. O GitHub automaticamente nomeia suas correções após um patch se você editá-los online, então não faz muita diferença. Mas quando você estiver offline e usando o git em sua máquina, dê um bom e descritivo nome para seu branch, e com menos de 30 caracteres.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/agis-/git-style-guide&quot;&gt;Este guia de estilo do git&lt;/a&gt; diz que você deve usar &lt;strong&gt;“nomes curtos e descritivos”&lt;/strong&gt;, e eu acho que é uma boa referência para nomeação. Use algo como “rails-5-upgrade”, ou use algo para referenciar um issue específica no GitHub, como “issue-57”. Deixe o nome do seu branch contar uma história com quanto menos caracteres possível e dê uma sinopse super rápida sobre o que você está fazendo ele.&lt;/p&gt;
+
+&lt;p&gt;Também, pelo amor de Torvalds, &lt;strong&gt;mantenha seu branch atualizado com o branch master&lt;/strong&gt;. Certifique-se de que quando você submeter um PR, o proprietário não tenha que passar por um milhão de &lt;em&gt;“hoops”&lt;/em&gt; apenas para fazer o merge do seu branch com o master. Deu conflito de merge? Conserte!&lt;/p&gt;
+
+&lt;h3 id=&quot;issues&quot;&gt;Issues&lt;/h3&gt;
+
+&lt;p&gt;Vamos falar sobre o report de bugs por um momento aqui. Você já tentou alguma vez corrigir algo mesmo sem saber primeiramente qual era o problema? Huh? O que você tem a dizer?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/issue_without_describing.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Você não pode esperar que eu conserte um problema sem saber qual era o problema em primeiro lugar.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Exatamente! Muitas pessoas enviam issues no GitHub sem descrever nada. Seja descritivo com suas issues. Isso vai ajudar a todos.&lt;/p&gt;
+
+&lt;p&gt;Como você espera que alguém possa te ajudar com seu problema se você não pode ao menos tirar um tempo para descrevê-lo? Eis algumas coisas que você deve incluir no report dos seus bugs para fazer a vida de todo mundo mais fácil:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;O que você estava tentando fazer.&lt;/strong&gt; Quais eram as condições quando o erro foi produzido? Você estava tentando executar um comando ou navegar para um página? Tantas questões, tão pouco tempo. Inclua alguns screenshots ou logs, se possível.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;O que exatamente aconteceu.&lt;/strong&gt; Você sabe, como as coisas deram errado.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;O que você acha que deu errado (opcional).&lt;/strong&gt; Isso deu errado de alguma forma, certo? Dê um palpite do que você acha que aconteceu e porque.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Como reproduzir seu problema.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Outros detalhes importantes.&lt;/strong&gt; Sistema Operacional, versão de tudo que você estava usando, alguns logs do sistema, caso você tenha, alguns screenshots. Nos ajude a te ajudar.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Agora que nós temos tudo isso em mente, vamos falar sobre a resposta a issues. Seja gentil. Diga “por favor” e “obrigado”. Só porque alguém submeteu uma issue ruim, não quer dizer que ela é uma pessoa ruim. Ser gentil com as pessoas é o primeiro passo para levá-los a cooperar com você. Tente resolver seus problemas, enquanto pede mais informações. Ofereça soluções e não mais problemas.&lt;/p&gt;
+
+&lt;p&gt;Mantenedores de projetos provavelmente devem usar &lt;a href=&quot;https://help.github.com/articles/creating-an-issue-template-for-your-repository/&quot;&gt;templates para as issues&lt;/a&gt; em seus projetos com as sugestões apresentadas acima. Eles estão lá por um motivo. Isso vai ajudar os usuários a fazerem melhores issues e fornecer para você melhores reports e sugestões. Ajude-os a ajudar você.&lt;/p&gt;
+
+&lt;h3 id=&quot;pull-requests&quot;&gt;Pull Requests&lt;/h3&gt;
+
+&lt;p&gt;Todo mundo gosta de uma mão amiga. Na maioria das vezes, porém, as pessoas gostam de saber como você está ajudando-as. Isso se aplica para Pull Requests também. Ao utilizar seu estilo de descrição de commit e uma breve lista de marcadores com as alterações feitas ao seu código, você vai chamar a atenção do proprietário do código e fazer com que ele queira fazer merge com seu branch mais rápido.&lt;/p&gt;
+
+&lt;p&gt;Quero dizer, por que eu vou adicionar seu código no meu incrível projeto se eu não tenho a minima ideia do que ele faz? Você não precisa escrever um artigo científico do porque essas mudanças são para melhor, mas pelo menos &lt;strong&gt;dê uma curta descrição do porque seu código vai beneficiar o projeto.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Além disso, aos mantenedores de projetos: &lt;strong&gt;Agradeça seus colaboradores!&lt;/strong&gt; É um gesto simples e que tem um resultado duradouro. A pessoa colocou tempo e esforço para ajudar seu projeto, e mesmo que tenha sido apenas uma linha de código, agradeça eles. Não importa se o código deles é horrível, agradeça eles pelo tempo que eles tiraram para lhe ajudar. &lt;a href=&quot;https://www.youtube.com/watch?v=gbrbUfYSt0E&quot;&gt;Estamos todos juntos nisso&lt;/a&gt;, certo?&lt;/p&gt;
+
+&lt;h3 id=&quot;agora&quot;&gt;Agora&lt;/h3&gt;
+
+&lt;p&gt;Eu aposto que você está indo para os &lt;a href=&quot;https://github.com/thattacoguy&quot;&gt;meus repositórios no GitHub&lt;/a&gt; e vai começar a gritar &lt;a href=&quot;https://twitter.com/that_taco_guy&quot;&gt;comigo no Twitter&lt;/a&gt; porque eu não sigo o meu próprio guia. Você está certo, eu não estou. Eu escrevi isso como um guia para seguir para escrever melhores commits baseado no que é descolado e está na moda agora. Vamos melhorar juntos!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 10 Aug 2016 16:50:00 -0300</pubDate>
+        <link>http://localhost:4000/blog/git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>git</category>
+        
+        <category>github</category>
+        
+        <category>development</category>
+        
+      </item>
+    
+      <item>
+        <title>Precisamos falar sobre Progressive Enhancement</title>
+        <description>&lt;p&gt;&lt;strong&gt;Progressive Enhancement&lt;/strong&gt; é uma forma de pensar o desenvolvimento de aplicações web com foco no front-end de uma forma que as melhorias sejam progressivas, como o nome sugere. Não ficou claro?! Não esquenta! Vamos decifrar o que esses conceitos significam e como aplicá-los nos seus projetos. 🤘&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Nota do autor:&lt;/strong&gt; Este texto é uma compilação envolvendo anotações e transcrições do segundo capítulo do e-book “Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira” que fala sobre Progressive Enhancement e que foi escrito pelo &lt;a href=&quot;https://twitter.com/srsaude&quot;&gt;Luiz Real&lt;/a&gt;, instrutor da Alura.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Quando trata-se do comportamento de aplicações desenvolvidas para a web, todo cuidado passa a ser pouco. Com navegadores mais modernos e compatíveis com as atuais tecnologias e especificações, tornou-se possível a abrangência de mais recursos, ampliando as possibilidades dos desenvolvedores. Seguindo está tendência, o ciclo natural seria que nossos sites também evoluíssem, tornando-se cada vez mais sofisticados.&lt;/p&gt;
+
+&lt;p&gt;Porém, dentro deste cenário, acabamos esquecendo um fator primordial para o sucesso: o comportamento do usuário e o navegador que eles utilizam para acessar nossos sites, que muitas vezes não é o navegador com os últimos recursos.&lt;/p&gt;
+
+&lt;p&gt;Normalmente, quando planejamentos o desenvolvimento de um site acabamos fazendo-o para um público indeterminado de pessoas. E dentre esse público, temos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pessoas que &lt;strong&gt;não gostam de JavaScript&lt;/strong&gt; sendo executado em seus computadores;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pessoas que &lt;strong&gt;não podem atualizar&lt;/strong&gt; seus navegadores;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pessoas acessando a internet a partir de &lt;strong&gt;dispositivos limitados&lt;/strong&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pessoas com &lt;strong&gt;dificuldades motoras, visuais e auditivas&lt;/strong&gt; que nem sempre conseguem utilizar o mouse para navegar ou dependem de leitores de tela;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;E ainda temos um outro usuário a considerar, que não tem JavaScript nem CSS habilitados: &lt;strong&gt;as ferramentas de busca&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;então-como-podemos-desenvolver-sites-levando-em-conta-estes-cenários&quot;&gt;Então como podemos desenvolver sites levando em conta estes cenários?&lt;/h3&gt;
+
+&lt;p&gt;Em um primeiro momento, uma forma de pensar seria desenvolver o site para o público geral, que são aqueles que tem acesso aos navegadores mais modernos e atualizados e sem bloqueios de acessibilidade. Em um segundo momento, procuraria-se atender os usuários que já possuem mais limitações, ou seja, definindo os tipos de usuários e quais implementações são necessárias a cada fase do projeto para suprir as suas necessidades. Dentro do mundo de desenvolvimento web, essa prática é conhecida como &lt;strong&gt;“Graceful Degradation”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Porém, pensar dessa forma pode nos levar a alguns problemas, como no exemplo a seguir dado pelo &lt;strong&gt;Luiz Real&lt;/strong&gt;(ver nota do autor):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Pegamos como exemplo para analisar: um botão de comprar em uma loja virtual. A compra foi implementada usando AJAX, para dar mais dinamicidade à navegação do usuário.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;produto&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;123456&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;number&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;quantidade&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;comprar&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icone-comprar.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#comprar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dadosCompra&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;produto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;[name=produto]&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;quantidade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;[name=quantidade]&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Enviamos os dados no formato JSON para o servidor.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// atualizaPagina é uma função que vai ser executada depois que o servidor confirmar a compra.&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/compra&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dadosCompra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;atualizaPagina&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A quais problemas essa solução não atende?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A primeira coisa que podemos pensar é na acessibilidade da página: será que os usuários com deficiência visual conseguirão comprar nessa loja virtual? Provavelmente não. Afinal, o botão de comprar exemplificado é uma imagem! O leitor de tela não vai ser capaz de ler o texto “comprar” da imagem.&lt;/p&gt;
+
+&lt;p&gt;Uma forma de melhoria seria trabalhar com um HTML mais semântico:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;produto&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;123456&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;number&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;quantidade&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;comprar&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icone-comprar.png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Comprar&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A tag &lt;code class=&quot;highlighter-rouge&quot;&gt;form&lt;/code&gt;, como sabemos, serve para indicar que as informações presentes serão enviadas para um servidor. Há também a tag &lt;code class=&quot;highlighter-rouge&quot;&gt;button&lt;/code&gt; com o tipo &lt;code class=&quot;highlighter-rouge&quot;&gt;submit&lt;/code&gt;, que indica que essa imagem é um botão e que ao ser clicado enviará o formulário.&lt;/p&gt;
+
+&lt;p&gt;Tendo a preocupação com &lt;strong&gt;Graceful Degradation&lt;/strong&gt;, precisamos lembrar de todos os cenários que deixamos de lado ao desenvolver nosso site com as últimas tecnologias.&lt;/p&gt;
+
+&lt;p&gt;Agora, imagine uma situação onde precisamos implementar uma solução sem JavaScript. Será que é possível? Pelo servidor nos devolver um JSON como resultado, e não uma página, &lt;strong&gt;precisamos&lt;/strong&gt; de JavaScript, agora. Ou seja, por termos desenvolvido uma solução sem pensar nos casos mais limitados, acabamos caindo em um beco sem saída. Precisando então &lt;strong&gt;refazer boa parte da nossa solução&lt;/strong&gt;, inclusive do lado do servidor.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Como fazer para não corrermos o risco de esquecermos estes cenários mais limitados durante o desenvolvimento de nossas aplicações? 🤔&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Começando exatamente por eles!&lt;/strong&gt; Essa é a ideia do &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;progressive-enhancement&quot;&gt;Progressive Enhancement&lt;/h2&gt;
+
+&lt;p&gt;Com essa breve contextualização dos cenários que enfrentamos durante o desenvolvimento dos nossos projetos web, agora podemos entrar mais a fundo nos conceitos de Progressive Enhancement.&lt;/p&gt;
+
+&lt;p&gt;Para compreender a diferença entre &lt;strong&gt;Graceful Degradation&lt;/strong&gt; e &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;, vamos tomar como exemplo o mesmo cenário de antes: precisamos implementar o botão para comprar um produto em uma loja virtual.&lt;/p&gt;
+
+&lt;p&gt;Qual seria então o nosso cenário mais limitado? Bom, um navegador baseado em texto já é um começo. Neste tipo de navegador, a única ferramenta que temos diponível é o HTML.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Como implementaríamos o botão de compra utilizando apenas HTML? Com algo similar ao que já tínhamos:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/comprar&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;comprar&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hidden&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;produto&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;123456&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;number&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;quantidade&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Comprar&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;O interessante de se observar nesta implementação, é o uso do atributo &lt;code class=&quot;highlighter-rouge&quot;&gt;action&lt;/code&gt; no formulário. Ele faz com que o navegador saiba para qual endereço no servidor os dados do formulário devem ser enviados. Assim, não precisamos de JavaScript nenhum para fazer o navegador entender isso.&lt;/p&gt;
+
+&lt;p&gt;Outro ponto interessante, é a inserção do texto “Comprar” dentro de um botão em vez de uma imagem. Essa decisão além de tratar a questão dos navegadores baseados em texto, também se mostra compatível com os leitores de telas utilizados pelos usuários com deficiência visual.&lt;/p&gt;
+
+&lt;p&gt;Também vale ressaltar que a decisão de começar pelo cenário mais limitado influencia também o lado servidor da aplicação: o formato dos dados enviados serão o padrão do navegador e não no formado JSON.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Para implementar a nossa compra com AJAX, como queríamos anteriormente, podemos escrever o seguinte código:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#comprar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;serialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Por estarmos usando um formulário semântico, podemos simplesmente pedir para o jQuery pegar os dados desse formulário e enviá-lo como o navegador faria, porém de forma assíncrona.&lt;/p&gt;
+
+&lt;p&gt;Quando começamos por um cenário mais limitado, há a tendência natural em solucioná-lo adequadamente. Isso nos força a pensar e desenvolver de uma forma que favorece um HTML mais semântico e desacoplado de CSS e JavaScript. Ganhamos não apenas um site que funciona bem para todos; ganhamos também um código &lt;strong&gt;mais limpo e fácil de manter&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Mas quais são os cenários mais limitados? Por onde começar? Como acrescentar funcionalidades sem quebrar o que já tínhamos? Veremos isso adiante! 🙃&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;por-onde-começar&quot;&gt;Por onde começar?&lt;/h3&gt;
+
+&lt;p&gt;Começar a desenvolver pensando em &lt;strong&gt;Progressive Enhancement&lt;/strong&gt; influencia os mais diversos pontos dentro de um projeto. Seguindo novamente um exemplo dado pelo &lt;strong&gt;Luiz Real&lt;/strong&gt;, se formos desenvolver um site para divulgar um produto, podemos pensar, antes de mais nada em:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Qual nosso público-alvo?&lt;/li&gt;
+  &lt;li&gt;Será que precisamos nos procupar com navegadores antigos?&lt;/li&gt;
+  &lt;li&gt;Qual a parcela de visitantes do meu site que virá de dispositivos móveis?&lt;/li&gt;
+  &lt;li&gt;Quão importante é a integração com redes sociais?&lt;/li&gt;
+  &lt;li&gt;O que posso oferecer para meus visitantes com configurações mais limitadas?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como podemos perceber, estas são questões que estão muito mais relacionadas ao contexto do negócio do que relacionados a questões técnicas. Ter as respostas para essas questões é muito relevante para nortear o processo de aplicação do conceito de &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Conseguimos perceber até aqui que o &lt;strong&gt;Progressive Enhancement&lt;/strong&gt; não é apenas uma forma de desenvolver códigos front-end. &lt;em&gt;É uma forma diferente de pensar o desenvolvimento do produto como um todo.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Sendo assim, uma possível resposta para a nossa pergunta “Por onde começar?” seria:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Pelo planejamento do produto&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Tendo bem claro os objetivos do produto, as decisões técnicas tornam-se mais simples.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Um grande erro dos desenvolvedores, principalmente dos iniciantes, é deixar em segundo plano pontos inerentes ao planejamento do projeto e partir diretamente para a codificação. Erro grave!&lt;/p&gt;
+
+&lt;p&gt;Claro que em um cenário real, algumas situações fogem do nosso controle, como público-alvo pouco conhecido, influência do cliente junto ao projeto e o orçamento com prazo limitado.&lt;/p&gt;
+
+&lt;p&gt;Mas ainda com esses potenciais empecilhos, é possível aplicar o &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;. Veja só:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Se não sabemos qual o cenário mais limitado que vamos atender, podemos começar pelo mais limitado.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Se não temos orçamento e/ou prazo suficiente para desenvolver todas as funcionalidade desejadas, podemos entregar as que atendem aos cenários mais limitados primeiro.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Se não sabemos quais tecnologias os visitantes do site vão usar para acessar o conteúdo, começamos com o mínimo possível de tecnologias.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;progressive-enhancement-e-html&quot;&gt;Progressive Enhancement e HTML&lt;/h2&gt;
+
+&lt;p&gt;Como sabemos, o HTML é a base de toda página na Internet e, portanto, todo usuário do nosso site, seja humano ou máquina, tem que entender pelo menos HTML; sempre podemos contar com ele.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Vale ressaltar que atualmente todos os navegadores, em suas últimas versões, trabalham com HTML5.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Quando dizemos HTML5, na verdade, estamos falando de uma série de novas funcionalidades, como, novas tags, novos atributos, novas APIs, entre outros. São tantos novos recursos, que os navegadores, em sua maioria, ainda não implementam a especificação do HTML5 em sua totalidade.&lt;/p&gt;
+
+&lt;p&gt;Porém, a especificação do HTML já foi projetado pensando em &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;. Peguemos o exemplo abaixo para analisar:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Teste de HTML5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Página com HTML5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;Bacana, né?&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Hora atual&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;time&amp;gt;&lt;/span&gt;22:39&lt;span class=&quot;nt&quot;&gt;&amp;lt;/time&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Um controle de form novo:&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;range&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;min=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;max=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Logo no início do código, declaramos o DOCTYPE para indicar para o navegador que estamos utilizando a versão mais recente do HTML, ou seja, que o navegador deve mostrar todo seu potencial.&lt;/p&gt;
+
+&lt;p&gt;E se o navegador não implementar suporte a todos estes recursos? A especificação do HTML recomenda que:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Se um agente de usuário encontrar um elemento que não reconhece, ele deve tentar renderizar seu conteúdo;&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Se um agente de usuário encontrar um atributo que não reconhece, ele deve ignorar a declaração completa deste atributo, isto é, o atributo e seu valor;&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Se um agente de usuário encontrar um valor de atributo que não reconhece, ele deve usar o valor padrão para aquele atributo.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mesmo que o navegador não entenda exatamente o que estamos querendo dizer, ele vai mostrar o conteúdo para o usuário; &lt;strong&gt;podemos incrementar a semântica e a interatividade do nosso HTML sem quebrar os navegadores mais limitados!&lt;/strong&gt; A recomendação é bem favorável à aplicação do &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;No exemplo dado anteriormente, se o navegador não suporta a tag &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;time&amp;gt;&lt;/code&gt; e o &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; do tipo &lt;code class=&quot;highlighter-rouge&quot;&gt;range&lt;/code&gt;, ainda assim o usuário verá a hora e um controle de formulário (uma caixa de texto, que é o controle de formulário padrão).&lt;/p&gt;
+
+&lt;h2 id=&quot;progressive-enhancement-e-css&quot;&gt;Progressive Enhancement e CSS&lt;/h2&gt;
+
+&lt;p&gt;Tendo a nosso HTML como base bem definido, podemos começar a implementar o design com CSS.&lt;/p&gt;
+
+&lt;p&gt;Assim como o HTML, o CSS é uma tecnologia já antiga e que passou por uma grande evolução, culminando no que chamamos agora de &lt;strong&gt;CSS 3&lt;/strong&gt;. Assim como o caso do HTML, os navegadores não implementam suporte a todas as novidades, mesmo porque elas continuam vindo, mas os navegadores ignoram as propriedades desconhecidas, de modo que também é muito fácil ir incrementando nosso visual de acordo com as funcionalidades disponíveis.&lt;/p&gt;
+
+&lt;p&gt;Além disso, o CSS tem uma outra característica peculiar que facilita o &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;: quando uma propriedade aparece duplicada, apenas a última declaração é considerada.&lt;/p&gt;
+
+&lt;p&gt;Esse comportamento permite fazer &lt;strong&gt;Progressive Enhancement&lt;/strong&gt; de um jeito fácil: basta ir acrescentando as funcionalidades mais recentes abaixo das mais antigas! 👌&lt;/p&gt;
+
+&lt;p&gt;Quando pensamos em &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;, devemos pensar em dar a melhor experiência possível para os cenários limitados. A maior parte dos sites que vamos desenvolver no nosso dia a dia precisará de CSS para ser visualmente agradável e atrair mais usuários. Ou seja, mesmo nos cenários mais limitados, já estaremos dependentes de CSS.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A maioria dos requisitos de front-end que normalmente implementamos com JavaScript podem ser feitos apenas com CSS, ou seja, sem depender de mais uma tecnologia.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;progressive-enhancement-e-javascript&quot;&gt;Progressive Enhancement e JavaScript&lt;/h2&gt;
+
+&lt;p&gt;Desenvolver pensando primeiro nos cenários mais limitados já evita que caiamos em certos tipos de armadilhas. No entanto, quando adicionamos JavaScript à página, precisamos tomar certos cuidados para não quebrar o trabalho já feito, assim como no CSS.&lt;/p&gt;
+
+&lt;p&gt;Da mesma forma que devemos pensar no CSS como algo a mais em uma página, devemos também pensar no JavaScript dessa forma. Isso significa que, na medida do possível, o código JavaScript não deve interferir no seu HTML.&lt;/p&gt;
+
+&lt;p&gt;Tomemos o exemplo dado pelo Luiz Real. Em vez de fazer um link virar uma ação em JavaScript como:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;maisProdutos()&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Mais produtos&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Devemos preservar o HTML original.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mais-produtos.html&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Mais produtos&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;E adicionar a funcionalidade JavaScript usando o próprio JavaScript.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mais-produtos.html&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;maisProdutos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Dessa forma, nosso site continua funcionando perfeitamente, mesmo que o JavaScript apresente algum problema, e essa é uma das principais vantagens do &lt;strong&gt;Progressive Enhancement&lt;/strong&gt; para o seu desenvolvimento.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Esse tipo de pensamento é conhecido entre os desenvolvedores JavaScript como JavaScript não-obstrutivo.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Um ponto que não gera dores de cabeça no HTML e no CSS mas que, no JavaScript, é bastante complicado, é lidar com funcionalidades faltantes. Vimos que, com relação ao HTML, o navegador mostra informações de tags desconhecidas e, com relação ao CSS, o navegador ignora propriedades e valores não suportados; o mesmo não acontece com o JavaScript: qualquer comando que não seja suportado pelo navegador gerará um erro de JavaScript, consequentemente parando toda a execução do código.&lt;/p&gt;
+
+&lt;p&gt;Lidar com as limitações e diferenças entre os navegadores pode ser bastante trabalhoso. Por exemplo, para selecionar elementos da página, podemos usar a função &lt;code class=&quot;highlighter-rouge&quot;&gt;document.querySelector&lt;/code&gt;, como  fizemos no exemplo anterior. No entanto, essa função não está presente em todos os navegadores. Para que nosso código funcione em todos os navegadores, podemos usar a função &lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementsByClassName&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;resultados&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByClassName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resultados&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;entendi-mas-quando-o-progressive-enhancement-não-é-uma-alternativa&quot;&gt;Entendi! Mas quando o Progressive Enhancement não é uma alternativa?&lt;/h2&gt;
+
+&lt;p&gt;A abordagem do &lt;strong&gt;Progressive Enhancement&lt;/strong&gt; resolve muitos problemas do desenvolvedor front-end ao forçar o foco primeiro na parte mais importante de um site, que é prover o conteúdo. No entanto, &lt;strong&gt;Progressive Enhancement&lt;/strong&gt; tem suas desvantagens e nem sempre é aplicável.&lt;/p&gt;
+
+&lt;p&gt;Quando desenvolvemos pensando primeiro nos cenários mais limitados, conseguimos planejar nosso desenvolvimento de modo a tornar nosso site minimamente acessível nesses cenários. No entanto, isso pode ser restritivo para o processo criativo de desenvolvimento de um site.&lt;/p&gt;
+
+&lt;p&gt;É possível desenvolver uma versão mais simples, sem as funcionalidades principais, para os cenários mais limitados, usando &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;. Essa abordagem é seguida, por exemplo, pelo Gmail, o serviço de e-mail da Google. A versão principal do cliente web é desenvolvida usando recursos avançados de JavaScript. Para simplificar o desenvolvimento dessa versão e ainda permitir o acesso aos e-mails nos navegadores mais limitados, foi desenvolvida uma versão baseada apenas em HTML.&lt;/p&gt;
+
+&lt;p&gt;Mesmo nos cenários em que &lt;strong&gt;Progressive Enhancement&lt;/strong&gt; não é aplicável, é interessante ter em mente as preocupações dessa forma de desenvolvimento. Desenvolver para a web é desenvolver para todos, independente de plataforma, navegador, língua e capacidades, e essa é a principal preocupação do &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 07 Aug 2016 11:30:00 -0300</pubDate>
+        <link>http://localhost:4000/blog/web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>web</category>
+        
+        <category>development</category>
+        
+      </item>
+    
+      <item>
+        <title>How to build: Um To-Do List com JavaScript utilizando a API Web Storage do HTML</title>
+        <description>&lt;p&gt;Decidi escrever este post para falar um pouco sobre uma API muito interessante do HTML, mas que pouco ouvimos falar a respeito. O que também me motivou a escrever este conteúdo, é que recentemente percebi que consigo fixar melhor o que estudo quando tenho a oportunidade de fazer anotações sobre o assunto. Se você der uma olhada no meu &lt;a href=&quot;https://github.com/JulianoPadilha&quot;&gt;GitHub&lt;/a&gt;, verá que estou de fato colocando isso em prática e tomando anotações como parte do meu método de aprendizado. 🤓&lt;/p&gt;
+
+&lt;p&gt;Pretendo tornar este tipo de conteúdo uma série dentro do meu site chamada “How to Build”. Acredito que será bem interessante e pretendo abordar os mais diversos assuntos, e claro, mostrar como se faz na prática, com uma pitada de teoria. Então vamos lá?!&lt;/p&gt;
+
+&lt;h2 id=&quot;o-que-é-web-storage&quot;&gt;O que é Web Storage?&lt;/h2&gt;
+
+&lt;p&gt;Web Storage faz parte da API do HTML e fornece mecanismos para que os navegadores possam armazenar dados através de chave/valor de uma forma mais eficiente que os cookies. A API do Web Storage fornece duas maneiras de armazenar dados:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sessionStorage&lt;/code&gt;
+O sessionStorage mantém as informações armazenadas por origem e permanece disponível enquanto há uma sessão aberta no navegador(mesmo a página sendo recarregada). Caso o browser seja fechado a sessão será limpa e as informações serão perdidas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;localStorage&lt;/code&gt;
+O localStorage é muito parecido com o sessionStorage, a diferença é que mesmo que o navegador seja fechado, os dados permanecem armazenados.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Com Local Storage, aplicações web podem armazenar dados localmente no navegador do usuário. Antes do HTML5, os dados de uma aplicação tinham que ser armazenados em cookies. Com Local Storage é mais seguro realizar esse processo e grandes quantidades de dados podem ser armazenados localmente, sem afetar o desempenho do site.&lt;/p&gt;
+
+&lt;p&gt;Ao contrário dos cookies, o limite de armazenamento é muito maior (pelo menos 5MB) e a informação não é transferida para o servidor.&lt;/p&gt;
+
+&lt;p&gt;Local Storage é muito útil, por exemplo, em sites de e-commerce, onde o usuário pode ter adicionado algo no seu carrinho de compras e fechado o navegador. Quando ele retornar para o site, os itens do seu carrinho continuarão lá disponíveis, isso porque as informações foram armazenadas no Local Storage do seu browser.&lt;/p&gt;
+
+&lt;p&gt;Esses mecanismos estão disponíveis a partir das seguintes propriedades &lt;code class=&quot;highlighter-rouge&quot;&gt;Window.sessionStorage&lt;/code&gt; e &lt;code class=&quot;highlighter-rouge&quot;&gt;Window.localStorage&lt;/code&gt; (para um maior suporte, o objeto Window implementa os objetos  Window.LocalStorage e Window.SessionStorage) — ao invocar uma dessas propriedades, é criada uma instância do objeto Storage, que fornece métodos para inserir, recuperar e remover os dados.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Fonte: &lt;a href=&quot;https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API_pt_br&quot;&gt;Mozilla Developer - Web Storage API&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;propriedades&quot;&gt;Propriedades&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage.lenght&lt;/code&gt;
+Retorna um inteiro que representa o número de itens de dados armazenados no objeto de armazenamento.&lt;/p&gt;
+
+&lt;h2 id=&quot;métodos&quot;&gt;Métodos&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage.key()&lt;/code&gt;
+Retorna o nome da chave passada como parâmetro.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage.getItem()&lt;/code&gt;
+Quando passado o nome de uma chave, retornará o valor dessa chave.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage.setItem()&lt;/code&gt;
+Quando passado o nome de uma chave, adicionará a chave no storage ou atualizar o valor da chave caso ela já exista.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage.removeItem()&lt;/code&gt;
+Quando passado o nome da chave, removerá a chave do storage.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage.clear()&lt;/code&gt;
+Quando chamada, esvaziará todas as chaves fora do armazenamento.&lt;/p&gt;
+
+&lt;h2 id=&quot;chega-de-teoria-lets-make-things-happen&quot;&gt;Chega de teoria! Let’s make things happen!&lt;/h2&gt;
+
+&lt;p&gt;Esse será o resultado final do nosso “How to Build” de hoje. Não está bonito, eu sei, seu sei.. Mas a ideia não era essa, a ideia é aprender os fundamentos de algo novo. Então fique a vontade para deixar o seu to-do list esteticamente mais bonito que o meu. 😉&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/how-to-build-todo-list-js-web-storage.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;estrutura-de-pastas-e-arquivos&quot;&gt;Estrutura de pastas e arquivos&lt;/h3&gt;
+
+&lt;p&gt;Para nosso exemplo usaremos algo simples para nossa estrutura de pastas e arquivos:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;📁 app
+|___ index.html
+|___ style.css
+|___ todo.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;indexhtml&quot;&gt;index.html&lt;/h3&gt;
+
+&lt;p&gt;Nossa página HTML também é super simples. De importante que devemos nos atentar, temos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; que vai servir para a entrada dos nossos dados;&lt;/li&gt;
+  &lt;li&gt;O elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;button&lt;/code&gt; que irá ser o principal responsável por diversas ações da aplicação;&lt;/li&gt;
+  &lt;li&gt;Os dois elementos &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; que irão ser responsáveis, respectivamente, por exibir uma mensagem para o usuário dependendo do status da sua lista de tarefas e listar todo os nossos to-do’s&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;style.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;To-Do List&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;add&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Add&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;hr&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;msg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt; // Usaremos essa div para exibir uma mensagem dependendo do status do nosso storage 
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todos&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todos&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt; // Usaremos essa div para exibir a nossa lista de to do's
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todo.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sussa?! Keep going!&lt;/p&gt;
+
+&lt;h3 id=&quot;todojs&quot;&gt;todo.js&lt;/h3&gt;
+
+&lt;p&gt;É aqui que a brincadeira começa a ficar interressante. &lt;em&gt;Muahahaha&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Como dito na parte teórica, o Web Storage dispõe do &lt;code class=&quot;highlighter-rouge&quot;&gt;sessionStorage&lt;/code&gt; e do &lt;code class=&quot;highlighter-rouge&quot;&gt;localStorage&lt;/code&gt;. Como nossa intensão é manter nosso to-do list mesmo após o navegador ter sido fechado, então neste exemplo usaremos apenas o localStorage.&lt;/p&gt;
+
+&lt;p&gt;Aaah, uma dica inicial. Vocês podem acompanhar o que está acontecendo no Local Storage de vocês acessando a aba Resources do Inspector de elementos do Chrome (torço que estejam utilizando o Chrome :P), como mostra o gif abaixo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../assets/images/local-storage-inspector-elementos.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Explicarei comentando trecho por trecho o que está acontecendo no código. 🤘&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addTodo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'todo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Pega o valor digitado no input e armazena na variável 'todo'.&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getTodos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Chamamos em uma variável a função 'getTodos' que cria um array que traz todas as todos salvas antes de inserir uma nova.&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Verifica se há algum conteúdo preenchido dentro do input&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Utilizamos o push para jogar o elemento armazenado na variável 'todo' para nosso Array.&lt;/span&gt;
+
+        &lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'todos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Utilizamos o localStorage.setItem para &quot;persistir&quot; as informações no storage do browser. Com parâmetro passamos a chave e o valor, usando 'JSON.stringify' para transformar o valor em uma string.&lt;/span&gt;
+
+        &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'todo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Retorna para vazio o input após um item ser inserido.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Utilizamos o reload(true) para após a função ser realizada atualizar a tela.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getTodos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Cria um array vazio caso não tenha nada já armazenado.&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;todos_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'todos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Pega o conteúdo/valor da chave 'todos' do 'localStorage' e armazena na variável 'todos_string'&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todos_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Verifica se o array de elementos não é nulo. Caso true então retornará a conversão de um JSON string para um Javascript data.&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todos_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showTodos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getTodos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Guardamos em uma variável chamada 'todos' todos os todos que temos armazenadas utilizando a função getTodos;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;ul&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Criamos uma variável 'html' que irá concatenando a nossa estrutura HTML.&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elemento&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Criamos um forEach para iterar todos os elementos do nosso Array. Utilizamos 'todos' na frente para referenciar de qual lugar estamos trazendo os elementos. &lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;li&amp;gt; 📌 '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elemento&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;button class=&quot;remove&quot; id=&quot;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;&amp;gt;Remover&amp;lt;/button&amp;gt;&amp;lt;/li&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Novamente utilizamos a variável 'html' para concatenar nosso HTML passando o 'elemento' que referencia os itens pertencentes os todos. 'index' representa nosso index dentro do array.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;/ul&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Fechamos a concatenação.&lt;/span&gt;
+
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'todos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Inserimos o conteúdo da variável 'html' dentro da 'div' que contém o id 'todos'. O innerHTML serve justamente para inserir novos conteúdos.&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;buttons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByClassName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'remove'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Pegamos todos os elementos do DOM que possuem a class 'remove' e armazenamos na variável 'buttons'.&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Iteramos nossos elementos e adicionamos para cada elemento com a class 'remove' o addEventListener conectado com o evento 'click' e o callback da função 'removeTodo'.&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;removeTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;removeTodo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Criamos uma variável id para receber o atual objeto-DOM referente ao id do botão remover que o usuário clicar. O this representa o objeto-DOM atual.&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getTodos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Guardamos em uma variável chamada 'todos' todos os todos que temos armazenadas utilizando a função getTodos;&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Utilizamos o método splice para remover um elemento específico. Como parâmetro passamos o id referente ao elemento que será removido do array e o valor &quot;1&quot;, que representa que estamos realizando apenas uma remoção.&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'todos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Após o elemento ser removido, utilizamos novamente o setItem para salvar a nossa nova lista de array.&lt;/span&gt;
+
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Utilizamos o reload(true) para após a função ser realizada atualizar a tela.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hasTodo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Função que verifica se há algum todo salvo dentro do Array do localStorage.&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getTodos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Guardamos em uma variável chamada 'todos' todos os todos que temos armazenadas utilizando a função getTodos;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Utilizamos uma condicional para exibir uma mensagem na tela de acordo com o status do nosso array.&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;h2&amp;gt;Não há tarefas cadastradas!&amp;lt;/h2&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'msg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;h2&amp;gt;Suas tarefas pendentes:&amp;lt;/h2&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'msg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'add'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Buscamos o elemento contendo o id igual a 'add' e em seguinda utilizamos o método 'addEventListener' com o evento de 'click' e o callback que será chamado, no caso, nossa função addTodo.&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'keydown'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Inserimos uma alternativa para a inserção os elementos, que é pressionando a tecla 'enter'. Para este caso precisamos passar um parâmetro que é uma função que recebe o evento com a keyCode que pressionamos. Depois verificamos se é true e caso seja chama o addTodo(); &lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keyCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;addTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt; 
+
+&lt;span class=&quot;nx&quot;&gt;hasTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Passamos a função aqui para verificar antes mesmo de listar nossos elementos se o array é vazio ou não.&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;showTodos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Chamamos a função showTodos() para mostrar na telas os elementos do nosso array.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Espero que tenha ficado claro. E por fim, vamos para o CSS só para fechar com chave de ouro. Ou não.&lt;/p&gt;
+
+&lt;h3 id=&quot;stylecss&quot;&gt;style.css&lt;/h3&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;Courier New&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Courier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;monospace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#F3F3F3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;470px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;text-indent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;14px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:focus&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;outline-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#99D04E&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;34px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#99D04E&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;14px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;lighter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;hr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#00BBC7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#00BBC7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.remove&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#F46560&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;60px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;pointer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.tasks&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;list-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;E assim finalizamos nosso To-Do List utilizando JavaScript e a API localStorage. Espero que tenha sido útil, e fico super aberto para feedbacks sobre como melhorar a didática dos exemplos e tudo mais. Também aceito com todo prazer feedbacks sobre o código, o que pode ser melhorado, o que tá errado, etc..&lt;/p&gt;
+
+&lt;p&gt;Até uma próxima! ✌️&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 Jul 2016 17:30:00 -0300</pubDate>
+        <link>http://localhost:4000/blog/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>javascript</category>
+        
+        <category>html</category>
+        
+        <category>how-to-build</category>
+        
+      </item>
+    
+      <item>
+        <title>Criação: Interface do Nubank</title>
+        <description>&lt;p&gt;Como parte do meu processo de crescimento contínuo dentro da área de desenvolvimento web, tenho estudado algumas práticas de criação de interfaces para aumentar as minhas skills. Durante um desses dias de estudo, decidi recriar uma das telas da interface do app do &lt;a href=&quot;https://www.nubank.com.br/&quot;&gt;Nubank&lt;/a&gt; utilizando apenas &lt;strong&gt;HTML&lt;/strong&gt; e &lt;strong&gt;CSS&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Foi um processo bem interessante, onde consegui aprender algumas novas funcionalidades das tecnologias acima citadas e, mais importante ainda, consegui descobrir alguns pontos fracos meus que precisam ser reforçados.&lt;/p&gt;
+
+&lt;p&gt;Bom, abaixo é possível ver o resultado final mais os códigos criados.&lt;/p&gt;
+
+&lt;p data-height=&quot;516&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;NAyxod&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;julianopadilha&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/julianopadilha/pen/NAyxod/&quot;&gt;Nubank Interface - @julianopadilha&lt;/a&gt; by Juliano Padilha (&lt;a href=&quot;http://codepen.io/julianopadilha&quot;&gt;@julianopadilha&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Pretendo continuar com essa prática e recriar outros projetos que achar interessante e nesse caminho aprender novas tecnologias e meios de otimizar meus códigos.&lt;/p&gt;
+
+&lt;p&gt;Também passarei a compartilhar com desenvolvedores mais experientes o que criei para coletar feedbacks.&lt;/p&gt;
+
+&lt;p&gt;É isso, em breve devo postar mais coisas envolvendo meus estudos na área de desenvolvimento e mais projetinhos interessantes.&lt;/p&gt;
+
+&lt;p&gt;😄&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 22 Jul 2016 20:00:00 -0300</pubDate>
+        <link>http://localhost:4000/blog/interface/estudos/html/css/2016/07/22/nubank-interface.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/interface/estudos/html/css/2016/07/22/nubank-interface.html</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>interface</category>
+        
+        <category>estudos</category>
+        
+        <category>html</category>
+        
+        <category>css</category>
+        
+      </item>
+    
+      <item>
+        <title>#PartiuSP</title>
+        <description>&lt;p&gt;Decidi começar este blog como uma forma de externalizar a decisão que tomei de ir morar em São Paulo no segundo semestre deste ano. Por meio dele relatarei toda essa jornada, apresentando os caminhos que estou tomando para tornar isso realidade e, futuramente, mostrando como estará sendo morar em SP.&lt;/p&gt;
+
+&lt;p&gt;Neste primeiro post falarei sobre os motivos que levaram eu querer me mudar de Belém/PA para São Paulo. 😄&lt;/p&gt;
+
+&lt;p&gt;Bom, eu sempre tive a sensação de não pertencer ao lugar onde moro. Grande parte desse sentimento é fruto das mudanças de cidade que minha família fez durante a minha infância/adolescência. &lt;/p&gt;
+
+&lt;p&gt;Apesar de todas as cidades em que passei eu ter boas lembranças, nunca aceitei que eu estava onde deveria estar. E entender isso, principalmente muito novo, me fez abrir os olhos com relação ao desapego. Pois umas das coisas que mais contribuem para que nós não deixemos algo de lado, é a ideia de pertencimento. Você pertencer a algo. Ou algo pertencer a você. Como até hoje não tenho esse “pertencimento” pelo local em que vivo, não foi difícil tomar a decisão de me mudar. &lt;/p&gt;
+
+&lt;p&gt;Obviamente, este não é o ponto predominante nesta minha tomada de decisão. Não é a falta de pertencimento pela cidade de Belém, ao qual tenho grande apreço, que me colocou na cabeça o sonho de sair daqui. A ideia de mudar para São Paulo existe dentro de mim desde que enxerguei que para o que faço e principalmente, para o que quero no futuro, São Paulo pode me oferecer. &lt;/p&gt;
+
+&lt;p&gt;Estou me formando em Sistemas de Informação pela UFPA (btw, estou prestes a defender meu TCC. 😱) e traçando o meu caminho dentro do mundo do empreendedorismo, uma das minhas grandes paixões. Dentro deste percurso, e como um bom empreendedor, sempre visei ser minha melhor versão em tudo que faço, procurando aprendizado e autodesenvolvimento (um dos meus valores pessoais) constante, para assim, atingir meus objetivos e sonho grande na vida. &lt;/p&gt;
+
+&lt;p&gt;Porém, chega um momento em que os desafios que a vida te dá não são suficientes para despertar em você a paixão que você procura e o gás para se manter motivado a fazer as coisas. Eu havia chegado neste ponto. Sabendo que me mantendo dessa forma eu estaria regredindo e deixando de entregar valor para a sociedade através das minhas ações e, principalmente, deixando de ser feliz, vi na possibilidade de trazer uma grande mudança para minha vida, uma alternativa de me reencontrar e continuar crescendo. &lt;/p&gt;
+
+&lt;p&gt;E a decisão de ir viver em São Paulo, visa justamente me proporcionar essa nova experiência que tanto procuro. Lá terei a oportunidade de amadurecer como pessoa e profissional, aprender com as mais diversas circunstâncias que viverei, me conectar com pessoas, criar empreendimentos, estudar (pretendo fazer uma pós), me divertir e redefinir os rumos da minha vida. &lt;/p&gt;
+
+&lt;p&gt;Não será nada fácil e tenho total ciência disto. Mas se fosse fácil, não teria graça, não é mesmo?! Haha&lt;/p&gt;
+
+&lt;p&gt;Então como uma forma de compartilhar meus pensamentos e momentos, postarei com uma frequência indefinida, conteúdos neste blog para que, quem sabe, ajude as pessoas que almejam fazer o mesmo, ou que desejam acompanhar este meu novo desafio. &lt;/p&gt;
+
+&lt;p&gt;No próximo post, escreverei sobre meu status atual dentro desse processo de mudança.&lt;/p&gt;
+
+&lt;p&gt;Espero muito que você continue me acompanhando e se tiver algo para compartilhar, não deixe de me procurar. &lt;/p&gt;
+
+&lt;p&gt;Have a nice day! ✌🏻️&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 28 May 2016 20:00:00 -0300</pubDate>
+        <link>http://localhost:4000/blog/2016/05/28/partiu-sp.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2016/05/28/partiu-sp.html</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+  </channel>
+</rss>

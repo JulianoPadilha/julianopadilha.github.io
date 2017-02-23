@@ -1,0 +1,99 @@
+section.first-section
+	.personal-infos
+		display: flex
+		flex-wrap: wrap
+		position: relative
+
+		.thumbnail
+			display: block
+			position: relative
+		
+			img
+				width: 100px
+				height: 100px
+				border: 1px solid #FCD246
+				border-radius: 50%
+
+			.thumb-icon
+				width: 17px
+				height: 17px
+				position: absolute
+				top: 2px
+				left: 78px
+				border-radius: 50%
+
+				background:
+					color: #FCD246
+					image: url(../images/icons/microphone.svg)
+					position: center
+					size: contain
+
+		.name
+			margin: 0px 100px 0 30px
+			font-weight: bold
+			color: #7E7E7E
+
+		.followers
+			font-weight: bold
+			color: #7E7E7E
+
+			span
+				font-weight: normal
+
+		.bio
+			position: absolute
+			top: 30px
+			left: 130px
+			color: #7E7E7E
+			text-align: justify
+
+		.btn-follow
+			display: block
+			cursor: pointer
+			margin: 10px 0 0 12px
+
+	.player
+		.btn-red
+			float: right
+			cursor: pointer
+			margin-top: 20px
+
+
+		p
+			font-weight: bold
+			color: #7E7E7E
+
+		.player-mini
+			background: #F3F3F3
+			border-radius: 10px
+			height: 60px
+			margin-top: 10px
+
+			p
+				color: #9F9F9F
+				font-size: 10px
+				margin-left: 20px
+				margin-top: 5px
+
+			span
+				font-size: 10px
+				margin-right: 50px
+				color: #696969
+
+			audio::-webkit-media-controls-panel
+				border-radius: 10px 10px 0px 0px
+				width: 360px
+				background: #EBEBEB
+				padding: 0 10px
+
+			audio::-webkit-media-controls-timeline
+				background: #404040
+		
+		.share
+			float: left
+			color: #747474
+			margin-top: 20px
+
+			img
+				vertical-align: bottom
+

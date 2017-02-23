@@ -1,0 +1,293 @@
+<p><strong>Progressive Enhancement</strong> é uma forma de pensar o desenvolvimento de aplicações web com foco no front-end de uma forma que as melhorias sejam progressivas, como o nome sugere. Não ficou claro?! Não esquenta! Vamos decifrar o que esses conceitos significam e como aplicá-los nos seus projetos. 🤘</p>
+
+<blockquote>
+  <p><strong>Nota do autor:</strong> Este texto é uma compilação envolvendo anotações e transcrições do segundo capítulo do e-book “Coletânea Front-end - Uma Antologia da Comunidade Front-end Brasileira” que fala sobre Progressive Enhancement e que foi escrito pelo <a href="https://twitter.com/srsaude">Luiz Real</a>, instrutor da Alura.</p>
+</blockquote>
+
+<p>Quando trata-se do comportamento de aplicações desenvolvidas para a web, todo cuidado passa a ser pouco. Com navegadores mais modernos e compatíveis com as atuais tecnologias e especificações, tornou-se possível a abrangência de mais recursos, ampliando as possibilidades dos desenvolvedores. Seguindo está tendência, o ciclo natural seria que nossos sites também evoluíssem, tornando-se cada vez mais sofisticados.</p>
+
+<p>Porém, dentro deste cenário, acabamos esquecendo um fator primordial para o sucesso: o comportamento do usuário e o navegador que eles utilizam para acessar nossos sites, que muitas vezes não é o navegador com os últimos recursos.</p>
+
+<p>Normalmente, quando planejamentos o desenvolvimento de um site acabamos fazendo-o para um público indeterminado de pessoas. E dentre esse público, temos:</p>
+
+<ul>
+  <li>
+    <p>Pessoas que <strong>não gostam de JavaScript</strong> sendo executado em seus computadores;</p>
+  </li>
+  <li>
+    <p>Pessoas que <strong>não podem atualizar</strong> seus navegadores;</p>
+  </li>
+  <li>
+    <p>Pessoas acessando a internet a partir de <strong>dispositivos limitados</strong>;</p>
+  </li>
+  <li>
+    <p>Pessoas com <strong>dificuldades motoras, visuais e auditivas</strong> que nem sempre conseguem utilizar o mouse para navegar ou dependem de leitores de tela;</p>
+  </li>
+  <li>
+    <p>E ainda temos um outro usuário a considerar, que não tem JavaScript nem CSS habilitados: <strong>as ferramentas de busca</strong>.</p>
+  </li>
+</ul>
+
+<h3 id="então-como-podemos-desenvolver-sites-levando-em-conta-estes-cenários">Então como podemos desenvolver sites levando em conta estes cenários?</h3>
+
+<p>Em um primeiro momento, uma forma de pensar seria desenvolver o site para o público geral, que são aqueles que tem acesso aos navegadores mais modernos e atualizados e sem bloqueios de acessibilidade. Em um segundo momento, procuraria-se atender os usuários que já possuem mais limitações, ou seja, definindo os tipos de usuários e quais implementações são necessárias a cada fase do projeto para suprir as suas necessidades. Dentro do mundo de desenvolvimento web, essa prática é conhecida como <strong>“Graceful Degradation”</strong>.</p>
+
+<p>Porém, pensar dessa forma pode nos levar a alguns problemas, como no exemplo a seguir dado pelo <strong>Luiz Real</strong>(ver nota do autor):</p>
+
+<blockquote>
+  <p>Pegamos como exemplo para analisar: um botão de comprar em uma loja virtual. A compra foi implementada usando AJAX, para dar mais dinamicidade à navegação do usuário.</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"produto"</span> <span class="na">value=</span><span class="s">"123456"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">name=</span><span class="s">"quantidade"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"comprar"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"icone-comprar.png"</span><span class="nt">&gt;&lt;/a&gt;</span>
+</code></pre>
+</div>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#comprar"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">dadosCompra</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">produto</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"[name=produto]"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+        <span class="na">quantidade</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"[name=quantidade]"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+    <span class="p">};</span>
+
+    <span class="c1">// Enviamos os dados no formato JSON para o servidor.</span>
+    <span class="c1">// atualizaPagina é uma função que vai ser executada depois que o servidor confirmar a compra.</span>
+
+    <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"/compra"</span><span class="p">,</span> <span class="nx">dadosCompra</span><span class="p">,</span> <span class="nx">atualizaPagina</span><span class="p">,</span> <span class="s2">"json"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>A quais problemas essa solução não atende?</li>
+</ul>
+
+<p>A primeira coisa que podemos pensar é na acessibilidade da página: será que os usuários com deficiência visual conseguirão comprar nessa loja virtual? Provavelmente não. Afinal, o botão de comprar exemplificado é uma imagem! O leitor de tela não vai ser capaz de ler o texto “comprar” da imagem.</p>
+
+<p>Uma forma de melhoria seria trabalhar com um HTML mais semântico:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"produto"</span> <span class="na">value=</span><span class="s">"123456"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">name=</span><span class="s">"quantidade"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">id=</span><span class="s">"comprar"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"icone-comprar.png"</span> <span class="na">alt=</span><span class="s">"Comprar"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre>
+</div>
+
+<p>A tag <code class="highlighter-rouge">form</code>, como sabemos, serve para indicar que as informações presentes serão enviadas para um servidor. Há também a tag <code class="highlighter-rouge">button</code> com o tipo <code class="highlighter-rouge">submit</code>, que indica que essa imagem é um botão e que ao ser clicado enviará o formulário.</p>
+
+<p>Tendo a preocupação com <strong>Graceful Degradation</strong>, precisamos lembrar de todos os cenários que deixamos de lado ao desenvolver nosso site com as últimas tecnologias.</p>
+
+<p>Agora, imagine uma situação onde precisamos implementar uma solução sem JavaScript. Será que é possível? Pelo servidor nos devolver um JSON como resultado, e não uma página, <strong>precisamos</strong> de JavaScript, agora. Ou seja, por termos desenvolvido uma solução sem pensar nos casos mais limitados, acabamos caindo em um beco sem saída. Precisando então <strong>refazer boa parte da nossa solução</strong>, inclusive do lado do servidor.</p>
+
+<ul>
+  <li>Como fazer para não corrermos o risco de esquecermos estes cenários mais limitados durante o desenvolvimento de nossas aplicações? 🤔</li>
+</ul>
+
+<p><strong>Começando exatamente por eles!</strong> Essa é a ideia do <strong>Progressive Enhancement</strong>.</p>
+
+<h2 id="progressive-enhancement">Progressive Enhancement</h2>
+
+<p>Com essa breve contextualização dos cenários que enfrentamos durante o desenvolvimento dos nossos projetos web, agora podemos entrar mais a fundo nos conceitos de Progressive Enhancement.</p>
+
+<p>Para compreender a diferença entre <strong>Graceful Degradation</strong> e <strong>Progressive Enhancement</strong>, vamos tomar como exemplo o mesmo cenário de antes: precisamos implementar o botão para comprar um produto em uma loja virtual.</p>
+
+<p>Qual seria então o nosso cenário mais limitado? Bom, um navegador baseado em texto já é um começo. Neste tipo de navegador, a única ferramenta que temos diponível é o HTML.</p>
+
+<ul>
+  <li>Como implementaríamos o botão de compra utilizando apenas HTML? Com algo similar ao que já tínhamos:</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/comprar"</span> <span class="na">id=</span><span class="s">"comprar"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"produto"</span> <span class="na">value=</span><span class="s">"123456"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">name=</span><span class="s">"quantidade"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Comprar<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre>
+</div>
+
+<p>O interessante de se observar nesta implementação, é o uso do atributo <code class="highlighter-rouge">action</code> no formulário. Ele faz com que o navegador saiba para qual endereço no servidor os dados do formulário devem ser enviados. Assim, não precisamos de JavaScript nenhum para fazer o navegador entender isso.</p>
+
+<p>Outro ponto interessante, é a inserção do texto “Comprar” dentro de um botão em vez de uma imagem. Essa decisão além de tratar a questão dos navegadores baseados em texto, também se mostra compatível com os leitores de telas utilizados pelos usuários com deficiência visual.</p>
+
+<p>Também vale ressaltar que a decisão de começar pelo cenário mais limitado influencia também o lado servidor da aplicação: o formato dos dados enviados serão o padrão do navegador e não no formado JSON.</p>
+
+<ul>
+  <li>Para implementar a nossa compra com AJAX, como queríamos anteriormente, podemos escrever o seguinte código:</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#comprar"</span><span class="p">).</span><span class="nx">submit</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">action</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">serialize</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>Por estarmos usando um formulário semântico, podemos simplesmente pedir para o jQuery pegar os dados desse formulário e enviá-lo como o navegador faria, porém de forma assíncrona.</p>
+
+<p>Quando começamos por um cenário mais limitado, há a tendência natural em solucioná-lo adequadamente. Isso nos força a pensar e desenvolver de uma forma que favorece um HTML mais semântico e desacoplado de CSS e JavaScript. Ganhamos não apenas um site que funciona bem para todos; ganhamos também um código <strong>mais limpo e fácil de manter</strong>.</p>
+
+<blockquote>
+  <p>Mas quais são os cenários mais limitados? Por onde começar? Como acrescentar funcionalidades sem quebrar o que já tínhamos? Veremos isso adiante! 🙃</p>
+</blockquote>
+
+<h3 id="por-onde-começar">Por onde começar?</h3>
+
+<p>Começar a desenvolver pensando em <strong>Progressive Enhancement</strong> influencia os mais diversos pontos dentro de um projeto. Seguindo novamente um exemplo dado pelo <strong>Luiz Real</strong>, se formos desenvolver um site para divulgar um produto, podemos pensar, antes de mais nada em:</p>
+
+<ul>
+  <li>Qual nosso público-alvo?</li>
+  <li>Será que precisamos nos procupar com navegadores antigos?</li>
+  <li>Qual a parcela de visitantes do meu site que virá de dispositivos móveis?</li>
+  <li>Quão importante é a integração com redes sociais?</li>
+  <li>O que posso oferecer para meus visitantes com configurações mais limitadas?</li>
+</ul>
+
+<p>Como podemos perceber, estas são questões que estão muito mais relacionadas ao contexto do negócio do que relacionados a questões técnicas. Ter as respostas para essas questões é muito relevante para nortear o processo de aplicação do conceito de <strong>Progressive Enhancement</strong>.</p>
+
+<p>Conseguimos perceber até aqui que o <strong>Progressive Enhancement</strong> não é apenas uma forma de desenvolver códigos front-end. <em>É uma forma diferente de pensar o desenvolvimento do produto como um todo.</em></p>
+
+<p>Sendo assim, uma possível resposta para a nossa pergunta “Por onde começar?” seria:</p>
+
+<p><strong>Pelo planejamento do produto</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Tendo bem claro os objetivos do produto, as decisões técnicas tornam-se mais simples.
+</code></pre>
+</div>
+
+<p>Um grande erro dos desenvolvedores, principalmente dos iniciantes, é deixar em segundo plano pontos inerentes ao planejamento do projeto e partir diretamente para a codificação. Erro grave!</p>
+
+<p>Claro que em um cenário real, algumas situações fogem do nosso controle, como público-alvo pouco conhecido, influência do cliente junto ao projeto e o orçamento com prazo limitado.</p>
+
+<p>Mas ainda com esses potenciais empecilhos, é possível aplicar o <strong>Progressive Enhancement</strong>. Veja só:</p>
+
+<ul>
+  <li>
+    <p>Se não sabemos qual o cenário mais limitado que vamos atender, podemos começar pelo mais limitado.</p>
+  </li>
+  <li>
+    <p>Se não temos orçamento e/ou prazo suficiente para desenvolver todas as funcionalidade desejadas, podemos entregar as que atendem aos cenários mais limitados primeiro.</p>
+  </li>
+  <li>
+    <p>Se não sabemos quais tecnologias os visitantes do site vão usar para acessar o conteúdo, começamos com o mínimo possível de tecnologias.</p>
+  </li>
+</ul>
+
+<h2 id="progressive-enhancement-e-html">Progressive Enhancement e HTML</h2>
+
+<p>Como sabemos, o HTML é a base de toda página na Internet e, portanto, todo usuário do nosso site, seja humano ou máquina, tem que entender pelo menos HTML; sempre podemos contar com ele.</p>
+
+<blockquote>
+  <p>Vale ressaltar que atualmente todos os navegadores, em suas últimas versões, trabalham com HTML5.</p>
+</blockquote>
+
+<p>Quando dizemos HTML5, na verdade, estamos falando de uma série de novas funcionalidades, como, novas tags, novos atributos, novas APIs, entre outros. São tantos novos recursos, que os navegadores, em sua maioria, ainda não implementam a especificação do HTML5 em sua totalidade.</p>
+
+<p>Porém, a especificação do HTML já foi projetado pensando em <strong>Progressive Enhancement</strong>. Peguemos o exemplo abaixo para analisar:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Teste de HTML5<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;header&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>Página com HTML5<span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Bacana, né?<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;section&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>Hora atual<span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;time&gt;</span>22:39<span class="nt">&lt;/time&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Um controle de form novo:<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"range"</span> <span class="na">min=</span><span class="s">"1"</span> <span class="na">max=</span><span class="s">"10"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>Logo no início do código, declaramos o DOCTYPE para indicar para o navegador que estamos utilizando a versão mais recente do HTML, ou seja, que o navegador deve mostrar todo seu potencial.</p>
+
+<p>E se o navegador não implementar suporte a todos estes recursos? A especificação do HTML recomenda que:</p>
+
+<ul>
+  <li>
+    <p><em>Se um agente de usuário encontrar um elemento que não reconhece, ele deve tentar renderizar seu conteúdo;</em></p>
+  </li>
+  <li>
+    <p><em>Se um agente de usuário encontrar um atributo que não reconhece, ele deve ignorar a declaração completa deste atributo, isto é, o atributo e seu valor;</em></p>
+  </li>
+  <li>
+    <p><em>Se um agente de usuário encontrar um valor de atributo que não reconhece, ele deve usar o valor padrão para aquele atributo.</em></p>
+  </li>
+</ul>
+
+<p>Mesmo que o navegador não entenda exatamente o que estamos querendo dizer, ele vai mostrar o conteúdo para o usuário; <strong>podemos incrementar a semântica e a interatividade do nosso HTML sem quebrar os navegadores mais limitados!</strong> A recomendação é bem favorável à aplicação do <strong>Progressive Enhancement</strong>.</p>
+
+<p>No exemplo dado anteriormente, se o navegador não suporta a tag <code class="highlighter-rouge">&lt;time&gt;</code> e o <code class="highlighter-rouge">input</code> do tipo <code class="highlighter-rouge">range</code>, ainda assim o usuário verá a hora e um controle de formulário (uma caixa de texto, que é o controle de formulário padrão).</p>
+
+<h2 id="progressive-enhancement-e-css">Progressive Enhancement e CSS</h2>
+
+<p>Tendo a nosso HTML como base bem definido, podemos começar a implementar o design com CSS.</p>
+
+<p>Assim como o HTML, o CSS é uma tecnologia já antiga e que passou por uma grande evolução, culminando no que chamamos agora de <strong>CSS 3</strong>. Assim como o caso do HTML, os navegadores não implementam suporte a todas as novidades, mesmo porque elas continuam vindo, mas os navegadores ignoram as propriedades desconhecidas, de modo que também é muito fácil ir incrementando nosso visual de acordo com as funcionalidades disponíveis.</p>
+
+<p>Além disso, o CSS tem uma outra característica peculiar que facilita o <strong>Progressive Enhancement</strong>: quando uma propriedade aparece duplicada, apenas a última declaração é considerada.</p>
+
+<p>Esse comportamento permite fazer <strong>Progressive Enhancement</strong> de um jeito fácil: basta ir acrescentando as funcionalidades mais recentes abaixo das mais antigas! 👌</p>
+
+<p>Quando pensamos em <strong>Progressive Enhancement</strong>, devemos pensar em dar a melhor experiência possível para os cenários limitados. A maior parte dos sites que vamos desenvolver no nosso dia a dia precisará de CSS para ser visualmente agradável e atrair mais usuários. Ou seja, mesmo nos cenários mais limitados, já estaremos dependentes de CSS.</p>
+
+<blockquote>
+  <p>A maioria dos requisitos de front-end que normalmente implementamos com JavaScript podem ser feitos apenas com CSS, ou seja, sem depender de mais uma tecnologia.</p>
+</blockquote>
+
+<h2 id="progressive-enhancement-e-javascript">Progressive Enhancement e JavaScript</h2>
+
+<p>Desenvolver pensando primeiro nos cenários mais limitados já evita que caiamos em certos tipos de armadilhas. No entanto, quando adicionamos JavaScript à página, precisamos tomar certos cuidados para não quebrar o trabalho já feito, assim como no CSS.</p>
+
+<p>Da mesma forma que devemos pensar no CSS como algo a mais em uma página, devemos também pensar no JavaScript dessa forma. Isso significa que, na medida do possível, o código JavaScript não deve interferir no seu HTML.</p>
+
+<p>Tomemos o exemplo dado pelo Luiz Real. Em vez de fazer um link virar uma ação em JavaScript como:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">onclick=</span><span class="s">"maisProdutos()"</span><span class="nt">&gt;</span>Mais produtos<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+</div>
+
+<p>Devemos preservar o HTML original.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mais-produtos.html"</span><span class="nt">&gt;</span>Mais produtos<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+</div>
+
+<p>E adicionar a funcionalidade JavaScript usando o próprio JavaScript.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="err">’</span><span class="p">[</span><span class="nx">href</span><span class="o">=</span><span class="s2">"mais-produtos.html"</span><span class="p">]</span><span class="err">’</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="err">’</span><span class="nx">click</span><span class="err">’</span><span class="p">,</span> <span class="nx">maisProdutos</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Dessa forma, nosso site continua funcionando perfeitamente, mesmo que o JavaScript apresente algum problema, e essa é uma das principais vantagens do <strong>Progressive Enhancement</strong> para o seu desenvolvimento.</p>
+
+<blockquote>
+  <p>Esse tipo de pensamento é conhecido entre os desenvolvedores JavaScript como JavaScript não-obstrutivo.</p>
+</blockquote>
+
+<p>Um ponto que não gera dores de cabeça no HTML e no CSS mas que, no JavaScript, é bastante complicado, é lidar com funcionalidades faltantes. Vimos que, com relação ao HTML, o navegador mostra informações de tags desconhecidas e, com relação ao CSS, o navegador ignora propriedades e valores não suportados; o mesmo não acontece com o JavaScript: qualquer comando que não seja suportado pelo navegador gerará um erro de JavaScript, consequentemente parando toda a execução do código.</p>
+
+<p>Lidar com as limitações e diferenças entre os navegadores pode ser bastante trabalhoso. Por exemplo, para selecionar elementos da página, podemos usar a função <code class="highlighter-rouge">document.querySelector</code>, como  fizemos no exemplo anterior. No entanto, essa função não está presente em todos os navegadores. Para que nosso código funcione em todos os navegadores, podemos usar a função <code class="highlighter-rouge">document.getElementsByClassName</code>:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">resultados</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="err">’</span><span class="nx">resultados</span><span class="err">’</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+</code></pre>
+</div>
+
+<h2 id="entendi-mas-quando-o-progressive-enhancement-não-é-uma-alternativa">Entendi! Mas quando o Progressive Enhancement não é uma alternativa?</h2>
+
+<p>A abordagem do <strong>Progressive Enhancement</strong> resolve muitos problemas do desenvolvedor front-end ao forçar o foco primeiro na parte mais importante de um site, que é prover o conteúdo. No entanto, <strong>Progressive Enhancement</strong> tem suas desvantagens e nem sempre é aplicável.</p>
+
+<p>Quando desenvolvemos pensando primeiro nos cenários mais limitados, conseguimos planejar nosso desenvolvimento de modo a tornar nosso site minimamente acessível nesses cenários. No entanto, isso pode ser restritivo para o processo criativo de desenvolvimento de um site.</p>
+
+<p>É possível desenvolver uma versão mais simples, sem as funcionalidades principais, para os cenários mais limitados, usando <strong>Progressive Enhancement</strong>. Essa abordagem é seguida, por exemplo, pelo Gmail, o serviço de e-mail da Google. A versão principal do cliente web é desenvolvida usando recursos avançados de JavaScript. Para simplificar o desenvolvimento dessa versão e ainda permitir o acesso aos e-mails nos navegadores mais limitados, foi desenvolvida uma versão baseada apenas em HTML.</p>
+
+<p>Mesmo nos cenários em que <strong>Progressive Enhancement</strong> não é aplicável, é interessante ter em mente as preocupações dessa forma de desenvolvimento. Desenvolver para a web é desenvolver para todos, independente de plataforma, navegador, língua e capacidades, e essa é a principal preocupação do <strong>Progressive Enhancement</strong>.</p>

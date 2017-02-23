@@ -1,27 +1,52 @@
 section.about
-	background: 
-		image: url(../images/about-bg.jpg)
+	background:
+		image: url(../images/about-bg.png)
+		color: #ecf0f1
 		position: center bottom
 		size: cover
+	color: #ffffff
+	height: 400px
 
 	h2
-		color: #3f3f42
+		color: #2b3e41
 		font:
-			size: 60px
+			size: 40px
 			weight: 400
-		line-height: 1
-		margin-left: -108px
+		line-height: 1.2
 		margin-top: 0
 
 	.home-lead
-		padding-bottom: 180px
-		color: #3f3f42
+		color: #2b3e41
 
-@media (max-width: 640px)
-	section.about 
-		h2, .home-lead
-			margin-left: auto
-			margin-right: auto
-			max-width: 300px
+	.image-strip
+		position: absolute
+		top: 0
+		margin: -50px 0
+		width: 100%
+		height: calc(100% + 100px)
+		background: 
+			image: url(../images/imagem-strip.gif)
+			position: center 0px
+			repeat: repeat-y
+			size: 75%
+
+		@media (max-width: 640px)
+			display: none
+		
+	.col-1
+		position: relative
+		height: 400px
+		display: flex
+		align-items: stretch
+		flex-direction: column
+		justify-content: center	
+
+		@media (max-width: 640px)
+			height: auto
+			display: block
+			padding: 50px 20px
+
+			&:last-child
+				padding: 0px 20px 50px
 
 
