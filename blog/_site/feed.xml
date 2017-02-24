@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description></description>
-    <link>http://localhost:4000/blog/</link>
-    <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 23 Feb 2017 20:43:56 -0300</pubDate>
-    <lastBuildDate>Thu, 23 Feb 2017 20:43:56 -0300</lastBuildDate>
+    <link>http://localhost:4000/blog//</link>
+    <atom:link href="http://localhost:4000/blog//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 23 Feb 2017 21:18:59 -0300</pubDate>
+    <lastBuildDate>Thu, 23 Feb 2017 21:18:59 -0300</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -114,8 +114,8 @@
 &lt;p&gt;&lt;img src=&quot;/blog/assets/images/thatsallfolks.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 09 Sep 2016 18:09:00 -0300</pubDate>
-        <link>http://localhost:4000/blog/debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</guid>
+        <link>http://localhost:4000/blog//debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</guid>
         
         
         <category>debug</category>
@@ -136,7 +136,7 @@
 
 &lt;p&gt;Para começar, optei por ir direto ao ponto de reviravolta da forma como desenvolvemos aplicações para a web: &lt;strong&gt;o HTML5&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/HTML5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/HTML5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Não vou me aprofundar na história do HTML nem nos detalhes por traz do HTML5. Esses conteúdos podem ser facilmente encontrados em sites como o da &lt;a href=&quot;https://www.w3.org/TR/html5/&quot;&gt;W3C&lt;/a&gt; ou em infinitamente outros, como o &lt;a href=&quot;https://diveintohtml5.com.br/&quot;&gt;Dive into HTML5&lt;/a&gt; (português). Aqui vou relatar um pouco dos elementos que fazem parte do HTML5 e &lt;strong&gt;futuramente&lt;/strong&gt;, em um outro texto, falar sobre as API disponíveis. A propósito, recentemente escrevi sobre uma dessas APIs, a Web Storage, e aproveitei para criar um simples &lt;a href=&quot;http://julianopadilha.com/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html&quot;&gt;To-Do List&lt;/a&gt;.&lt;/p&gt;
 
@@ -201,13 +201,13 @@
 
 &lt;p&gt;Qualquer conteúdo entre as tags de abertura e de fechamento do elemento &lt;code class=&quot;highlighter-rouge&quot;&gt;audio&lt;/code&gt; é um &lt;em&gt;fallback&lt;/em&gt;. Este conteúdo é exibido apenas em browsers que não suportam a tag &lt;code class=&quot;highlighter-rouge&quot;&gt;audio&lt;/code&gt;.&lt;/p&gt;
 
-&lt;audio src=&quot;/../assets/audios/good_enough.mp3&quot; controls=&quot;&quot;&gt;
+&lt;audio src=&quot;/blog/assets/audios/good_enough.mp3&quot; controls=&quot;&quot;&gt;
 	&lt;p&gt;Se você está vendo este texto é porque seu navegador não suporta o elemento áudio. :/&lt;/p&gt;
 &lt;/audio&gt;
 
 &lt;h4 id=&quot;exemplo-1&quot;&gt;Exemplo:&lt;/h4&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;audio&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/../assets/audios/good_enough.mp3&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;constrols&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;audio&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/blog/assets/audios/good_enough.mp3&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;constrols&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Se você está vendo este texto é porque seu navegador não 		suporta o elemento áudio.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt; //Fallback para navegadores 		que não suportam o elemento audio.
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/audio&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -510,15 +510,15 @@ function displayCanvas()
 
 &lt;p&gt;A imagem abaixo contém todas as tag pertencentes ao HTML e pode servir de referência.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/html5_list.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/html5_list.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Escrevi esse conteúdo como uma forma de me forçar a pesquisar mais sobre o HTML5 e ao mesmo tempo prover algo legal para quem tem interesse ou está começando.&lt;/p&gt;
 
 &lt;p&gt;🙃&lt;/p&gt;
 </description>
         <pubDate>Sat, 27 Aug 2016 10:00:00 -0300</pubDate>
-        <link>http://localhost:4000/blog/html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</guid>
+        <link>http://localhost:4000/blog//html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</guid>
         
         
         <category>html5</category>
@@ -533,7 +533,7 @@ function displayCanvas()
   &lt;p&gt;Tradução livre do post escrito por &lt;a href=&quot;https://stories.devacademy.la/@thattacoguy&quot;&gt;Daniel Gallegos&lt;/a&gt;: &lt;a href=&quot;https://stories.devacademy.la/how-to-use-github-like-a-proper-human-being-1a9c895c4e13#.rafva1m7t&quot;&gt;How to use GitHub like a proper human being&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/octocat.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/octocat.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;center style=&quot;font-size: 11px;&quot;&gt; [Founding Father Octocat v2 por James Kang](https://octodex.github.com/foundingfather_v2) &lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -545,7 +545,7 @@ function displayCanvas()
 
 &lt;p&gt;Eu tenho visto (e feito) muitas mensagens ruins de commit na &lt;a href=&quot;https://medium.com/@devacademyla&quot;&gt;devAcademy&lt;/a&gt;. Nós realmente devíamos começar a cobrar 10 centavos para cada commit mal feito por alguém. Faríamos &lt;a href=&quot;https://www.youtube.com/watch?v=EJR1H5tf5wE&quot;&gt;milhões&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/austin_power.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/austin_power.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;center style=&quot;font-size: 11px;&quot;&gt;100 milhões de dólares, para ser exato&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -553,7 +553,7 @@ function displayCanvas()
 
 &lt;p&gt;Uma vez que você adquire o hábito de escrever mensagens de commit consistentes, você vai começar a fazer isso reflexivamente. Você não terá mais que perder tempo pensando no que escrever, desperdiçando esforços. Além de que seus colegas de trabalho podem passar a gostar mais de você também. &lt;em&gt;Podem.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/reflexive_commits.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/reflexive_commits.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;center style=&quot;font-size: 11px;&quot;&gt;reflexive_commits.gif&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -580,7 +580,7 @@ function displayCanvas()
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/fix_estilo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/fix_estilo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;center style=&quot;font-size: 11px;&quot;&gt;NÃO FAÇA ISSO. POR FAVOR.&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -628,7 +628,7 @@ function displayCanvas()
 
 &lt;p&gt;Vamos falar sobre o report de bugs por um momento aqui. Você já tentou alguma vez corrigir algo mesmo sem saber primeiramente qual era o problema? Huh? O que você tem a dizer?&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/issue_without_describing.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/issue_without_describing.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Você não pode esperar que eu conserte um problema sem saber qual era o problema em primeiro lugar.&lt;/p&gt;
@@ -673,8 +673,8 @@ function displayCanvas()
 &lt;p&gt;Eu aposto que você está indo para os &lt;a href=&quot;https://github.com/thattacoguy&quot;&gt;meus repositórios no GitHub&lt;/a&gt; e vai começar a gritar &lt;a href=&quot;https://twitter.com/that_taco_guy&quot;&gt;comigo no Twitter&lt;/a&gt; porque eu não sigo o meu próprio guia. Você está certo, eu não estou. Eu escrevi isso como um guia para seguir para escrever melhores commits baseado no que é descolado e está na moda agora. Vamos melhorar juntos!&lt;/p&gt;
 </description>
         <pubDate>Wed, 10 Aug 2016 16:50:00 -0300</pubDate>
-        <link>http://localhost:4000/blog/git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</guid>
+        <link>http://localhost:4000/blog//git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</guid>
         
         
         <category>git</category>
@@ -982,8 +982,8 @@ function displayCanvas()
 &lt;p&gt;Mesmo nos cenários em que &lt;strong&gt;Progressive Enhancement&lt;/strong&gt; não é aplicável, é interessante ter em mente as preocupações dessa forma de desenvolvimento. Desenvolver para a web é desenvolver para todos, independente de plataforma, navegador, língua e capacidades, e essa é a principal preocupação do &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 07 Aug 2016 11:30:00 -0300</pubDate>
-        <link>http://localhost:4000/blog/web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</guid>
+        <link>http://localhost:4000/blog//web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</guid>
         
         
         <category>web</category>
@@ -1051,7 +1051,7 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.&lt;/p&gt;
 
 &lt;p&gt;Esse será o resultado final do nosso “How to Build” de hoje. Não está bonito, eu sei, seu sei.. Mas a ideia não era essa, a ideia é aprender os fundamentos de algo novo. Então fique a vontade para deixar o seu to-do list esteticamente mais bonito que o meu. 😉&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/how-to-build-todo-list-js-web-storage.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/how-to-build-todo-list-js-web-storage.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;estrutura-de-pastas-e-arquivos&quot;&gt;Estrutura de pastas e arquivos&lt;/h3&gt;
 
@@ -1109,7 +1109,7 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.&lt;/p&gt;
 
 &lt;p&gt;Aaah, uma dica inicial. Vocês podem acompanhar o que está acontecendo no Local Storage de vocês acessando a aba Resources do Inspector de elementos do Chrome (torço que estejam utilizando o Chrome :P), como mostra o gif abaixo.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/../assets/images/local-storage-inspector-elementos.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/local-storage-inspector-elementos.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Explicarei comentando trecho por trecho o que está acontecendo no código. 🤘&lt;/p&gt;
 
@@ -1287,8 +1287,8 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.&lt;/p&gt;
 &lt;p&gt;Até uma próxima! ✌️&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Jul 2016 17:30:00 -0300</pubDate>
-        <link>http://localhost:4000/blog/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</guid>
+        <link>http://localhost:4000/blog//javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</guid>
         
         
         <category>javascript</category>
@@ -1320,8 +1320,8 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 22 Jul 2016 20:00:00 -0300</pubDate>
-        <link>http://localhost:4000/blog/interface/estudos/html/css/2016/07/22/nubank-interface.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/interface/estudos/html/css/2016/07/22/nubank-interface.html</guid>
+        <link>http://localhost:4000/blog//interface/estudos/html/css/2016/07/22/nubank-interface.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//interface/estudos/html/css/2016/07/22/nubank-interface.html</guid>
         
         
         <category>interface</category>
@@ -1364,8 +1364,8 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 28 May 2016 20:00:00 -0300</pubDate>
-        <link>http://localhost:4000/blog/2016/05/28/partiu-sp.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2016/05/28/partiu-sp.html</guid>
+        <link>http://localhost:4000/blog//2016/05/28/partiu-sp.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//2016/05/28/partiu-sp.html</guid>
         
         
       </item>

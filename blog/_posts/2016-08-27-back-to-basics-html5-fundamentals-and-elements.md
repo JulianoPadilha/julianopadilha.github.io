@@ -16,7 +16,7 @@ Refletindo sobre isso, decidi retomar o estudo de alguns fundamentos básicos do
 
 Para começar, optei por ir direto ao ponto de reviravolta da forma como desenvolvemos aplicações para a web: **o HTML5**. 
 
-![](/../assets/images/HTML5.png)
+![](/blog/assets/images/HTML5.png)
 
 Não vou me aprofundar na história do HTML nem nos detalhes por traz do HTML5. Esses conteúdos podem ser facilmente encontrados em sites como o da [W3C](https://www.w3.org/TR/html5/) ou em infinitamente outros, como o [Dive into HTML5](https://diveintohtml5.com.br/) (português). Aqui vou relatar um pouco dos elementos que fazem parte do HTML5 e **futuramente**, em um outro texto, falar sobre as API disponíveis. A propósito, recentemente escrevi sobre uma dessas APIs, a Web Storage, e aproveitei para criar um simples [To-Do List](http://julianopadilha.com/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html).  
 
@@ -83,14 +83,14 @@ O HTML5 introduziu a possibilidade de tocar mídias nativamente no browser. A ta
 
 Qualquer conteúdo entre as tags de abertura e de fechamento do elemento `audio` é um *fallback*. Este conteúdo é exibido apenas em browsers que não suportam a tag `audio`.
 
-<audio src="/../assets/audios/good_enough.mp3" controls>
+<audio src="/blog/assets/audios/good_enough.mp3" controls>
 	<p>Se você está vendo este texto é porque seu navegador não suporta o elemento áudio. :/</p>
 </audio>
 
 #### Exemplo:
 
 ```html
-<audio src="/../assets/audios/good_enough.mp3" constrols>
+<audio src="/blog/assets/audios/good_enough.mp3" constrols>
 	<p>Se você está vendo este texto é porque seu navegador não 		suporta o elemento áudio.</p> //Fallback para navegadores 		que não suportam o elemento audio.
 </audio>
 ```
@@ -389,7 +389,7 @@ Esses são alguns dos principais elementos do HTML5. Não me aprofundei nas prop
 
 A imagem abaixo contém todas as tag pertencentes ao HTML e pode servir de referência. 
 
-![](/../assets/images/html5_list.png)
+![](/blog/assets/images/html5_list.png)
 
 Escrevi esse conteúdo como uma forma de me forçar a pesquisar mais sobre o HTML5 e ao mesmo tempo prover algo legal para quem tem interesse ou está começando. 
 

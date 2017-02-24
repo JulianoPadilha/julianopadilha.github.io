@@ -58,7 +58,7 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.
 
 Esse será o resultado final do nosso "How to Build" de hoje. Não está bonito, eu sei, seu sei.. Mas a ideia não era essa, a ideia é aprender os fundamentos de algo novo. Então fique a vontade para deixar o seu to-do list esteticamente mais bonito que o meu. 😉
 
-![](/../assets/images/how-to-build-todo-list-js-web-storage.gif)
+![](/blog/assets/images/how-to-build-todo-list-js-web-storage.gif)
 
 ### Estrutura de pastas e arquivos
 
@@ -115,7 +115,7 @@ Como dito na parte teórica, o Web Storage dispõe do `sessionStorage` e do `loc
 
 Aaah, uma dica inicial. Vocês podem acompanhar o que está acontecendo no Local Storage de vocês acessando a aba Resources do Inspector de elementos do Chrome (torço que estejam utilizando o Chrome :P), como mostra o gif abaixo.
 
-![](/../assets/images/local-storage-inspector-elementos.gif)
+![](/blog/assets/images/local-storage-inspector-elementos.gif)
 
 Explicarei comentando trecho por trecho o que está acontecendo no código. 🤘
 

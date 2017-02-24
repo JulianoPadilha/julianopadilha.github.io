@@ -6,11 +6,11 @@ markdown: kramdown
 highlighter: rouge
 logo: false
 paginate: 5
-baseurl: /blog
-domain_name: 'julianopadilha.com/blog'
+baseurl: /blog/
+domain_name: 'julianopadilha.com/blog/'
 google_analytics: 'UA-78425258-1'
 gems: [jekyll-paginate]
 
 # Details for the RSS feed generator
-url:            'julianopadilha.com'
+url:            'julianopadilha.com/blog/'
 author:         'Juliano Padilha'
