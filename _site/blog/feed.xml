@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/blog//</link>
     <atom:link href="http://localhost:4000/blog//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 23 Feb 2017 22:51:16 -0300</pubDate>
-    <lastBuildDate>Thu, 23 Feb 2017 22:51:16 -0300</lastBuildDate>
+    <pubDate>Thu, 23 Feb 2017 22:56:01 -0300</pubDate>
+    <lastBuildDate>Thu, 23 Feb 2017 22:56:01 -0300</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -114,11 +114,9 @@
 &lt;p&gt;&lt;img src=&quot;/blog/assets/images/thatsallfolks.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 09 Sep 2016 18:09:00 -0300</pubDate>
-        <link>http://localhost:4000/blog//blog/debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog//blog/debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</guid>
+        <link>http://localhost:4000/blog//debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//debug/development/chrome/2016/09/09/debug-fundamentals-chrome-developer-tools.html</guid>
         
-        
-        <category>blog</category>
         
         <category>debug</category>
         
@@ -519,11 +517,9 @@ function displayCanvas()
 &lt;p&gt;🙃&lt;/p&gt;
 </description>
         <pubDate>Sat, 27 Aug 2016 10:00:00 -0300</pubDate>
-        <link>http://localhost:4000/blog//blog/html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog//blog/html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</guid>
+        <link>http://localhost:4000/blog//html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//html5/development/2016/08/27/back-to-basics-html5-fundamentals-and-elements.html</guid>
         
-        
-        <category>blog</category>
         
         <category>html5</category>
         
@@ -677,11 +673,9 @@ function displayCanvas()
 &lt;p&gt;Eu aposto que você está indo para os &lt;a href=&quot;https://github.com/thattacoguy&quot;&gt;meus repositórios no GitHub&lt;/a&gt; e vai começar a gritar &lt;a href=&quot;https://twitter.com/that_taco_guy&quot;&gt;comigo no Twitter&lt;/a&gt; porque eu não sigo o meu próprio guia. Você está certo, eu não estou. Eu escrevi isso como um guia para seguir para escrever melhores commits baseado no que é descolado e está na moda agora. Vamos melhorar juntos!&lt;/p&gt;
 </description>
         <pubDate>Wed, 10 Aug 2016 16:50:00 -0300</pubDate>
-        <link>http://localhost:4000/blog//blog/git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog//blog/git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</guid>
+        <link>http://localhost:4000/blog//git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//git/github/development/2016/08/10/como-usar-github-como-um-ser-humano-adequado.html</guid>
         
-        
-        <category>blog</category>
         
         <category>git</category>
         
@@ -988,11 +982,9 @@ function displayCanvas()
 &lt;p&gt;Mesmo nos cenários em que &lt;strong&gt;Progressive Enhancement&lt;/strong&gt; não é aplicável, é interessante ter em mente as preocupações dessa forma de desenvolvimento. Desenvolver para a web é desenvolver para todos, independente de plataforma, navegador, língua e capacidades, e essa é a principal preocupação do &lt;strong&gt;Progressive Enhancement&lt;/strong&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 07 Aug 2016 11:30:00 -0300</pubDate>
-        <link>http://localhost:4000/blog//blog/web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog//blog/web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</guid>
+        <link>http://localhost:4000/blog//web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//web/development/2016/08/07/precisamos-falar-sobre-progressive-enhancement.html</guid>
         
-        
-        <category>blog</category>
         
         <category>web</category>
         
@@ -1295,11 +1287,9 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.&lt;/p&gt;
 &lt;p&gt;Até uma próxima! ✌️&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Jul 2016 17:30:00 -0300</pubDate>
-        <link>http://localhost:4000/blog//blog/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog//blog/javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</guid>
+        <link>http://localhost:4000/blog//javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//javascript/html/how-to-build/2016/07/24/how-to-build-todo-list-with-javascript-and-web-storage.html</guid>
         
-        
-        <category>blog</category>
         
         <category>javascript</category>
         
@@ -1330,11 +1320,9 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 22 Jul 2016 20:00:00 -0300</pubDate>
-        <link>http://localhost:4000/blog//blog/interface/estudos/html/css/2016/07/22/nubank-interface.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog//blog/interface/estudos/html/css/2016/07/22/nubank-interface.html</guid>
+        <link>http://localhost:4000/blog//interface/estudos/html/css/2016/07/22/nubank-interface.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//interface/estudos/html/css/2016/07/22/nubank-interface.html</guid>
         
-        
-        <category>blog</category>
         
         <category>interface</category>
         
@@ -1376,11 +1364,9 @@ Quando chamada, esvaziará todas as chaves fora do armazenamento.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 28 May 2016 20:00:00 -0300</pubDate>
-        <link>http://localhost:4000/blog//blog/2016/05/28/partiu-sp.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog//blog/2016/05/28/partiu-sp.html</guid>
+        <link>http://localhost:4000/blog//2016/05/28/partiu-sp.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog//2016/05/28/partiu-sp.html</guid>
         
-        
-        <category>blog</category>
         
       </item>
     
