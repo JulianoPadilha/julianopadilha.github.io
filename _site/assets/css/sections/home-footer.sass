@@ -1,0 +1,41 @@
+.home-footer
+
+	.email-contact
+		color: #fff
+		background: #e24040
+		display: block
+		width: 100%
+		line-height: 6
+		text-align: center
+		font-size: 40px
+		font-weight: 300
+		transition: background 150ms ease-in-out
+		text-decoration: none
+
+		&:hover
+			background: darken(#e24040, 8%)
+
+	.social-media
+		margin: 10px 0
+
+		img
+			margin: 10px
+
+	@media(max-width: 640px)
+		.social-media
+			display: flex 
+
+	@media(max-width: 550px)
+
+		.email-contact
+			font-size: 30px
+
+	@media(max-width: 430px)
+
+		.email-contact
+			font-size: 25px
+
+	@media(max-width: 320px)
+
+		.email-contact
+			font-size: 20px

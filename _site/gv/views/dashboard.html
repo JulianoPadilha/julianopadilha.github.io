@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GravaVoz</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<!-- Start Header -->
+	<header class='headerPrimary'>
+		<div class="container">
+			<div class="headerWrapper">
+				<h1 class="cell logo"><a href="/"><img src="images/gravavoz-logotipo.png" alt="" /></a></h1>
+				
+				<nav class="main-nav text-center">
+					<ul class="clearfix">
+
+						<li class="is-active--border"><a href="#">Categorias</a></li>
+						<li><a href="/locutores">Locutores</a></li>
+						<li><a href="#">Ranking</a></li>
+						<li><a href="#">Sobre</a></li>
+					</ul>
+				</nav>	
+
+				<a href="" class="cell userAccess text-center" data-toggle="modal" data-target="#Login">
+					<div class="cell userAccess text-center">
+						Entrar / Cadastrar
+					</div>
+				</a>
+				<div class="cell text-center navIcon"><i class="fa fa-navicon"></i></div>
+			</div>
+		</div>
+	</header>
+	<!-- End Header -->
+
+	<div class="container sub-header-section">
+		<div class="row">
+			<div class="col-xs-2 col-md-3 text-right">
+				<picture class="thumbnail-profile">
+					<img src="images/face.jpeg" alt="Foto do perfil">
+					<span class="thumb-icon"></span>
+				</picture>
+				<button class="btn-follow">Follow +</button>
+			</div>
+			<div class="col-xs-10 col-sm-5 col-md-3 profile-infos">
+				<p class="profile-name text-left">Xandy Sant's</p>
+				<p class="profile-followers">500 Followers</p>
+				<div class="profile-bio text-left">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit deleniti officia natus id sapiente harum necessitatibus maxime expedita, rem dignissimos tempore, reprehenderit et molestias quis neque, aspernatur culpa eveniet optio!
+				</div>
+
+			</div>
+			<div class="col-xs-10 col-sm-5 col-md-3 text-left">
+				<p>Escute e conheça</p>
+				<div class="player-mini">
+					<audio controls>
+						<source src="media/evidence-song.ogg" type="audio/ogg">
+						<source src="media/evidence-song.mp3" type="audio/mpeg">
+					</audio>
+					<p>Plays: <span>189</span> Trabalhos: <span>320</span></p>
+				</div>
+				<div class="share">
+					Compartilhe:
+					<a href=""><img src="images/whatsapp.png" alt="WhatsApp"></a>
+					<a href=""><img src="images/facebook.png" alt="Facebook"></a>
+					<a href=""><img src="images/twitter.png" alt="Twitter"></a>
+				</div>
+				<button class="btn-red-square pull-right">ORÇAMENTO ▶︎</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="tabs">
+				<nav class="tabs-nav">
+					<ul id="tabs" class="teste">
+						<li><a>Publicações</a></li>
+						<li><a>Categorias</a></li>
+						<li><a>Playlists</a></li>
+						<li><a>Clientes</a></li>
+						<li><a>Extra</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Scripts -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/dashboard.js"></script>
+</body>
+</html>
