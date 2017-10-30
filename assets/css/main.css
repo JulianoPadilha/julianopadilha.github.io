@@ -547,14 +547,14 @@ body {
     display: block;
     transform: translateY(0%); } }
 section.hero {
-  background-image: url(../images/hero.jpg);
+  background-image: url(/assets/images/hero.jpg);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
   height: 500px; }
 
 section.about {
-  background-image: url(../images/about-bg.png);
+  background-image: url(/assets/images/about-bg.png);
   background-color: #ecf0f1;
   background-position: center bottom;
   background-size: cover;
@@ -574,7 +574,7 @@ section.about {
     margin: -50px 0;
     width: 100%;
     height: calc(100% + 100px);
-    background-image: url(../images/imagem-strip.gif);
+    background-image: url(/assets/images/imagem-strip.gif);
     background-position: center 0px;
     background-repeat: repeat-y;
     background-size: 75%; }
@@ -597,7 +597,7 @@ section.about {
           padding: 0px 20px 50px; } }
 
 section.interests {
-  background-image: url(../images/interests-bg.jpg);
+  background-image: url(/assets/images/interests-bg.jpg);
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -627,7 +627,7 @@ section.interests {
     position: relative;
     cursor: pointer; }
     section.interests .item.back-btn {
-      background: #fff url(../images/back-icon.svg) center no-repeat;
+      background: #fff url(/assets/images/back-icon.svg) center no-repeat;
       background-size: 15px 26px;
       display: none; }
   section.interests .bubble {
@@ -666,7 +666,7 @@ section.interests {
     box-sizing: border-box;
     margin-left: 20px; } }
 section.articles {
-  background-image: url(../images/article-bg.jpg);
+  background-image: url(/assets/images/article-bg.jpg);
   background-repeat: repeat;
   padding-top: 0; }
   section.articles .col-1 {
@@ -742,7 +742,7 @@ section.articles {
     transform: scale3d(1, 1, 1); } }
 section.skills {
   background-color: #3f3f42;
-  background-image: url(../images/skills.jpg);
+  background-image: url(/assets/images/skills.jpg);
   background-size: cover;
   color: #fff; }
   section.skills iframe {
@@ -779,7 +779,7 @@ section.projects {
     font-size: 30px; }
   section.projects .dribbble, section.projects .behance {
     background-color: #ea4c89;
-    background-image: url(../images/design-bg.png);
+    background-image: url(/assets/images/design-bg.png);
     background-position: center;
     padding: 50px 0;
     transition: background-color 150ms ease-in-out; }
